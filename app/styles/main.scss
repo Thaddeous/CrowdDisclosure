@@ -224,17 +224,20 @@ input::-webkit-input-placeholder {
 .bodybox {
     position: relative;
     width: 100%;
-    height: 198px;
+    height: 225px;
     text-align: center;
 }
-
+.bodybox:hover {
+    transform: scale(1.02);
+    transition: all 0.3s ease-in-out;
+}
 .bodybox-img img {
     padding-top: 20px;
     width: 60px;
 }
 .bodybox-text {
-    padding: 20px 5px 11px 5px;
-    font-size: 17px;
+    padding: 25px 5px 35px 5px;
+    font-size: 30px;
     font-family: "Quicksand";
     color: #222222;
 }
@@ -251,22 +254,44 @@ input::-webkit-input-placeholder {
     color: #ffffff;
     background-color: #222222;
 }
+.gain-readers {
+    height: 198px;
+}
+.gain-readers-text {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    font-size: 30px;
+    font-family: "Quicksand";
+    color: #222222;
+}
 // =================================
-//
+//       Bodybox Styling Ends
+//     Squarebox Styling Begins
 // =================================
 .squarebox {
     width: 100%;
+    text-align: center;
 }
 .squarebox-size {
     position: relative;
     height: 200px;
+    overflow: hidden;
+}
+.squarebox-size:hover {
+    transform: scale(1.02);
+    transition: all 0.3s ease-in-out;
+}
+.squarebox-button:hover {
+    color: #ffffff;
+    border: 2px solid #cd1713;
+    background-color: #cd1713;
 }
 .squarebox-text {
     font-family: "Quicksand";
-    font-size: 20px;
     color: #ffffff;
-    padding: 20px 5px 11px 5px;
     text-shadow: 0px 0px 8px #000000;
+    font-size: 35px;
+    margin-top: 60px;
 }
 .dark-overlay {
     position: absolute;
@@ -274,99 +299,155 @@ input::-webkit-input-placeholder {
     left: 0;    
     right: 0;
     bottom: 0;
-    background-color: rgba(205, 23, 19, 0.4);
+    background-color: rgba(205, 23, 19, 0.85);
 }
-// .dark-overlay:hover {
-//     background-color: rgba(2, 2, 2, 0.4);
-// }
+.dark-overlay:hover {
+    background-color: rgba(2, 2, 2, 0.8);
+    transition: all 0.3s ease-in-out;
+}
 .one {
     width: 100%;
     height: 290px;
     background: url('http://wallpapersus.com/wp-content/uploads/2012/11/Mountain-Lake-HDR.jpg');
     background-size: cover;
-    & .squarebox-text {
-        font-size: 35px;
-        padding: 20px 35px;
-    }
 }
 .two {
     width: 100%;
+    height: 235px;
     background: url('http://velograd.com/img/foto17b.jpg');
     background-size: cover;
 }
 .three {
     width: 100%;
-    background: url('http://media-cache-ak0.pinimg.com/236x/84/fe/69/84fe6997961f434e90fc840ee78a8811.jpg');
-    background-size: repeat;
+    background: url('http://www.thisiscolossal.com/wp-content/uploads/2014/01/cohen-1.jpg');
+    background-size: cover;
+}
+.left-right-button-container {
+    width: 100%;
+    height: 35px;
+}
+.squarebox-button {
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 150px;
+    color: #222222;
+    border: 2px solid #ffffff;
+    background-color: #ffffff;
+}
+.squarebox-button:hover {
+    color: #ffffff;
+    border: 2px solid #cd1713;
+    background-color: #cd1713;
+}
+// ================================
+//     Square box Styling Ends
+//   Bodybox Split Styling Begins
+// =================================
+.split-container {
+    width: 100%;
+    height: 160px;
+    text-align: center;
+}
+.split {
+    position: relative;
+    float: left;
+    height: 160px;
+}
+.split-A {
+    width: 60%;
+    background-color: #5e5e5e;
+}
+.split-B {
+    width: 40%;
+    background-color: #222222;
+}
+.split-C {
+    width: 40%;
+    background-color: #5e5e5e;
+}
+.split-D {
+    width: 60%;
+    background-color: #222222;
+}
+.split-box {
+    line-height: 50px;
+    padding-top: 27px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.split-box:hover{
+    transform: scale(1.02);
+    transition: all 0.3s ease-in-out;
+}
+.split-box-A {
+    font-size: 60px;
+}
+.split-box-B {
+    font-size: 30px;
+}
+.split-box-C {
+    font-size: 60px;
+}
+.split-box-D {
+    font-size: 30px;
+}
+.split-img img {
+    padding-top: 20px;
+    width: 60px;
+}
+.split-text {
+    font-family: "Quicksand";
+    color: #ffffff;
+}
+.split-button {
+    width: 110px;
+    height: 35px;
+    font-size: 15px;
+    line-height: 35px;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    background-color: #222222;
+    background-image: none;
+}
+.split-button:hover {
+    color: #ffffff;
+    border: 2px solid #5e5e5e;
+    background-color: #5e5e5e;
 }
 // =================================
+//    Bodybox Split Styling Ends
 //
 // =================================
-
-
-
-
-
-
-
-
-
-.four {
-    background: url('http://cdn.wall88.com/51daa72ba408632581.jpg');
-    background-size: contain;
+.category {
+    height: 280px;
 }
-.two {
-    background: url('http://velograd.com/img/foto17b.jpg');
-    background-size: cover;
+.categories {
+    padding-bottom: 20px;
+    padding-left: 60px;
+    padding-right: 60px;
 }
-.three {
-    background: url('http://media-cache-ak0.pinimg.com/236x/84/fe/69/84fe6997961f434e90fc840ee78a8811.jpg');
-    background-size: repeat;
+.categories-text {
+    font-size: 70px;
+    margin-bottom: 13px;
 }
-.four {
-    background: url('http://cdn.wall88.com/51daa72ba408632581.jpg');
-    background-size: contain;
+.category-button {
+    width: 180px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-bottom: 8px;
+    color: #ffffff;
+    border: 2px solid #cd1713;
+    background-color: #cd1713;
 }
-.five {
-    background: url('https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQgxf0MEiKD_DSWt_Mo0ifhI40zA9EWh2X3ue37px8VyvPLlryo4bETxg');
-    background-size: cover;
+.category-button:hover {
+    border: 2px solid #222222;
+    background-color: #222222;
 }
-.six {
-    background: url('http://www.geeky-gadgets.com/wp-content/uploads/2008/03/vuzix_iwear.jpg');
-    background-size: contain;
-}
-.seven {
-    background: url('http://www.skonis-kvapas.lt/out/fck_pictures/kava01(1).jpg');
-    background-size: cover;
-}
-.eight {
-    background: url('http://thecoolgadgets.com/wp-content/uploads/2010/04/Santander-Bank-Has-Robot-Tour-Guides.jpg');
-    background-size: contain;
-}
-.nine {
-    background: url('http://2.bp.blogspot.com/-4rqcuznsYfo/Th31YWuLDsI/AAAAAAAAAhU/oYHQgJyWDW0/s1600/Awesome+stacked+books.jpg');
-    background-size: cover;
-}
-.ten {
-    background: url('http://demo.devilcantburn.com/sobr/files/2012/09/lens-depth-of-field-reflections-blurred-inverted-photo-wallpaper-2560x1600.jpg');
-    background-size: cover;
-}
-.eleven {
-    background: url('http://media.digitalcameraworld.com/files/2014/02/Urban_photography_tips_blur_people_NIK29.zone_2.doing3_.jpg');
-    background-size: cover;
-}
-.twelve {
-    background: url('http://www.123status.org/wp-content/uploads/2012/12/Melbourne-City-Timeline-Cover.jpg');
-    background-size: cover;
-}
-.thirteen {
-    background: url('http://1.bp.blogspot.com/-9EDRNKWbrmg/UU2kwjrPg8I/AAAAAAAAAFE/SsVWJJV-fl4/s1600/Backpacking_guy.jpg');
-    background-size: cover;
-}
-.fourteen {
-    background: url('http://www.insidescience.org/sites/default/files/crowd-top-slider.jpg');
-    background-size: cover;
-}
+// =================================
+//    Bodybox Split Styling Ends
+//        Category Buttons
+// =================================
 .footer-menu-container {
     padding-top: 2px;
     padding-bottom: 3px;
@@ -379,6 +460,7 @@ input::-webkit-input-placeholder {
     height: 16px;
     font-size: 10px;
 }
+
 @media screen and (max-width:850px) {
     .bodybox-sign-up-box {
         height: 120px;
