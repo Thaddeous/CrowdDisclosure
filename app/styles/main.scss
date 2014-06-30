@@ -1,8 +1,9 @@
-// ========================
-//       bower:scss
-//        endbower
-// universal styling begins
-// ========================
+// ==========================
+// bower:scss
+// endbower
+// ==========================
+//  Universal Styling Begins
+// ==========================
 .browsehappy {
     margin: 0.25em;
     padding: 0.2em;
@@ -42,32 +43,33 @@ input::-webkit-input-placeholder {
     display: inline-block;
     width: 70px;
     height: 25px;
-    font-size: 13px;
     line-height: 25px;
     text-align: center;
     color: #222222;
     border: 1px solid #dddddd;
     background-image: linear-gradient(to bottom, #e5e5e5 0%, #cccccc 100%);
 }
+.button:hover {
+    transition: 0.1s ease-in-out;
+}
 // ========================
 //  Universal Styling Ends
 //   Tippy Top Menu Begins
 // ========================
-
-.top-menu-container {
-    padding-top: 2px;
-    padding-right: 11px;
-    padding-left: 11px;
+.top-container {
+    padding-left: 7px;
+    padding-right: 9px;
+    height: 30px;
+    line-height: 30px;
 }
 .top-menu-box {
     width: 100%;
-    height: 16px;
-    font-size: 10px;
+    font-size: 12px;
 }
 .menu-left a {
     float: left;
     color: #555555;
-    margin-right: 8px;
+    margin-right: 10px;
     margin-left: 1px;
     & a:hover {
         color: #000000;
@@ -78,7 +80,7 @@ input::-webkit-input-placeholder {
     float: right;
     color: #555555;
     margin-right: 3px;
-    margin-left: 6px;
+    margin-left: 10px;
     & a:hover {
         color: #000000;
         text-shadow: 0px 0px 1px #f5f5f5;
@@ -101,6 +103,7 @@ input::-webkit-input-placeholder {
 .searchbar {
     padding-right: 10px;
     padding-top: 20px;
+    padding-bottom: 9px;
 }
 .searchbar-wrap span {
     display: block;
@@ -118,6 +121,7 @@ input::-webkit-input-placeholder {
     width: 30px;
     height: 30px;
     line-height: 30px;
+    box-shadow: 0px 1px 2px 1px #222222;
 }
 .search-button:hover {
     border: 1px solid #222222;
@@ -125,11 +129,11 @@ input::-webkit-input-placeholder {
     background-image: none;
     color: #ffffff;
 }
-// ===================================
-//        Logo & Searchbar End
-//   5 Block Menu and Overlays Begin
-// ===================================
-.blocks-container {
+// =================================================
+//               Logo & Searchbar End
+//   Default Block Menu and Overlay Styling Begins
+// =================================================
+.block-menu-container {
     width: 100%;
     box-shadow: 0px 1px 4px 0px #000000;
 }
@@ -142,6 +146,33 @@ input::-webkit-input-placeholder {
     background-size: cover;
     box-shadow: 0px 1px 4px 0px #000000;
 }
+.block-text {
+    color: #ffffff;
+    text-align: center;
+    font-size: 24px;
+    font-family: "Quicksand";
+}
+.block:hover {
+    & .block-text {
+        text-shadow: 0px 0px 8px #000000;
+    }
+}
+.red-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(205, 23, 19, 0.90);
+}
+.red-overlay:hover {
+    background-color: rgba(2, 2, 2, 0.4);
+    transition: 0.1s ease-in-out;
+}
+// ===============================================
+//   Default Block Menu and Overlay Styling Ends
+//          1-off Block Styling Begins
+// ===============================================
 .block1 {
     background-image: url("http://image.automobilemag.com/f/2014_lamborghini_aventador/61915371+w286+h179+cr1+ar0/2014_lamborghini_aventador_lp_700_4_roadster_ignition_button_detail.jpg");
 }
@@ -157,32 +188,10 @@ input::-webkit-input-placeholder {
 .block5 {
     background-image: url("http://www.drapekings.com/wp-content/uploads/2012/03/Darker-P1010716.jpg");
 }
-.five-block-text {
-    color: #ffffff;
-    text-align: center;
-    font-size: 24px;
-    font-family: "Quicksand";
-}
-.block:hover {
-    & .five-block-text {
-        text-shadow: 0px 0px 8px #000000;
-    }
-}
-.red-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(205, 23, 19, 0.85);
-}
-.red-overlay:hover {
-    background-color: rgba(2, 2, 2, 0.4);
-}
-// ================================
-//  5 Block Menu and Overlays End
-//        Main Menu Begins
-// ================================
+// =========================
+//   1-off Block Menus Ends
+//      Main Menu Begins
+// =========================
 .lower-main-menu {
     clear: both;
     height: 20px;
@@ -201,6 +210,7 @@ input::-webkit-input-placeholder {
 .second-menu:hover {
     background-image: linear-gradient(to bottom, #000000 0%, #222222 100%);
     color: #ffffff;
+    transition: 0.1s ease-in-out;
 }
 // =============================
 //      All Top Menus End
@@ -219,55 +229,100 @@ input::-webkit-input-placeholder {
 }
 // =======================================
 //  Home Page Headerboard Gif & Text Ends
-//            Sign-UP CTA Begins
+//      Default Bodybox Styling Begins
 // ======================================
 .bodybox {
     position: relative;
     width: 100%;
-    height: 225px;
+    height: auto;
     text-align: center;
 }
-.bodybox:hover {
-    transform: scale(1.02);
+.bodybox-size:hover {
+    transform: scale(0.98);
     transition: all 0.3s ease-in-out;
 }
 .bodybox-img img {
-    padding-top: 20px;
+    padding-top: 10px;
     width: 60px;
 }
 .bodybox-text {
-    padding: 25px 5px 35px 5px;
+    padding-top: 2px;
     font-size: 30px;
     font-family: "Quicksand";
     color: #222222;
 }
+.bodybox-text-a {
+    padding-top: 10px;
+    font-family: "Open Sans";
+    text-shadow: 0px 1px 1px rgba(150, 150, 150, 1);
+}
 .bodybox-button {
-    width: 110px;
+    margin-top: 12px;
+    width: 130px;
     height: 35px;
-    font-size: 15px;
+    font-size: 17px;
     line-height: 35px;
     color: #222222;
     border: 2px solid #222222;
+    background-color: #ffffff;
     background-image: none;
 }
 .bodybox-button:hover {
     color: #ffffff;
-    background-color: #222222;
+    border: 2px solid #cd1713;
+    background-color: #cd1713;
 }
-.gain-readers {
-    height: 198px;
+// ================================
+//   Default Bodybox Styling Ends
+//   1-off Bodybox Styling begins
+// ================================
+.bodybox-writer {
+    height: 225px
 }
-.gain-readers-text {
-    padding-top: 30px;
+.bodybox-size-writer:hover {
+    transform: none;
+    transition: none;
+}
+.bodybox-reader {
+    height: 110px;
+}
+.bodybox-category {
+    height: 60px;
+    line-height: 54px;
+}
+.bodybox-categories {
+    height: 180px;
+}
+.bodybox-size-categories {
     padding-bottom: 20px;
-    font-size: 30px;
-    font-family: "Quicksand";
-    color: #222222;
+    padding-left: 60px;
+    padding-right: 60px;
 }
-// =================================
-//       Bodybox Styling Ends
-//     Squarebox Styling Begins
-// =================================
+.bodybox-size-categories:hover {
+    transform: none;
+    transition: none;
+}
+.categories-button {
+    width: 190px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-bottom: 8px;
+    font-size: 17px;
+    color: #ffffff;
+    border: 2px solid #cd1713;
+    background-color: #cd1713;
+    box-shadow: 0px 1px 2px 1px #222222;
+}
+.categories-button:hover {
+    border: 2px solid #222222;
+    background-color: #222222;
+    transform: scale(1.02);
+    transition: all 0.1s ease-in-out;
+}
+// ==============================================
+//          All Bodybox Styling Ends
+//  Default Squarebox and Overlay Styling Begin
+// ==============================================
 .squarebox {
     width: 100%;
     text-align: center;
@@ -278,72 +333,63 @@ input::-webkit-input-placeholder {
     overflow: hidden;
 }
 .squarebox-size:hover {
-    transform: scale(1.02);
-    transition: all 0.3s ease-in-out;
-}
-.squarebox-button:hover {
-    color: #ffffff;
-    border: 2px solid #cd1713;
-    background-color: #cd1713;
+    & .squarebox-text {
+        transform: scale(1.07);
+        transition: all 0.3s ease-in-out;
+    }
 }
 .squarebox-text {
     font-family: "Quicksand";
     color: #ffffff;
     text-shadow: 0px 0px 8px #000000;
     font-size: 35px;
+    margin-top: 40px;
+}
+.squarebox-text-a {
     margin-top: 60px;
-}
-.dark-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;    
-    right: 0;
-    bottom: 0;
-    background-color: rgba(205, 23, 19, 0.85);
-}
-.dark-overlay:hover {
-    background-color: rgba(2, 2, 2, 0.8);
-    transition: all 0.3s ease-in-out;
-}
-.one {
-    width: 100%;
-    height: 290px;
-    background: url('http://wallpapersus.com/wp-content/uploads/2012/11/Mountain-Lake-HDR.jpg');
-    background-size: cover;
-}
-.two {
-    width: 100%;
-    height: 235px;
-    background: url('http://velograd.com/img/foto17b.jpg');
-    background-size: cover;
-}
-.three {
-    width: 100%;
-    background: url('http://www.thisiscolossal.com/wp-content/uploads/2014/01/cohen-1.jpg');
-    background-size: cover;
-}
-.left-right-button-container {
-    width: 100%;
-    height: 35px;
 }
 .squarebox-button {
     margin-top: 20px;
     margin-right: 10px;
     margin-left: 10px;
-    width: 150px;
-    color: #222222;
     border: 2px solid #ffffff;
-    background-color: #ffffff;
 }
-.squarebox-button:hover {
-    color: #ffffff;
-    border: 2px solid #cd1713;
-    background-color: #cd1713;
+.dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(205, 23, 19, 0.90);
 }
-// ================================
-//     Square box Styling Ends
-//   Bodybox Split Styling Begins
-// =================================
+.dark-overlay:hover {
+    background-color: rgba(2, 2, 2, 0.8);
+    transition: all 0.3s ease-in-out;
+}
+// =============================================
+//  Default Squarebox and Overlay Styling Ends
+//     1off Squarebox Styling Styling Begins
+// =============================================
+.squarebox-size-one {
+    width: 100%;
+    height: 290px;
+    background: url('http://wallpapersus.com/wp-content/uploads/2012/11/Mountain-Lake-HDR.jpg');
+    background-size: cover;
+}
+.squarebox-size-two {
+    width: 100%;
+    height: 235px;
+    background: url('http://velograd.com/img/foto17b.jpg');
+    background-size: cover;
+}
+.squarebox-size-two-container {
+    width: 100%;
+    height: 35px;
+}
+// ========================================
+//   1off Squarebox Styling Styling Ends
+//  Default Split Container Styling Begins
+// ========================================
 .split-container {
     width: 100%;
     height: 160px;
@@ -354,6 +400,27 @@ input::-webkit-input-placeholder {
     float: left;
     height: 160px;
 }
+.split-box {
+    line-height: 50px;
+    padding-top: 27px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.split-box:hover {
+    transform: scale(0.99);
+    transition: all 0.3s ease-in-out;
+}
+.splitbox-img img {
+    width: 60px;
+}
+.split-text {
+    font-family: "Quicksand";
+    color: #ffffff;
+}
+// =======================================
+//  Default Split Container Styling Ends
+//   1-off Split Container Styling Begins
+// ========================================
 .split-A {
     width: 60%;
     background-color: #5e5e5e;
@@ -364,21 +431,11 @@ input::-webkit-input-placeholder {
 }
 .split-C {
     width: 40%;
-    background-color: #5e5e5e;
+    background-color: #222222;
 }
 .split-D {
     width: 60%;
-    background-color: #222222;
-}
-.split-box {
-    line-height: 50px;
-    padding-top: 27px;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-.split-box:hover{
-    transform: scale(1.02);
-    transition: all 0.3s ease-in-out;
+    background-color: #5e5e5e;
 }
 .split-box-A {
     font-size: 60px;
@@ -386,88 +443,138 @@ input::-webkit-input-placeholder {
 .split-box-B {
     font-size: 30px;
 }
+.split-box-B-button:hover {
+    color: #ffffff;
+    border: 2px solid #5e5e5e;
+    background-color: #5e5e5e;
+}
 .split-box-C {
     font-size: 60px;
 }
 .split-box-D {
     font-size: 30px;
 }
-.split-img img {
-    padding-top: 20px;
-    width: 60px;
-}
-.split-text {
-    font-family: "Quicksand";
-    color: #ffffff;
-}
-.split-button {
-    width: 110px;
-    height: 35px;
-    font-size: 15px;
-    line-height: 35px;
-    color: #ffffff;
-    border: 2px solid #ffffff;
-    background-color: #222222;
-    background-image: none;
-}
-.split-button:hover {
-    color: #ffffff;
-    border: 2px solid #5e5e5e;
-    background-color: #5e5e5e;
-}
-// =================================
-//    Bodybox Split Styling Ends
-//
-// =================================
-.category {
-    height: 280px;
-}
-.categories {
-    padding-bottom: 20px;
-    padding-left: 60px;
-    padding-right: 60px;
-}
-.categories-text {
-    font-size: 70px;
-    margin-bottom: 13px;
+// ===================================================
+//         1-off Split Container Styling Begins
+//  Default Category Button Styling & Overlay Begins
+// ===================================================
+.category-container {
+    width: 100%;
+    height: 120px;
+    box-shadow: 0px 1px 4px 0px #000000;
 }
 .category-button {
-    width: 180px;
-    margin-left: 2px;
-    margin-right: 2px;
-    margin-bottom: 8px;
-    color: #ffffff;
-    border: 2px solid #cd1713;
-    background-color: #cd1713;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    float: left;
+    width: 16.66%;
+    height: 40px;
+    line-height: 40px;
+    background-size: cover;
+    box-shadow: 0px 1px 4px 0px #000000;
 }
 .category-button:hover {
-    border: 2px solid #222222;
-    background-color: #222222;
+    & .five-category-text {
+        text-shadow: 0px 0px 8px #000000;
+    }
 }
-// =================================
-//    Bodybox Split Styling Ends
-//        Category Buttons
-// =================================
-.footer-menu-container {
-    padding-top: 2px;
-    padding-bottom: 3px;
+.red-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(205, 23, 19, 0.90);
+}
+.red-overlay:hover {
+    background-color: rgba(2, 2, 2, 0.4);
+    transition: 0.1s ease-in-out;
+}
+.category-text {
+    text-align: center;
+    font-size: 17px;
+    color: #ffffff;
+}
+// =================================================
+//  Default Category Button Styling & Overlay Ends
+//   1-off Category Button Styling & Overlay Begins
+// =================================================
+.category1 {
+    background-image: url("http://image.automobilemag.com/f/2014_lamborghini_aventador/61915371+w286+h179+cr1+ar0/2014_lamborghini_aventador_lp_700_4_roadster_ignition_button_detail.jpg");
+}
+.category2 {
+    background-image: url("http://ak.picdn.net/shutterstock/videos/3163174/preview/stock-footage-writing-success-by-many-process-on-chalkboard.jpg");
+}
+.category3 {
+    background-image: url("http://static.tumblr.com/db6d6056efbbc156f35c9967e7d9f14c/v56ekyk/b8Nmtsggm/tumblr_static_writing.jpg");
+}
+.category4 {
+    background-image: url("https://dressagesnob.files.wordpress.com/2014/06/img_043441.jpg");
+}
+.category5 {
+    background-image: url("http://www.drapekings.com/wp-content/uploads/2012/03/Darker-P1010716.jpg");
+}
+.category6 {
+    background-image: url("http://www.drapekings.com/wp-content/uploads/2012/03/Darker-P1010716.jpg");
+}
+.category7 {
+    background-image: url("http://image.automobilemag.com/f/2014_lamborghini_aventador/61915371+w286+h179+cr1+ar0/2014_lamborghini_aventador_lp_700_4_roadster_ignition_button_detail.jpg");
+}
+.category7 {
+    background-image: url("http://ak.picdn.net/shutterstock/videos/3163174/preview/stock-footage-writing-success-by-many-process-on-chalkboard.jpg");
+}
+.category8 {
+    background-image: url("http://static.tumblr.com/db6d6056efbbc156f35c9967e7d9f14c/v56ekyk/b8Nmtsggm/tumblr_static_writing.jpg");
+}
+.category9 {
+    background-image: url("https://dressagesnob.files.wordpress.com/2014/06/img_043441.jpg");
+}
+.category10 {
+    background-image: url("http://image.automobilemag.com/f/2014_lamborghini_aventador/61915371+w286+h179+cr1+ar0/2014_lamborghini_aventador_lp_700_4_roadster_ignition_button_detail.jpg");
+}
+.category11 {
+    background-image: url("http://ak.picdn.net/shutterstock/videos/3163174/preview/stock-footage-writing-success-by-many-process-on-chalkboard.jpg");
+}
+.category12 {
+    background-image: url("http://static.tumblr.com/db6d6056efbbc156f35c9967e7d9f14c/v56ekyk/b8Nmtsggm/tumblr_static_writing.jpg");
+}
+.category13 {
+    background-image: url("http://ak.picdn.net/shutterstock/videos/3163174/preview/stock-footage-writing-success-by-many-process-on-chalkboard.jpg");
+}
+.category14 {
+    background-image: url("http://static.tumblr.com/db6d6056efbbc156f35c9967e7d9f14c/v56ekyk/b8Nmtsggm/tumblr_static_writing.jpg");
+}
+.category15 {
+    background-image: url("https://dressagesnob.files.wordpress.com/2014/06/img_043441.jpg");
+}
+.category16 {
+    background-image: url("http://image.automobilemag.com/f/2014_lamborghini_aventador/61915371+w286+h179+cr1+ar0/2014_lamborghini_aventador_lp_700_4_roadster_ignition_button_detail.jpg");
+}
+.category17 {
+    background-image: url("http://ak.picdn.net/shutterstock/videos/3163174/preview/stock-footage-writing-success-by-many-process-on-chalkboard.jpg");
+}
+.category18 {
+    background-image: url("http://static.tumblr.com/db6d6056efbbc156f35c9967e7d9f14c/v56ekyk/b8Nmtsggm/tumblr_static_writing.jpg");
+}
+// ================================================
+//   1-off Category Button Styling & Overlay Ends
+//               Footer Styling Begins
+// ================================================
+.footer-container {
     padding-left: 7px;
-    padding-right: 6px;
-    border-top: 1px solid #eeeeee;
+    padding-right: 9px;
+    height: 30px;
+    line-height: 30px;
 }
 .footer-menu-box {
     width: 100%;
-    height: 16px;
-    font-size: 10px;
+    font-size: 12px;
 }
-
-@media screen and (max-width:850px) {
-    .bodybox-sign-up-box {
-        height: 120px;
-    }
-}
-
-/* media query dude 850px */
+// ============================
+//    Footer Styling Ends
+//   645px Media Query Begins
+// ============================
 @media screen and (max-width:645px) {
     .searchbar {
         clear: both;
@@ -477,35 +584,24 @@ input::-webkit-input-placeholder {
         padding-right: 15px;
         margin-bottom: 8px;
     }
-    .five-block-text {
-        font-size: 17px;
-    }
-     .one {
-        height: 260px;
-        & .squarebox-text {
-            font-size: 30px;
-            padding-top: 15px;
-            padding-right: 30px;
-            padding-bottom: 0px;
-            padding-left: 30px;
-        }
+    .block-text {
+        font-size: 19px;
     }
 }
-
-/* media query dude 645px */
+// ============================
+//    645px Media Query Ends
+//   500px Media Query Begins
+// ============================
 @media screen and (max-width:500px) {
-    .top-menu-container {
-        padding-right: 7px;
-        padding-left: 6px;
-    }
     .logo {
+        padding-top: 5px;
         padding-left: 5px;
         width: 307px;
     }
     .searchbar {
         padding-left: 5px;
-        padding-top: 0px;
-        margin-bottom: 8px;
+        padding-top: 6px;
+        margin-bottom: 5px;
         width: 96%;
     }
     .lower-main-menu {
@@ -519,26 +615,11 @@ input::-webkit-input-placeholder {
         height: 30px;
         line-height: 30px;
     }
-    .five-block-text {
-        font-size: 13px;
-    }
-    .bodybox {
-        height: 130px;
-    }
-    .one {
-        height: 243px;
-        & .squarebox-text {
-            font-size: 23px;
-            padding-top: 15px;
-            padding-right: 30px;
-            padding-bottom: 0px;
-            padding-left: 30px;
-        }
-    }
-    .footer-menu-box {
-        padding-left: 1px;
-        padding-right: 10px;
+    .block-text {
+        font-size: 16px;
     }
 }
-
-/* media query dude 500px */
+// ============================
+//   500px Media Query Ends
+//   
+// ============================
