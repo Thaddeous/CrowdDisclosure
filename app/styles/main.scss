@@ -28,13 +28,13 @@ body {
 input {
     height: 25px;
     line-height: 25px;
-    font-size: 13px;
+    font-size: 0.813em;
     color: #222222;
     border: 1px solid #dddddd;
 }
 input::-webkit-input-placeholder {
     color: #222222;
-    font-size: 13px;
+    font-size: 0.813em;
 }
 .clear {
     clear: both;
@@ -45,12 +45,26 @@ input::-webkit-input-placeholder {
     height: 25px;
     line-height: 25px;
     text-align: center;
+    font-size: 1.000em;
     color: #222222;
     border: 1px solid #dddddd;
     background-image: linear-gradient(to bottom, #e5e5e5 0%, #cccccc 100%);
 }
 .button:hover {
     transition: 0.1s ease-in-out;
+}
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    margin: auto;
+    z-index: 10000;
+    background-color: #ffffff;
+}
+.header-default-padding {
+    width: 100%;
+    height: 150px;
+    background-color: blue;
 }
 // ========================
 //  Universal Styling Ends
@@ -59,12 +73,12 @@ input::-webkit-input-placeholder {
 .top-container {
     padding-left: 7px;
     padding-right: 9px;
-    height: 30px;
     line-height: 30px;
 }
 .top-menu-box {
+    height: 30px;
     width: 100%;
-    font-size: 12px;
+    // font-size: 0.813em;
 }
 .menu-left a {
     float: left;
@@ -101,7 +115,7 @@ input::-webkit-input-placeholder {
     padding-right: 15px;
 }
 .searchbar {
-    padding-right: 10px;
+    padding-right: 15px;
     padding-top: 20px;
     padding-bottom: 9px;
 }
@@ -135,6 +149,7 @@ input::-webkit-input-placeholder {
 // =================================================
 .block-menu-container {
     width: 100%;
+    height: 40px;
     box-shadow: 0px 1px 4px 0px #000000;
 }
 .block {
@@ -149,7 +164,7 @@ input::-webkit-input-placeholder {
 .block-text {
     color: #ffffff;
     text-align: center;
-    font-size: 24px;
+    font-size: 1.500em;
     font-family: "Quicksand";
 }
 .block:hover {
@@ -193,17 +208,16 @@ input::-webkit-input-placeholder {
 //      Main Menu Begins
 // =========================
 .lower-main-menu {
-    clear: both;
+    width: 100%;
     height: 20px;
     line-height: 20px;
     padding-right: 10px;
     padding-left: 10px;
     background-color: #222222;
-    box-shadow: 0px 1px 1px #999999;
 }
 .second-menu {
     float: left;
-    font-size: 13px;
+    font-size: 0.813em;
     color: #ffffff;
     padding-right: 10px;
 }
@@ -217,9 +231,8 @@ input::-webkit-input-placeholder {
 //  Home Page Gif & Text Begins
 // =============================
 .headerboard {
-    margin: 0 auto;
-    text-align: center;
     width: 100%;
+    text-align: center;
 }
 .headerboard-message {
     width: 100%;
@@ -247,7 +260,9 @@ input::-webkit-input-placeholder {
 }
 .bodybox-text {
     padding-top: 2px;
-    font-size: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 1.875em;
     font-family: "Quicksand";
     color: #222222;
 }
@@ -260,7 +275,6 @@ input::-webkit-input-placeholder {
     margin-top: 12px;
     width: 130px;
     height: 35px;
-    font-size: 17px;
     line-height: 35px;
     color: #222222;
     border: 2px solid #222222;
@@ -277,7 +291,7 @@ input::-webkit-input-placeholder {
 //   1-off Bodybox Styling begins
 // ================================
 .bodybox-writer {
-    height: 225px
+    height: auto;
 }
 .bodybox-size-writer:hover {
     transform: none;
@@ -303,11 +317,10 @@ input::-webkit-input-placeholder {
     transition: none;
 }
 .categories-button {
-    width: 190px;
+    width: 180px;
     margin-left: 2px;
     margin-right: 2px;
     margin-bottom: 8px;
-    font-size: 17px;
     color: #ffffff;
     border: 2px solid #cd1713;
     background-color: #cd1713;
@@ -329,27 +342,32 @@ input::-webkit-input-placeholder {
 }
 .squarebox-size {
     position: relative;
-    height: 200px;
     overflow: hidden;
 }
 .squarebox-size:hover {
-    & .squarebox-text {
+    & .squarebox-text-container {
         transform: scale(1.07);
         transition: all 0.3s ease-in-out;
     }
 }
-.squarebox-text {
+.squarebox-text-container {
+    padding-top: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 2.250em;
     font-family: "Quicksand";
     color: #ffffff;
     text-shadow: 0px 0px 8px #000000;
-    font-size: 35px;
-    margin-top: 40px;
+    & p {
+        padding: 20px;
+    }
 }
-.squarebox-text-a {
-    margin-top: 60px;
+.squarebox-button-container {
+    width: 100%;
+    height: 35px;
 }
 .squarebox-button {
-    margin-top: 20px;
+    margin-top: 25px;
     margin-right: 10px;
     margin-left: 10px;
     border: 2px solid #ffffff;
@@ -372,7 +390,7 @@ input::-webkit-input-placeholder {
 // =============================================
 .squarebox-size-one {
     width: 100%;
-    height: 290px;
+    height: 338px;
     background: url('http://wallpapersus.com/wp-content/uploads/2012/11/Mountain-Lake-HDR.jpg');
     background-size: cover;
 }
@@ -381,10 +399,11 @@ input::-webkit-input-placeholder {
     height: 235px;
     background: url('http://velograd.com/img/foto17b.jpg');
     background-size: cover;
-}
-.squarebox-size-two-container {
-    width: 100%;
-    height: 35px;
+    & .squarebox-text-container {
+        padding-top: 65px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
 }
 // ========================================
 //   1off Squarebox Styling Styling Ends
@@ -392,25 +411,17 @@ input::-webkit-input-placeholder {
 // ========================================
 .split-container {
     width: 100%;
-    height: 160px;
+    height: 180px;
     text-align: center;
 }
 .split {
-    position: relative;
     float: left;
-    height: 160px;
-}
-.split-box {
-    line-height: 50px;
-    padding-top: 27px;
-    padding-left: 20px;
-    padding-right: 20px;
 }
 .split-box:hover {
     transform: scale(0.99);
     transition: all 0.3s ease-in-out;
 }
-.splitbox-img img {
+.split-box-img img {
     width: 60px;
 }
 .split-text {
@@ -422,37 +433,61 @@ input::-webkit-input-placeholder {
 //   1-off Split Container Styling Begins
 // ========================================
 .split-A {
-    width: 60%;
+    width: 65%;
+    height: 180px;
     background-color: #5e5e5e;
+    & p {
+        padding: 43px 20px;
+    }
 }
 .split-B {
-    width: 40%;
+    width: 35%;
+    height: 180px;
     background-color: #222222;
+    & p {
+        padding-top: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
 }
 .split-C {
-    width: 40%;
+    width: 42%;
+    height: 180px;
     background-color: #222222;
+    & p {
+        padding-top: 12px;
+    }
 }
 .split-D {
-    width: 60%;
+    width: 58%;
+    height: 180px;
     background-color: #5e5e5e;
+    & p {
+        padding-top: 35px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
-.split-box-A {
-    font-size: 60px;
+.split-text-A {
+    height: 180px;
+    font-size: 3.750em;
 }
-.split-box-B {
-    font-size: 30px;
+.split-text-B {
+    height: 180px;
+    & p {
+        font-size: 1.875em;
+    }
+    & .split-box-B-button {
+        font-family: "Open Sans";
+    }
 }
-.split-box-B-button:hover {
-    color: #ffffff;
-    border: 2px solid #5e5e5e;
-    background-color: #5e5e5e;
+.split-text-C {
+    height: 180px;
+    font-size: 3.750em;
 }
-.split-box-C {
-    font-size: 60px;
-}
-.split-box-D {
-    font-size: 30px;
+.split-text-D {
+    height: 180px;
+    font-size: 1.875em;
 }
 // ===================================================
 //         1-off Split Container Styling Begins
@@ -464,18 +499,17 @@ input::-webkit-input-placeholder {
     box-shadow: 0px 1px 4px 0px #000000;
 }
 .category-button {
-    margin: 0 auto;
-    text-align: center;
     position: relative;
     float: left;
     width: 16.66%;
     height: 40px;
+    margin: 0 auto;
+    text-align: center;
     line-height: 40px;
-    background-size: cover;
     box-shadow: 0px 1px 4px 0px #000000;
 }
 .category-button:hover {
-    & .five-category-text {
+    & .category-text {
         text-shadow: 0px 0px 8px #000000;
     }
 }
@@ -488,74 +522,13 @@ input::-webkit-input-placeholder {
     background-color: rgba(205, 23, 19, 0.90);
 }
 .red-overlay:hover {
-    background-color: rgba(2, 2, 2, 0.4);
+    background-color: rgba(34, 34, 34, 1);
     transition: 0.1s ease-in-out;
 }
 .category-text {
     text-align: center;
-    font-size: 17px;
+    font-size: 1.000em;
     color: #ffffff;
-}
-// =================================================
-//  Default Category Button Styling & Overlay Ends
-//   1-off Category Button Styling & Overlay Begins
-// =================================================
-.category1 {
-    background-image: url("http://image.automobilemag.com/f/2014_lamborghini_aventador/61915371+w286+h179+cr1+ar0/2014_lamborghini_aventador_lp_700_4_roadster_ignition_button_detail.jpg");
-}
-.category2 {
-    background-image: url("http://ak.picdn.net/shutterstock/videos/3163174/preview/stock-footage-writing-success-by-many-process-on-chalkboard.jpg");
-}
-.category3 {
-    background-image: url("http://static.tumblr.com/db6d6056efbbc156f35c9967e7d9f14c/v56ekyk/b8Nmtsggm/tumblr_static_writing.jpg");
-}
-.category4 {
-    background-image: url("https://dressagesnob.files.wordpress.com/2014/06/img_043441.jpg");
-}
-.category5 {
-    background-image: url("http://www.drapekings.com/wp-content/uploads/2012/03/Darker-P1010716.jpg");
-}
-.category6 {
-    background-image: url("http://www.drapekings.com/wp-content/uploads/2012/03/Darker-P1010716.jpg");
-}
-.category7 {
-    background-image: url("http://image.automobilemag.com/f/2014_lamborghini_aventador/61915371+w286+h179+cr1+ar0/2014_lamborghini_aventador_lp_700_4_roadster_ignition_button_detail.jpg");
-}
-.category7 {
-    background-image: url("http://ak.picdn.net/shutterstock/videos/3163174/preview/stock-footage-writing-success-by-many-process-on-chalkboard.jpg");
-}
-.category8 {
-    background-image: url("http://static.tumblr.com/db6d6056efbbc156f35c9967e7d9f14c/v56ekyk/b8Nmtsggm/tumblr_static_writing.jpg");
-}
-.category9 {
-    background-image: url("https://dressagesnob.files.wordpress.com/2014/06/img_043441.jpg");
-}
-.category10 {
-    background-image: url("http://image.automobilemag.com/f/2014_lamborghini_aventador/61915371+w286+h179+cr1+ar0/2014_lamborghini_aventador_lp_700_4_roadster_ignition_button_detail.jpg");
-}
-.category11 {
-    background-image: url("http://ak.picdn.net/shutterstock/videos/3163174/preview/stock-footage-writing-success-by-many-process-on-chalkboard.jpg");
-}
-.category12 {
-    background-image: url("http://static.tumblr.com/db6d6056efbbc156f35c9967e7d9f14c/v56ekyk/b8Nmtsggm/tumblr_static_writing.jpg");
-}
-.category13 {
-    background-image: url("http://ak.picdn.net/shutterstock/videos/3163174/preview/stock-footage-writing-success-by-many-process-on-chalkboard.jpg");
-}
-.category14 {
-    background-image: url("http://static.tumblr.com/db6d6056efbbc156f35c9967e7d9f14c/v56ekyk/b8Nmtsggm/tumblr_static_writing.jpg");
-}
-.category15 {
-    background-image: url("https://dressagesnob.files.wordpress.com/2014/06/img_043441.jpg");
-}
-.category16 {
-    background-image: url("http://image.automobilemag.com/f/2014_lamborghini_aventador/61915371+w286+h179+cr1+ar0/2014_lamborghini_aventador_lp_700_4_roadster_ignition_button_detail.jpg");
-}
-.category17 {
-    background-image: url("http://ak.picdn.net/shutterstock/videos/3163174/preview/stock-footage-writing-success-by-many-process-on-chalkboard.jpg");
-}
-.category18 {
-    background-image: url("http://static.tumblr.com/db6d6056efbbc156f35c9967e7d9f14c/v56ekyk/b8Nmtsggm/tumblr_static_writing.jpg");
 }
 // ================================================
 //   1-off Category Button Styling & Overlay Ends
@@ -569,30 +542,226 @@ input::-webkit-input-placeholder {
 }
 .footer-menu-box {
     width: 100%;
-    font-size: 12px;
+    font-size: 0.813em;
 }
+
+
+
 // ============================
 //    Footer Styling Ends
-//   645px Media Query Begins
+//   1210px Media Query Begins
 // ============================
-@media screen and (max-width:645px) {
-    .searchbar {
-        clear: both;
-        width: 97%;
-        padding-top: 0px;
-        padding-left: 10px;
-        padding-right: 15px;
-        margin-bottom: 8px;
+@media screen and (max-width:1220px) {
+    .split-C {
+        & p {
+            padding-top: 23px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
     }
-    .block-text {
-        font-size: 19px;
+    .split-D {
+        & p {
+            padding-top: 30px;
+        }
+    }
+    .split-text-C {
+        font-size: 3.100em;
     }
 }
+
+
+
 // ============================
-//    645px Media Query Ends
+//   1136px Media Query Begins
+// ============================
+@media screen and (max-width:1136px) {
+    .squarebox-size-one {
+        & .squarebox-text-container {
+            padding-top: 20px;
+        }
+    }
+}
+
+
+
+// ============================
+//  1100px Media Query Begins
+// ============================
+@media screen and (max-width:1100px) {
+    .split-A {
+        & p {
+            padding-top: 12px;
+        }
+    }
+    .split-C {
+        & p {
+            padding-top: 5px;
+        }
+    }
+    .split-text-C {
+        font-size: 2.900em;
+    }
+    .category-button {
+        width: 33.33%;
+    }
+}
+
+
+
+// ===========================
+//  980px Media Query Begins
+// ===========================
+@media screen and (max-width:980px) {
+    .split-A {
+        & p {
+            padding-top: 20px;
+        }
+    }
+    .split-text-A {
+        font-size: 3.20em;
+    }
+    .split-text-B {
+        height: 180px;
+        & p {
+            font-size: 1.500em;
+        }
+    }
+    .split-box-B-button {
+        padding-top: 0px;
+    }
+    .bodybox-category {
+        height: 90px;
+        line-height: 42px;
+    }
+}
+
+
+
+// ===========================
+//  800px Media Query Begins
+// ===========================
+@media screen and (max-width:800px) {
+    .split-A {
+        & p {
+            padding: 26px 8px;
+        }
+    }
+    .split-B {
+        & p {
+            padding-top: 10px;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
+    .split-text-A {
+        font-size: 3.000em;
+    }
+    .split-box-B-button {
+        margin-top: 8px;
+    }
+    .bodybox-reader {
+        height: 140px;
+    }
+    .split-C {
+        & p {
+            padding-top: 15px;
+        }
+    }
+    .split-D {
+        & p {
+            padding-top: 25px;
+        }
+    }
+    .split-text-C {
+        font-size: 2.500em;
+    }
+    .split-text-D {
+        font-size: 1.650em;
+    }
+}
+
+
+
+// ============================
+//  700px Media Query Begins
+// ===========================
+@media screen and (max-width:700px) {
+    .searchbar {
+        clear: both;
+        padding-left: 5px;
+        padding-top: 6px;
+        margin-bottom: 2px;
+        width: 95%;
+    }
+    .header-default-padding {
+        height: 194px;
+    }
+    .squarebox-size-one {
+        & .squarebox-text-container {
+            padding-top: 5px;
+        }
+    }
+    .squarebox-size-two {
+        & .squarebox-text-container {
+            padding-top: 15px;
+            padding-left: 45px;
+            padding-right: 45px;
+        }
+    }
+    .split-text-C {
+        font-size: 2.300em;
+    }
+}
+
+
+
+// ============================
+//  650px Media Query Begins
+// ===========================
+@media screen and (max-width:665px) {
+    .squarebox-size-one {
+        height: 350px;
+        & .squarebox-text-container {
+            padding-top: 0px;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-size: 2.000em;
+        }
+    }
+    .split-C {
+        & p {
+            padding-top: 10px;
+        }
+    }
+    .split-D {
+        & p {
+            padding-top: 15px;
+        }
+    }
+    .split-text-C {
+        font-size: 2.000em;
+    }
+    .split-text-D {
+        font-size: 1.500em;
+    }
+    .category-button {
+        width: 50%;
+    }
+    .bodybox-category {
+        font-size: 0.800em;
+        // line-height: 42px;
+    }
+}
+
+
+
+// ============================
 //   500px Media Query Begins
 // ============================
 @media screen and (max-width:500px) {
+    .header-default-padding {
+        height: 171px;
+    }
     .logo {
         padding-top: 5px;
         padding-left: 5px;
@@ -601,25 +770,82 @@ input::-webkit-input-placeholder {
     .searchbar {
         padding-left: 5px;
         padding-top: 6px;
-        margin-bottom: 5px;
-        width: 96%;
+        margin-bottom: 2px;
+        width: 95%;
+    }
+    .block-menu-container {
+        height: 30px;
     }
     .lower-main-menu {
         padding-left: 6px;
         padding-right: 6px;
     }
     .second-menu {
-        font-size: 12px;
+        font-size: 0.750em;
     }
     .block {
         height: 30px;
         line-height: 30px;
     }
     .block-text {
-        font-size: 16px;
+        font-size: 1.000em;
+    }
+    .squarebox-size-one {
+        height: 350px;
+        & .squarebox-text-container {
+            padding-top: 16px;
+            padding-left: 30px;
+            padding-right: 30px;
+            font-size: 1.700em;
+        }
+    }
+    .squarebox-size-two {
+        & .squarebox-text-container {
+            padding-top: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
+            font-size: 1.80em;
+        }
+    }
+    .split-A {
+        & p {
+            padding-top: 0px;
+        }
+    }
+    .split-B {
+        & p {
+            padding-top: 12px;
+            padding-bottom: 0px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+    .split-text-B {
+        & p {
+            font-size: 1.300em;
+        }
+    }
+    .split-box-B-button {
+        width: 90px;
+        margin-top: 10px;
+    }
+    .bodybox-reader {
+        height: 175px;
+    }
+    .split-C {
+        & p {
+            padding-top: 5px;
+        }
+    }
+    .split-D {
+        & p {
+            padding-top: 14px;
+        }
+    }
+    .split-text-D {
+        font-size: 1.300em;
     }
 }
 // ============================
-//   500px Media Query Ends
-//   
+//   All Media Queries End
 // ============================
