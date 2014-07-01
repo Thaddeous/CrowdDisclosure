@@ -247,32 +247,23 @@ input::-webkit-input-placeholder {
 .bodybox {
     position: relative;
     width: 100%;
-    height: auto;
+    height: 230px;
     text-align: center;
 }
 .bodybox-size:hover {
     transform: scale(0.98);
     transition: all 0.3s ease-in-out;
 }
-.bodybox-img img {
-    padding-top: 10px;
-    width: 60px;
-}
 .bodybox-text {
-    padding-top: 2px;
+    padding-top: 90px;
     padding-left: 30px;
     padding-right: 30px;
     font-size: 1.875em;
     font-family: "Quicksand";
     color: #222222;
 }
-.bodybox-text-a {
-    padding-top: 10px;
-    font-family: "Open Sans";
-    text-shadow: 0px 1px 1px rgba(150, 150, 150, 1);
-}
 .bodybox-button {
-    margin-top: 12px;
+    margin-top: 30px;
     width: 130px;
     height: 35px;
     line-height: 35px;
@@ -286,36 +277,33 @@ input::-webkit-input-placeholder {
     border: 2px solid #cd1713;
     background-color: #cd1713;
 }
+.bodybox-img img {
+    padding-top: 20px;
+    width: 60px;
+}
 // ================================
 //   Default Bodybox Styling Ends
 //   1-off Bodybox Styling begins
 // ================================
 .bodybox-writer {
-    height: auto;
+    height: 250px;
 }
 .bodybox-size-writer:hover {
     transform: none;
     transition: none;
 }
-.bodybox-reader {
-    height: 110px;
+.bodybox-text-a {
+    padding-top: 35px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 1.875em;
+    font-family: "Quicksand";
+    color: #222222;
 }
-.bodybox-category {
-    height: 60px;
-    line-height: 54px;
-}
-.bodybox-categories {
-    height: 180px;
-}
-.bodybox-size-categories {
-    padding-bottom: 20px;
-    padding-left: 60px;
-    padding-right: 60px;
-}
-.bodybox-size-categories:hover {
-    transform: none;
-    transition: none;
-}
+// ==================================
+//        All Bodybox Styling 
+//  Category Buttons Styling Begins
+// ==================================
 .categories-button {
     width: 180px;
     margin-left: 2px;
@@ -333,7 +321,7 @@ input::-webkit-input-placeholder {
     transition: all 0.1s ease-in-out;
 }
 // ==============================================
-//          All Bodybox Styling Ends
+//       Category Buttons Styling Begins
 //  Default Squarebox and Overlay Styling Begin
 // ==============================================
 .squarebox {
@@ -629,9 +617,11 @@ input::-webkit-input-placeholder {
     .split-box-B-button {
         padding-top: 0px;
     }
-    .bodybox-category {
-        height: 90px;
-        line-height: 42px;
+    .bodybox-text {
+        padding-top: 70px;
+    }
+    .bodybox-text-b {
+        padding-top: 90px;
     }
 }
 
@@ -658,9 +648,6 @@ input::-webkit-input-placeholder {
     }
     .split-box-B-button {
         margin-top: 8px;
-    }
-    .bodybox-reader {
-        height: 140px;
     }
     .split-C {
         & p {
@@ -730,27 +717,35 @@ input::-webkit-input-placeholder {
     }
     .split-C {
         & p {
-            padding-top: 10px;
+            padding-top: 25px;
+            padding-left: 15px;
+            padding-right: 15px;
         }
     }
     .split-D {
         & p {
-            padding-top: 15px;
+            padding-top: 25px;
         }
     }
     .split-text-C {
-        font-size: 2.000em;
+        font-size: 1.600em;
     }
     .split-text-D {
         font-size: 1.500em;
     }
+    .split-box-img img {
+        width: 30px;
+    }
     .category-button {
         width: 50%;
     }
-    .bodybox-category {
-        font-size: 0.800em;
-        // line-height: 42px;
+     .bodybox-text {
+        padding-top: 60px;
     }
+    .bodybox-text-b {
+        padding-top: 90px;
+    }
+
 }
 
 
@@ -829,21 +824,21 @@ input::-webkit-input-placeholder {
         width: 90px;
         margin-top: 10px;
     }
-    .bodybox-reader {
-        height: 175px;
-    }
     .split-C {
         & p {
-            padding-top: 5px;
+            padding-top: 25px;
         }
     }
     .split-D {
         & p {
-            padding-top: 14px;
+            padding-top: 27px;
         }
     }
     .split-text-D {
         font-size: 1.300em;
+    }
+    .bodybox-text-b {
+        padding-top: 70px;
     }
 }
 // ============================
