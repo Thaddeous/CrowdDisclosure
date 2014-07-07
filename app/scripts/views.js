@@ -1,21 +1,17 @@
 'use strict';
-
-
-
 //    __ __                 _   ___           
 //   / // /__  __ _  ___   | | / (_)__ _    __
 //  / _  / _ \/  ' \/ -_)  | |/ / / -_) |/|/ /
 // /_//_/\___/_/_/_/\__/   |___/_/\__/|__,__/   
 //                                     
 var HomeView = Parse.View.extend({
-	className: "homeView",
+	className: "home-page",
 	template: _.template($(".home-page-view-template").text()),
 	events: {
-
 	},
 
 	initialize: function(){
-		$(".home-page").append(this.el);
+		$(".content-container").html(this.el);
 		this.render();
 	},
 
@@ -32,16 +28,15 @@ var HomeView = Parse.View.extend({
 //   / _ | / /  ___  __ __/ /_  | | / (_)__ _    __
 //  / __ |/ _ \/ _ \/ // / __/  | |/ / / -_) |/|/ /
 // /_/ |_/_.__/\___/\_,_/\__/   |___/_/\__/|__,__/
-//                                              
+//
 var AboutView = Parse.View.extend({
-	className: "aboutView",
+	className: "about-page",
 	template: _.template($(".about-page-view-template").text()),
 	events: {
-
 	},
 
 	initialize: function(){
-		$(".about-page").append(this.el);
+		$(".content-container").html(this.el);
 		this.render();
 	},
 
@@ -61,14 +56,14 @@ var AboutView = Parse.View.extend({
 //       /___/
 //
 var SignInView = Parse.View.extend({
-	className: "signInView",
+	className: "sign-in-page",
 	template: _.template($(".sign-in-page-view-template").text()),
 	events: {
 
 	},
 
 	initialize: function(){
-		$(".sign-in-page").append(this.el);
+		$(".content-container").html(this.el);
 		this.render();
 	},
 
@@ -88,14 +83,14 @@ var SignInView = Parse.View.extend({
 //       /___/          /_/ 
 //   
 var SignUpView = Parse.View.extend({
-	className: "signUpView",
+	className: "sign-up-page",
 	template: _.template($(".sign-up-page-view-template").text()),
 	events: {
 
 	},
 
 	initialize: function(){
-		$(".sign-up-page").append(this.el);
+		$(".content-container").html(this.el);
 		this.render();
 	},
 
@@ -115,14 +110,14 @@ var SignUpView = Parse.View.extend({
 //                        /___/
 //                           
 var SettingsView = Parse.View.extend({
-	className: "settingsView",
+	className: "settings-page",
 	template: _.template($(".settings-page-view-template").text()),
 	events: {
 
 	},
 
 	initialize: function(){
-		$(".settings-page").append(this.el);
+		$(".content-container").html(this.el);
 		this.render();
 	},
 
@@ -141,14 +136,14 @@ var SettingsView = Parse.View.extend({
 // /_/   \___/___/\__/   |___/_/\__/|__,__/ 
 //
 var PostView = Parse.View.extend({
-	className: "postView",
+	className: "post-page",
 	template: _.template($(".post-page-view-template").text()),
 	events: {
 
 	},
 
 	initialize: function(){
-		$(".post-page").append(this.el);
+		$(".content-container").html(this.el);
 		this.render();
 	},
 
@@ -167,14 +162,14 @@ var PostView = Parse.View.extend({
 // /_/ /_//_/\_,_/_/_/_/_.__/_//_/\_,_/_/_/   |___/_/\__/|__,__/
 //                        
 var ThumbnailView = Parse.View.extend({
-	className: "thumbnailView",
+	className: "thumbnail-page",
 	template: _.template($(".thumbnail-page-view-template").text()),
 	events: {
 
 	},
 
 	initialize: function(){
-		$(".thumbnail-page").append(this.el);
+		$(".content-container").html(this.el);
 		this.render();
 	},
 
@@ -193,14 +188,14 @@ var ThumbnailView = Parse.View.extend({
 // /____/\__/\__/\_,_/_/_/   |___/_/\__/|__,__/ 
 //                                             
 var DetailView = Parse.View.extend({
-	className: "detailView",
+	className: "detail-page",
 	template: _.template($(".detail-page-view-template").text()),
 	events: {
 
 	},
 
 	initialize: function(){
-		$(".detail-page").append(this.el);
+		$(".content-container").html(this.el);
 		this.render();
 	},
 
@@ -218,14 +213,14 @@ var DetailView = Parse.View.extend({
 // /_/  /_/  \___/_//_/_/\__/   |___/_/\__/|__,__/ 
 //                                                
 var ProfileView = Parse.View.extend({
-	className: "profileView",
+	className: "profile-page",
 	template: _.template($(".profile-page-view-template").text()),
 	events: {
 
 	},
 
 	initialize: function(){
-		$(".profile-page").append(this.el);
+		$(".content-container").html(this.el);
 		this.render();
 	},
 

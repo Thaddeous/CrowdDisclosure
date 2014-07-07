@@ -18,55 +18,55 @@ var AppRouter = Parse.Router.extend({
 	
 	},
 		home: function() {
-			$('.home-page').html('');
+			$('.content-container').html('');
 			homeView = new HomeView();
 			console.log("HomeView has loaded.");
 		},
 
 		about: function(){
-			$('.about-page').html('');
+			$('.content-container').html('');
 			aboutView = new AboutView();
 			console.log("AboutView has loaded.");
 		},
 
 		signIn: function(){
-			$('.sign-in-page').html('');
+			$('.content-container').html('');
 			signInView = new SignInView();
 			console.log("SignInView has loaded.");
 		},
 
 		signUp: function(){
-			$('.sign-up-page').html('');
+			$('.content-container').html('');
 			signUpView = new SignUpView();
 			console.log("SignUpView has loaded.");
 		},
 
 		settings: function(){
-			$('.settings-page').html('');
+			$('.content-container').html('');
 			settingsView = new SettingsView();
 			console.log("SettingsView has loaded.");
 		},
 
 		post: function(){
-			$('.post-page').html('');
+			$('.content-container').html('');
 			postView = new PostView();
 			console.log("PostView has loaded.");
 		},
 
 		thumbnail: function(){
-			$('.thumbnail-page').html('');
+			$('.content-container').html('');
 			thumbnailView = new ThumbnailView();
 			console.log("ThumbnailView has loaded.");
 		},
 
 		detail: function(){
-			$('.detail-page').html('');
+			$('.content-container').html('');
 			detailView = new DetailView();
 			console.log("DetailView has loaded.");
 		},
 
 		profile: function(){
-			$('.profile-page').html('');
+			$('.content-container').html('');
 			profileView = new ProfileView();
 			console.log("ProfileView has loaded.");
 		},
