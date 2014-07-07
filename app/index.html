@@ -13,21 +13,24 @@
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700|Quicksand:400,700' rel='stylesheet' type='text/css'>
-            <link rel="stylesheet" href="styles/main.css">
-            <!-- endbuild -->
-            <!-- build:js scripts/vendor/modernizr.js -->
-            <script src="../bower_components/modernizr/modernizr.js"></script>
-            <!-- endbuild -->
-        </head>
-        <body>
-            <!--[if lt IE 10]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-            <![endif]-->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+        <!-- build:js scripts/vendor/modernizr.js -->
+        <script src="../bower_components/modernizr/modernizr.js"></script>
+        <!-- endbuild -->
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="viewport">
+        <!-- Viewport is set to contain all elements and is positioned relative for the footer -->
+
 <!--
    __ __            __          __  ___                
-  / // /__ ___ ____/ /__ ____  /  |/  /__ ___  __ _____
- / _  / -_) _ `/ _  / -_) __/ / /|_/ / -_) _ \/ // (_-<
-/_//_/\__/\_,_/\_,_/\__/_/   /_/  /_/\__/_//_/\_,_/___/
+  / // /__ ___ ____/ /__ ____  /  |/  /__ ___  __ __
+ / _  / -_) _ `/ _  / -_) __/ / /|_/ / -_) _ \/ // /
+/_//_/\__/\_,_/\_,_/\__/_/   /_/  /_/\__/_//_/\_,_/
 
 -->
         <div class="header">
@@ -90,14 +93,59 @@
         </div> 
         <div class="header-default-padding"></div>
         <!-- default padding is set to counter "fixed" header position -->
+<!-- 
+  _____          __       _                    ___           ____        _      __    
+ / ___/__  ___  / /____ _(_)__  ___ _______   / _/__  ____  / __/_______(_)__  / /____
+/ /__/ _ \/ _ \/ __/ _ `/ / _ \/ -_) __(_-<  / _/ _ \/ __/ _\ \/ __/ __/ / _ \/ __(_-<
+\___/\___/_//_/\__/\_,_/_/_//_/\__/_/ /___/ /_/ \___/_/   /___/\__/_/ /_/ .__/\__/___/
+                                                                       /_/ 
+-->     
+        <div class="main-body">
+            <div class="home-page"></div>
+            <div class="about-page"></div>
+            <div class="signin-page"></div>
+            <div class="signup-page"></div>
+            <div class="settings-page"></div>
+            <div class="post-page"><div>
+            <div class="thumbnail-page"></div>
+            <div class="detail-page"></div>
+            <div class="profile-user-page"></div>
+        </div>
 <!--
+   ____          __         
+  / __/__  ___  / /____ ____
+ / _// _ \/ _ \/ __/ -_) __/
+/_/  \___/\___/\__/\__/_/  
+-->                        
+        <div class="clear"></div>
+        <div class="footer">
+            <div class="footer-container">
+                <div class="footer-menu-box">
+                    <div class="menu-left">
+                        <a href=""><ul>©2014 CrowdDisclosure</ul></a>
+                    </div>
+                    <div class="menu-right">
+                        <a href=""><ul>Careers</ul></a>
+                        <a href=""><ul>Meet the Team</ul></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Entire Viewport ends with the below div--> 
+    </div> 
+<!--
+  _      __    __     ___                  ____        _      __    ______               __     __        
+ | | /| / /__ / /    / _ \___ ____ ____   / __/_______(_)__  / /_  /_  __/__ __ _  ___  / /__ _/ /____ ___
+ | |/ |/ / -_) _ \  / ___/ _ `/ _ `/ -_) _\ \/ __/ __/ / _ \/ __/   / / / -_)  ' \/ _ \/ / _ `/ __/ -_|_-<
+ |__/|__/\__/_.__/ /_/   \_,_/\_, /\__/ /___/\__/_/ /_/ .__/\__/   /_/  \__/_/_/_/ .__/_/\_,_/\__/\__/___/
+                             /___/                   /_/                        /_/ 
    __ __                 ___               
   / // /__  __ _  ___   / _ \___ ____ ____ 
  / _  / _ \/  ' \/ -_) / ___/ _ `/ _ `/ -_)
 /_//_/\___/_/_/_/\__/ /_/   \_,_/\_, /\__/ 
                                 /___/
---> 
-        <div class="home-page">
+-->
+        <script type="text/template" class="home-page-view-template">
             <div class="headerboard">
                 <div class="headerboard-message">
                     <div class="headerboard-text"><strong>FOR THE WRITER.</strong></div>
@@ -110,7 +158,7 @@
                     <a href=""><div class="button bodybox-button sign-up-button">Sign Up</div></a>
                 </div>
             </div>
-        </div>
+        </script>
 <!--
    ___   __             __    ___               
   / _ | / /  ___  __ __/ /_  / _ \___ ____ ____ 
@@ -118,7 +166,7 @@
 /_/ |_/_.__/\___/\_,_/\__/ /_/   \_,_/\_, /\__/ 
                                      /___/
 -->
-        <div class="about-page">
+        <script type="text/template" class="about-page-view-template">
             <div class="category-container">  
                 <a href="">
                     <div class="category-button category1">
@@ -314,10 +362,10 @@
 
             <div class="bodybox">
                 <div class="bodybox-size bodybox-size-large">
-                    <div class="bodybox-text">Will YOUR articles be featured?</div>
+                    <div class="bodybox-text bodybox-text-large">Will YOUR articles be featured?</div>
                 </div>
             </div>
-        </div>
+        </script>
 <!--  
    _____           ____       ___               
   / __(_)__ ____  /  _/__    / _ \___ ____ ____ 
@@ -325,7 +373,7 @@
 /___/_/\_, /_//_/___/_//_/ /_/   \_,_/\_, /\__/ 
       /___/                          /___/    
 -->   
-        <div class="signin-page">
+        <script type="text/template" class="signin-page-view-template">
             <div class="signin-page-container">
                 <div class="signin-page-box">
                     <img src="/images/logo2.png" width="100%">
@@ -335,8 +383,7 @@
                     <button>Sign Up</button>
                 </div>
             </div>
-        </div>
-
+        </script>
 <!--  
    _____           __  __       ___               
   / __(_)__ ____  / / / /__    / _ \___ ____ ____ 
@@ -344,7 +391,7 @@
 /___/_/\_, /_//_/\____/ .__/ /_/   \_,_/\_, /\__/ 
       /___/          /_/               /___/  
 -->   
-        <div class="signup-page">
+        <script type="text/template" class="signup-page-view-template">
             <div class="signup-page-container">
                 <div class="signup-page-box">
                     <img src="/images/logo2.png" width="100%">
@@ -357,7 +404,7 @@
                     <button>Sign Up</button>
                 </div>
             </div>
-        </div>
+        </script>
 <!--
    ____    __  __  _                 ___               
   / __/__ / /_/ /_(_)__  ___ ____   / _ \___ ____ ____ 
@@ -365,7 +412,7 @@
 /___/\__/\__/\__/_/_//_/\_, /___/ /_/   \_,_/\_, /\__/ 
                        /___/                /___/  
 -->     
-        <div class="settings-page">
+        <script type="text/template" class="settings-page-view-template">
             <div class="settings-container">
                 <div class="settings-container-box">
                     <img src="http://www.realtimearts.net/data/images/art/46/4640_profile_nilssonpolias.jpg" width="100%">
@@ -374,7 +421,7 @@
                     <button>Save</button>
                 </div>
             </div>
-        </div>
+        </script>
 <!--
    ___           __    ___               
   / _ \___  ___ / /_  / _ \___ ____ ____ 
@@ -382,15 +429,15 @@
 /_/   \___/___/\__/ /_/   \_,_/\_, /\__/ 
                               /___/    
 -->   
-        <div class="write-post-page">
-            <div class="write-post-container">
+        <script type="text/template" class="post-page-view-template">
+            <div class="post-container">
                 <h3>Upload a photo and begin writing.</h3>
                 <img src="http://placehold.it/1020x400&text=image+placeholder" width="100%">
                 <input class="file-uploader" type="file" name="img">
                 <textarea class="post-input" type="text" placeholder="Start Writing..."></textarea>
                 <button>Post Article</button>
             </div>
-        </div>
+        </script>
 <!--  
  ________              __             _ __  ___               
 /_  __/ /  __ ____ _  / /  ___  ___ _(_) / / _ \___ ____ ____ 
@@ -398,7 +445,7 @@
 /_/ /_//_/\_,_/_/_/_/_.__/_//_/\_,_/_/_/ /_/   \_,_/\_, /\__/ 
                                                    /___/      
  -->
-        <div class="thumbnail-page">
+        <script type="text/template" class="thumbnail-page-view-template">
             <div class="thumbnail-page-container">
                 <div class="thumbnail-columns">
 
@@ -575,7 +622,7 @@
 
                 </div>
             </div>
-        </div>
+        </script>
 <!-- 
    ___      __       _ __  ___               
   / _ \___ / /____ _(_) / / _ \___ ____ ____ 
@@ -583,7 +630,7 @@
 /____/\__/\__/\_,_/_/_/ /_/   \_,_/\_, /\__/ 
                                   /___/  
 --> 
-        <div class="detail-page">
+        <script type="text/template" class="detail-page-view-template">
             <div class="detail-article-container">
                 <div class="detail-article-box">
                     <h1>This is the really cool heading</h1>
@@ -623,7 +670,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </script>
 <!-- 
    ___           ____ __      ___               
   / _ \_______  / _(_) /__   / _ \___ ____ ____ 
@@ -631,7 +678,7 @@
 /_/  /_/  \___/_//_/_/\__/ /_/   \_,_/\_, /\__/ 
                                      /___/  
 -->
-        <div class="profile-user-page">
+        <script type="text/template" class="profile-page-view-template">
             <div class="profile-user-page-container">
 
                 <div class="profile-user-container-left">
@@ -687,62 +734,44 @@
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                         </p>
                     </div>
-
-                </div>
-
-            </div>
-        </div>
-        <div class="clear"></div>
-<!--
-   ____          __         
-  / __/__  ___  / /____ ____
- / _// _ \/ _ \/ __/ -_) __/
-/_/  \___/\___/\__/\__/_/  
--->                        
-        <div class="footer">
-            <div class="footer-container">
-                <div class="footer-menu-box">
-                    <div class="menu-left">
-                        <a href=""><ul>©2014 CrowdDisclosure</ul></a>
-                    </div>
-                    <div class="menu-right">
-                        <a href=""><ul>Careers</ul></a>
-                        <a href=""><ul>Meet the Team</ul></a>
-                    </div>
                 </div>
             </div>
-        </div>
-<!--
-  _      __    __     ___                      ____        __
- | | /| / /__ / /    / _ \___ ____ ____ ___   / __/__  ___/ /
- | |/ |/ / -_) _ \  / ___/ _ `/ _ `/ -_|_-<  / _// _ \/ _  / 
- |__/|__/\__/_.__/ /_/   \_,_/\_, /\__/___/ /___/_//_/\_,_/  
-                             /___/                            
--->     
-            <!-- build:js scripts/vendor.js -->
-            <!-- bower:js -->
-            <script src="../bower_components/jquery/dist/jquery.js"></script>
-            <script src="../bower_components/underscore/underscore.js"></script>
-            <script src="../bower_components/jquery/dist/jquery.fittext.js"></script>
-            <script src="../bower_components/jquery/dist/jquery.fitvids.js"></script>
-            <!-- endbower -->
-            <!-- endbuild -->
+        </script>
+<!-- 
+   ____        _      __    ______               __     __            ____        __
+  / __/_______(_)__  / /_  /_  __/__ __ _  ___  / /__ _/ /____ ___   / __/__  ___/ /
+ _\ \/ __/ __/ / _ \/ __/   / / / -_)  ' \/ _ \/ / _ `/ __/ -_|_-<  / _// _ \/ _  / 
+/___/\__/_/ /_/ .__/\__/   /_/  \__/_/_/_/ .__/_/\_,_/\__/\__/___/ /___/_//_/\_,_/  
+             /_/                        /_/                                         
+-->
+        <!-- build:js scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <script src="../bower_components/jquery/dist/jquery.fittext.js"></script>
+        <script src="../bower_components/jquery/dist/jquery.fitvids.js"></script>
+        <script src="../bower_components/underscore/underscore.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
 
-            <script>
-                jQuery(".headerboard-text").fitText();
-            </script>
+        <script src="//www.parsecdn.com/js/parse-1.2.18.min.js"></script>
+        <script>jQuery(".headerboard-text").fitText();</script>
 
-            <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-            <script>
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
             e=o.createElement(i);r=o.getElementsByTagName(i)[0];
             e.src='//www.google-analytics.com/analytics.js';
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X');ga('send','pageview');
-            </script>
-            <!-- build:js({app,.tmp}) scripts/main.js -->
-            <script src="scripts/main.js"></script>
-            <!-- endbuild -->
-        </body>
-    </html>
+        </script>
+
+        <!-- build:js({app,.tmp}) scripts/main.js -->
+        <script src="scripts/model.js"></script>
+        <script src="scripts/main.js"></script>
+        <script src="scripts/views.js"></script>
+        <script src="scripts/router.js"></script>
+        <!-- endbuild -->
+
+    </body>
+</html>
