@@ -1,13 +1,12 @@
 'use strict';
 
-
 var AppRouter = Parse.Router.extend({
 
 	routes: {
-		"home"      : 	"home",
+		""          : 	"home",
 		"about" 	: 	"about",
-		"signin"    : 	"signin",
-		"signup"    : 	"signup",
+		"signIn"    : 	"signIn",
+		"signUp"    : 	"signUp",
 		"settings" 	: 	"settings",
 		"post" 		: 	"post",
 		"thumbnail" : 	"thumbnail",
@@ -18,59 +17,59 @@ var AppRouter = Parse.Router.extend({
 	initialize: function() {
 	
 	},
-		homePage: function() {
+		home: function() {
 			$('.home-page').html('');
 			homeView = new HomeView();
 			console.log("HomeView has loaded.");
 		},
 
-		// aboutPage: function(){
-		// 	$('.about-page').html('');
-		// 	aboutView = new AboutView();
-		// 	console.log("AboutView has loaded.");
-		// },
+		about: function(){
+			$('.about-page').html('');
+			aboutView = new AboutView();
+			console.log("AboutView has loaded.");
+		},
 
-		// signInPage: function(){
-		// 	$('.signin-page').html('');
-		// 	signinView = new SignInView();
-		// 	console.log("SigninView has loaded.");
-		// },
+		signIn: function(){
+			$('.sign-in-page').html('');
+			signInView = new SignInView();
+			console.log("SignInView has loaded.");
+		},
 
-		// signUpPage: function(){
-		// 	$('.signup-page').html('');
-		// 	signupView = new SignUpView();
-		// 	console.log("SignupView has loaded.");
-		// },
+		signUp: function(){
+			$('.sign-up-page').html('');
+			signUpView = new SignUpView();
+			console.log("SignUpView has loaded.");
+		},
 
-		// settingsPage: function(){
-		// 	$('.settings-page').html('');
-		// 	settingsView = new SettingsView();
-		// 	console.log("SettingsView has loaded.");
-		// },
+		settings: function(){
+			$('.settings-page').html('');
+			settingsView = new SettingsView();
+			console.log("SettingsView has loaded.");
+		},
 
-		// postPage: function(){
-		// 	$('.post-page').html('');
-		// 	postView = new PostView();
-		// 	console.log("PostView has loaded.");
-		// },
+		post: function(){
+			$('.post-page').html('');
+			postView = new PostView();
+			console.log("PostView has loaded.");
+		},
 
-		// thumbnailPage: function(){
-		// 	$('.thumbnail-page').html('');
-		// 	thumbnailView = new ThumbnailView();
-		// 	console.log("ThumbnailView has loaded.");
-		// },
+		thumbnail: function(){
+			$('.thumbnail-page').html('');
+			thumbnailView = new ThumbnailView();
+			console.log("ThumbnailView has loaded.");
+		},
 
-		// detailPage: function(){
-		// 	$('.detail-page').html('');
-		// 	detailView = new DetailView();
-		// 	console.log("DetailView has loaded.");
-		// },
+		detail: function(){
+			$('.detail-page').html('');
+			detailView = new DetailView();
+			console.log("DetailView has loaded.");
+		},
 
-		// profilePage: function(){
-		// 	$('.profile-page').html('');
-		// 	profileView = new ProfileView();
-		// 	console.log("ProfileView has loaded.");
-		// },
+		profile: function(){
+			$('.profile-page').html('');
+			profileView = new ProfileView();
+			console.log("ProfileView has loaded.");
+		},
 });
 
 var router = new AppRouter();
