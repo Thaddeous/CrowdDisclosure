@@ -234,17 +234,17 @@ input::-webkit-input-placeholder {
 //                                      /___/ 
 .category-container {
     width: 100%;
-    height: 120px;
+    height: 84px;
     box-shadow: 0px 1px 4px 0px #000000;
 }
 .category-button {
     position: relative;
     float: left;
     width: 16.66%;
-    height: 40px;
+    line-height: 28px;
+    height: 28px;
     margin: 0 auto;
     text-align: center;
-    line-height: 40px;
     box-shadow: 0px 1px 4px 0px #000000;
 }
 .category-button:hover {
@@ -255,6 +255,7 @@ input::-webkit-input-placeholder {
 .category-text {
     text-align: center;
     font-size: 1.000em;
+    font-family: "Quicksand";
     color: #ffffff;
 }
 // ================================
@@ -279,12 +280,12 @@ input::-webkit-input-placeholder {
 .bodybox {
     position: relative;
     width: 100%;
-    height: 230px;
+    height: 350px;
     text-align: center;
     clear: both; 
 }
 .bodybox-text {
-    padding-top: 90px;
+    padding-top: 150px;
     padding-left: 30px;
     padding-right: 30px;
     font-size: 1.875em;
@@ -317,6 +318,13 @@ input::-webkit-input-placeholder {
 .bodybox-writer {
     height: 160px;
 }
+.bodybox-about {
+    height: 500px;
+    h6 {
+        text-align: right;
+        padding-right: 200px;
+    }
+}
 .bodybox-text-a {
     padding-top: 35px;
     padding-left: 30px;
@@ -325,14 +333,7 @@ input::-webkit-input-placeholder {
     font-family: "Quicksand";
     color: #222222;
 }
-.bodybox-about {
-    height: 400px;
-    h6 {
-        text-align: right;
-        padding-right: 200px;
-    }
-}
-.bodybox-text-b {
+.bodybox-text-B {
     padding-top: 40px;
     img {
         height: 60px; 
@@ -341,7 +342,13 @@ input::-webkit-input-placeholder {
     }
 }
 .arrow {
-    padding-top: 45px;
+    margin-top: 110px;
+    img {
+        height: 30px; 
+    }
+}
+.bodybox-text-large {
+    padding-top: 200px;
 }
 .bodybox-size-large:hover {
     transform: scale(1.17);
@@ -379,39 +386,34 @@ input::-webkit-input-placeholder {
 // ========================================
 .split-A {
     width: 65%;
-    height: 180px;
+    height: 450px;
     background-color: #5e5e5e;
 }
 .split-B {
     width: 35%;
-    height: 180px;
+    height: 450px;
     background-color: #222222;
-}
-.split-C {
-    width: 100%;
-    height: 80px;
-    background-color: #5e5e5e;
 }
 .split-D {
     width: 100%;
-    height: 200px;
+    height: 450px;
     background-color: #222222;
 }
 .split-box-D:hover {
     transform: scale(1.15);
 }
 .split-text-A {
-    height: 180px;
+    height: 450px;
     p {
         font-size: 3.500em;
-        padding-top: 45px;
+        padding-top: 180px;
     }
 }
 .split-text-B {
-    height: 180px;
+    height: 450px;
     p {
         font-size: 1.875em;
-        padding-top: 20px;
+        padding-top: 162px;
         padding-left: 30px;
         padding-right: 30px;
     } .split-box-B-button {
@@ -419,18 +421,13 @@ input::-webkit-input-placeholder {
         margin-top: 15px;
     }
 }
-.split-text-C {
-    height: 80px;
-    line-height: 80px;
-    p {
-        font-size: 1.500em;
-    }
-}
 .split-text-D {
-    height: 200px;
-    p {
+    height: 450px;
+    .small {
+        padding-top: 145px;
+    } p {
         font-size: 2.750em;
-        padding-top: 65px;
+        padding-top: 30px;
     } span {
         color: #5e5e5e;
     }
@@ -470,7 +467,7 @@ input::-webkit-input-placeholder {
     height: 35px;
 }
 .squarebox-button {
-    margin-top: 50px;
+    margin-top: 100px;
     margin-right: 10px;
     margin-left: 10px;
     border: 2px solid #ffffff;
@@ -481,11 +478,11 @@ input::-webkit-input-placeholder {
 // =============================================
 .squarebox-size-two {
     width: 100%;
-    height: 235px;
+    height: 450px;
     background: url('http://velograd.com/img/foto17b.jpg');
     background-size: cover;
     .squarebox-text-container {
-        padding-top: 50px;
+        padding-top: 130px;
         padding-left: 40px;
         padding-right: 40px;
     }
@@ -1007,14 +1004,26 @@ textarea::-webkit-input-placeholder {
 
 
 
+@media screen and (max-width:1250px) {
+    .split-text-D {
+        p {
+            font-size: 2.500em;
+        }
+    }
+}
+// 1250px Media Query Ends
+// =======================
+
+
+
+
 @media screen and (max-width:1136px) {
     .thumbnail-columns {
         column-count: 4;
     }
     .split-text-D {
         p {
-            font-size: 2.500em;
-            padding-top: 65px;
+            font-size: 2.300em;
         }
     }
     .bodybox-about {
@@ -1034,8 +1043,7 @@ textarea::-webkit-input-placeholder {
     }
     .split-text-D {
         p {
-            padding-top: 70px;
-            font-size: 2.300em;
+            font-size: 2.200em;
         }
     }
     .bodybox-about {
@@ -1065,26 +1073,9 @@ textarea::-webkit-input-placeholder {
     .thumbnail-columns {
         column-count: 3;
     }
-    .split-text-A {
-        height: 180px;
-        p {
-            font-size: 2.900em;
-            padding-top: 55px;
-        }
-    }
-    .split-text-B {
-        height: 180px;
-        p {
-            font-size: 1.500em;
-            padding-top: 20px;
-            padding-left: 25px;
-            padding-right: 25px;
-        }
-    }
     .split-text-D {
         p {
-            padding-top: 75px;
-            font-size: 2.100em;
+            font-size: 2.000em;
         }
     }
     .squarebox-size:hover {
@@ -1107,6 +1098,11 @@ textarea::-webkit-input-placeholder {
             padding-right: 0px;
         }
     }
+    .split-text-D {
+        p {
+            font-size: 1.700em;
+        }
+    }
 }
 // 850px Media Query Ends
 // =======================
@@ -1116,26 +1112,10 @@ textarea::-webkit-input-placeholder {
 @media screen and (max-width:800px) {
     .category-text {
         font-size: 0.900em;
-    }.split-text-A {
-        height: 180px;
-        p {
-            font-size: 2.100em;
-            padding-top: 55px;
-        }
-    }
-    .split-text-B {
-        height: 180px;
-        p {
-            font-size: 1.300em;
-            padding-top: 25px;
-        } .split-box-B-button {
-            margin-top: 10px;;
-        }
     }
     .split-text-D {
         p {
-            padding-top: 75px;
-            font-size: 1.900em;
+            font-size: 1.600em;
         }
     }
 }
@@ -1151,15 +1131,14 @@ textarea::-webkit-input-placeholder {
     .thumbnail-columns {
         column-count: 2;
     }
-    .bodybox-text-b {
+    .bodybox-text-B {
         img {
             height: 50px; 
         }
     }
     .split-text-D {
         p {
-            padding-top: 75px;
-            font-size: 1.700em;
+            font-size: 1.500em;
         }
     }
 }
@@ -1185,10 +1164,9 @@ textarea::-webkit-input-placeholder {
     }
     .split-text-D {
         p {
-            padding-top: 75px;
             padding-left: 30px;
             padding-right: 30px;
-            font-size: 1.500em;
+            font-size: 1.400em;
         }
     }
     .detail-article-container {
@@ -1229,28 +1207,6 @@ textarea::-webkit-input-placeholder {
 @media screen and (max-width:665px) {
     .category-text {
         font-size: 0.700em;
-    }
-    .split-text-A {
-        height: 180px;
-        p {
-            font-size: 1.700em;
-            padding-top: 65px;
-        }
-    }
-    .split-text-B {
-        height: 180px;
-        p {
-            font-size: 1.300em;
-            padding-top: 20px;
-        } .split-box-B-button {
-            margin-top: 15px;
-            width: 90px;
-        }
-    }
-    .split-text-D {
-        p {
-            padding-top: 65px;
-        }
     }
     .detail-article-container {
         width: 95%;
@@ -1304,33 +1260,23 @@ textarea::-webkit-input-placeholder {
 
 @media screen and (max-width:575px) {
     .split-text-A {
-        height: 180px;
         p {
             font-size: 1.600em;
-            padding-top: 65px;
+            padding-top: 180px;
         }
     }
     .split-text-B {
-        height: 180px;
         p {
             font-size: 1.200em;
-            padding-top: 20px;
+            padding-top: 130px;
         } .split-box-B-button {
-            margin-top: 15px;
-            width: 90px;
+            margin-top: 25px;
+            width: 100px;
         }
     }
     .post-input {
         width: 95%;
         max-width: 95%;
-    }
-    .squarebox-size-two {
-        .squarebox-text-container {
-            padding-top: 40px;
-        }
-    }
-    .squarebox-button {
-        margin-top: 30px;
     }
 }
 // 575px Media Query Ends
@@ -1368,27 +1314,10 @@ textarea::-webkit-input-placeholder {
     .block-text {
         font-size: 1.000em;
     }
-    .bodybox-text-b {
+    .bodybox-text-B {
         padding-top: 70px; 
         img {
             height: 35px; 
-        }
-    }
-    .split-text-A {
-        height: 180px;
-        p {
-            font-size: 1.600em;
-            padding-top: 55px;
-        }
-    }
-    .split-text-B {
-        height: 180px;
-        p {
-            font-size: 1.200em;
-            padding-top: 15px;
-        } .split-box-B-button {
-            margin-top: 15px;
-            width: 90px;
         }
     }
     .detail-article-container {
