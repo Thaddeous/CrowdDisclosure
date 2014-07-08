@@ -77,6 +77,7 @@
                             <div class="submenu">
                                 <a href="#signIn">Sign In</a>
                                 <a href="#signUp">Sign Up</a>
+                                <a href=""><div class="home-page-sign-out-button">Sign Out</div></a>
                                 <a href="#settings">Settings</a>
                                 <a href="#profile">Profile</a>
                             </div>  
@@ -371,10 +372,9 @@
             <div class="sign-in-page-container">
                 <div class="sign-in-page-box">
                     <img src="/images/logo2.png" width="100%">
-                    <input class="username-input" type="text" placeholder="Username">
-                    <input class="password-input" type="text" placeholder="Password">
-                    <button>Sign In</button>
-                    <button>Sign Up</button>
+                    <input class="sign-in-username-input" type="text" placeholder="Username">
+                    <input class="sign-in-password-input" type="password" placeholder="Password">
+                    <a href="#profile"><button><div class="sign-in-button">Sign In</div></button></a>
                 </div>
             </div>
         </script>
@@ -389,13 +389,10 @@
             <div class="sign-up-page-container">
                 <div class="sign-up-page-box">
                     <img src="/images/logo2.png" width="100%">
-                    <input class="first-name" type="text" placeholder="First Name">
-                    <input class="last-name" type="text" placeholder="Last Name">
-                    <input class="username-input" type="text" placeholder="Username">
-                    <input class="email-input" type="text" placeholder="Email">
-                    <input class="password-input" type="text" placeholder="Password">
-                    <input class="enter-password-again-input" type="text" placeholder="Enter Password Again">
-                    <button>Sign Up</button>
+                    <input class="sign-up-username-input" type="text" placeholder="Username">
+                    <input class="sign-up-password-input" type="password" placeholder="Password">
+                    <input class="sign-up-email-input" type="text" placeholder="Email">
+                    <a href="#signIn"><button><div class="sign-up-button">Sign Up</div></button></a>
                 </div>
             </div>
         </script>
@@ -409,10 +406,15 @@
         <script type="text/template" class="settings-page-view-template">
             <div class="settings-container">
                 <div class="settings-container-box">
-                    <img src="http://www.realtimearts.net/data/images/art/46/4640_profile_nilssonpolias.jpg" width="100%">
                     <h3>Account Settings</h3>
-                    <textarea class="about-you-input" type="text" placeholder="Author Bio..."></textarea>
-                    <button>Save</button>
+                    <img src="http://hubcaresupport.co.uk/sites/default/files/Default_Profile.jpg" width="100%">
+                    <input class="settings-file-uploader" type="file" name="img">
+                    <input class="settings-first-name-input" type="text" placeholder="First Name">
+                    <input class="settings-last-name-input" type="text" placeholder="Last Name">
+                    <input class="settings-website-input" type="text" placeholder="Website Link">
+                    <input class="settings-phone-name" type="text" placeholder="Contact #">
+                    <textarea class="settings-about-you-input" type="text" placeholder="Author Bio..."></textarea>
+                    <a href="#profile"><button><div class="settings-save-button">Save</div></button></a>
                 </div>
             </div>
         </script>
