@@ -548,7 +548,7 @@ input {
     padding-left: 6px;
     padding-right: 6px;
     height: 30px;
-    font-size: 0.90em;
+    font-size: 0.800em;
     color: #333333;
     border: 1px solid #aaaaaa;
 
@@ -556,10 +556,12 @@ input {
 input::-webkit-input-placeholder {
     color: #333333;
     padding-left: 2px;
+    font-size: 0.900em;
 }
 textarea::-webkit-input-placeholder {
     color: #333333;
     padding-left: 2px;
+    font-size: 0.900em;
 }
 // Sign In Page Ends
 
@@ -611,17 +613,49 @@ textarea::-webkit-input-placeholder {
         width: 95%;
         max-width: 95%;
         height: 90px;
-        margin-top: 5px;
         margin-bottom: 5px;
         padding-top: 6px;
         padding-left: 6px;
         padding-right: 6px;
         line-height: 17px;
-        font-size: 0.90em;
+        font-size: 0.800em;
+        border: 1px solid #aaaaaa;
+        color: #333333;
     } textarea::-webkit-input-placeholder {
         color: #333333;
+        font-size: 0.900em;
+    } input {
+        width: 96%;
+        margin-bottom: 5px;
+        padding-left: 6px;
+        padding-right: 6px;
+        height: 30px;
+        font-size: 0.800em;
+        color: #333333;
+        border: 1px solid #aaaaaa;
+    } span {
+        font-size: 0.700em;
     }
 }
+#profilePhotoFileUpload {
+    border: 0px solid #aaaaaa;
+}
+.gender-equality {
+        width: 98%;
+        height: 30px;
+        line-height: 30px;
+        border: 1px solid #aaaaaa;
+        text-align: left;
+        padding-left: 5px;
+        margin-bottom: 4px;
+    input {
+        width: 10%;
+        height: 15px;
+    } span {
+        font-size: 0.800em;
+    }
+}
+
 // Settings Page Ends
 
 
@@ -879,6 +913,13 @@ textarea::-webkit-input-placeholder {
     } button:hover a {
         color: #ffffff;
     }
+}
+.contact-info {
+    border-top: 1px solid #e5e5e5;
+    clear: both;
+    width: 100%;
+    padding-top: 10px;
+    margin-bottom: 10px;
 }
 .about-the-author {
     border-top: 1px solid #e5e5e5;

@@ -6,7 +6,5 @@ Parse.initialize("fAAOcX6ymK5Y6cAxJm9SuWKueNwRuNg9a9yL9chU", "Rp7YkpFZqOV7jItJsu
 // sign out functionality
 $(".home-page-sign-out-button").click(function() {
 	Parse.User.logOut();
-	var userName = Parse.User.current().attributes.username;
-		alert("Goodbye, " + userName);
-	var currentUser = Parse.User.current(); 
+	var currentUser = Parse.User.current();
 });

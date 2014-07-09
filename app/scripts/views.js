@@ -68,15 +68,16 @@ var SignInView = Parse.View.extend ({
 	},
 
 	render: function(){
-	    this.$el.html(this.template())
+	    this.$el.html(this.template());
 	    return this;
 	},
 
 	signIn: function() {
 		Parse.User.logIn($(".sign-in-username-input").val(), $(".sign-in-password-input").val(), {
 			success: function(user) {
+				router.navigate('#thumbnail', {trigger: true});
 				var userName = Parse.User.current().attributes.username;
-		    	alert("Welcome, " + userName);
+		    	console.log("Welcome, " + userName);
 		  },
 			error: function(user, error) {
 		    	alert("There was an error signing in. Please try again.");
@@ -105,7 +106,7 @@ var SignUpView = Parse.View.extend ({
 	},
 
 	render: function(){
-	    this.$el.html(this.template())
+	    this.$el.html(this.template());
 	    return this;
 	},
 
@@ -114,17 +115,17 @@ var SignUpView = Parse.View.extend ({
 		user.set("username", $(".sign-up-username-input").val() );
 		user.set("password", $(".sign-up-password-input").val() );
 		user.set("email", $(".sign-up-email-input").val() );
-
+		
 		user.signUp(null, {
 			success: function(user) {
-				alert("Welcome to CrowdDisclosure. Please remember to validate your email.");
+				router.navigate('#profile', {trigger: true});
 			},
 		 	error: function(user, error) {
 		    	alert("Error: " + error.code + " " + error.message);
 		    }
 		});
 	}
-});     
+});
 
 
 
@@ -147,29 +148,56 @@ var SettingsView = Parse.View.extend ({
 	},
 
 	render: function(){
-	    this.$el.html(this.template())
+		console.log('user is ', Parse.User.current());
+	    this.$el.html(this.template());
 	    return this;
 	},
 
 	updateUserInfo: function() {
-		var user = Parse.User.current()
-		user.set("firstName", $(".settings-first-name-input").val() );
-		user.set("lastName", $(".settings-last-name-input").val() );
+		var user = Parse.User.current();
+		user.set("name", $(".settings-name-input").val() );
+		user.set("gender", $(".settings-gender-input:checked").val() );
+		user.set("birthday", $(".settings-birthday-input").val() );
 		user.set("website", $(".settings-website-input").val() );
-		user.set("phone", $(".settings-phone-input").val() );
+		user.set("contactEmail", $(".settings-email-input").val() );
 		user.set("about", $(".settings-about-you-input").val() );
-		user.set("profilePicture", $(".settings-file-uploader").val() );
-		
-		user.save(null, {
-			success: function(user) {
-				alert("Your information has been updated successfully.");
-			},
-		 	error: function(user, error) {
-		    	alert("Error: " + error.code + " " + error.message);
-		    }
-		});
+
+		var fileUploadControl = $("#profilePhotoFileUpload")[0];
+		if (fileUploadControl.files.length > 0) {
+			var file = fileUploadControl.files[0];
+			var name = "photo.jpg";
+			var parseFile = new Parse.File(name, file);
+
+			parseFile.save().then(function() {
+				user.set("profilePicture", parseFile);
+				console.log("The file has been saved to Parse.");
+				user.save(null, {
+					success: function(user) {
+						router.navigate('#profile', {trigger: true});
+						alert("Your information has been updated successfully.");
+					},
+				 	error: function(user, error) {
+				    	alert("Error: " + error.code + " " + error.message);
+				    }
+				});
+			}, function(error) {
+				console.log("The file either could not be read, or could not be saved to Parse.");
+			});
+		} else {
+			user.save(null, {
+				success: function(user) {
+					router.navigate('#profile', {trigger: true});
+					alert("Your information has been updated successfully.");
+				},
+			 	error: function(user, error) {
+			    	alert("Error: " + error.code + " " + error.message);
+			    }
+			});
+		}
+
+
 	}
-}); 
+});
 
 
 
@@ -191,7 +219,7 @@ var PostView = Parse.View.extend({
 	},
 
 	render: function(){
-	    this.$el.html(this.template());
+	    this.$el.html(this.template(this.model.attributes));
 	    return this;
 	},
 

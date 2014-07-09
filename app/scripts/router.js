@@ -19,55 +19,55 @@ var AppRouter = Parse.Router.extend({
 	},
 		home: function() {
 			$('.content-container').html('');
-			homeView = new HomeView();
+			var homeView = new HomeView();
 			console.log("HomeView has loaded.");
 		},
 
 		about: function(){
 			$('.content-container').html('');
-			aboutView = new AboutView();
+			var aboutView = new AboutView();
 			console.log("AboutView has loaded.");
 		},
 
 		signIn: function(){
 			$('.content-container').html('');
-			signInView = new SignInView();
+			var signInView = new SignInView();
 			console.log("SignInView has loaded.");
 		},
 
 		signUp: function(){
 			$('.content-container').html('');
-			signUpView = new SignUpView();
+			var signUpView = new SignUpView();
 			console.log("SignUpView has loaded.");
 		},
 
 		settings: function(){
 			$('.content-container').html('');
-			settingsView = new SettingsView();
+			var settingsView = new SettingsView();
 			console.log("SettingsView has loaded.");
 		},
 
 		post: function(){
 			$('.content-container').html('');
-			postView = new PostView();
+			var postView = new PostView();
 			console.log("PostView has loaded.");
 		},
 
 		thumbnail: function(){
 			$('.content-container').html('');
-			thumbnailView = new ThumbnailView();
+			var thumbnailView = new ThumbnailView();
 			console.log("ThumbnailView has loaded.");
 		},
 
 		detail: function(){
 			$('.content-container').html('');
-			detailView = new DetailView();
+			var detailView = new DetailView();
 			console.log("DetailView has loaded.");
 		},
 
 		profile: function(){
 			$('.content-container').html('');
-			profileView = new ProfileView();
+			var profileView = new ProfileView();
 			console.log("ProfileView has loaded.");
 		},
 });
