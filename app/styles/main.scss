@@ -316,7 +316,7 @@ input::-webkit-input-placeholder {
 //   1-off Bodybox Styling begins
 // ================================
 .bodybox-writer {
-    height: 160px;
+    height: 50px;
 }
 .bodybox-about {
     height: 500px;
@@ -566,6 +566,7 @@ textarea::-webkit-input-placeholder {
 // Sign In Page Ends
 
 
+
 //    _____           ____       ___               
 //   / __(_)__ ____  /  _/__    / _ \___ ____ ____ 
 //  _\ \/ / _ `/ _ \_/ // _ \  / ___/ _ `/ _ `/ -_)
@@ -608,6 +609,8 @@ textarea::-webkit-input-placeholder {
         width: 95%;
     }
 }
+
+
 
 //    ____    __  __  _                 ___               
 //   / __/__ / /_/ /_(_)__  ___ ____   / _ \___ ____ ____ 
@@ -680,7 +683,6 @@ textarea::-webkit-input-placeholder {
 
 
 
-
 //    ___           __    ___               
 //   / _ \___  ___ / /_  / _ \___ ____ ____ 
 //  / ___/ _ \(_-</ __/ / ___/ _ `/ _ `/ -_)
@@ -697,7 +699,7 @@ textarea::-webkit-input-placeholder {
     width: 50%;
     padding: 10px 25px;
     border: 1px solid #aaaaaa;
-    h3 {
+    h3 {    
         color: #cd1713;
         margin-bottom: 5px;
     }

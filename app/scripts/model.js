@@ -10,5 +10,5 @@ var Article = Parse.Object.extend({
 });
 
 var Articles = Parse.Collection.extend({
-	model: Article
+	model: Article,
 });

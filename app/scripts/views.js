@@ -258,7 +258,6 @@ var PostView = Parse.View.extend({
 	},
 
 	render: function(){
-		console.log("user is ", Parse.User.current());
 	    this.$el.html(this.template());
 	    return this;
 	},
@@ -313,13 +312,6 @@ var PostView = Parse.View.extend({
 
 
 
-
-
-
-
-
-
-
 //  ________              __             _ __  _   ___           
 // /_  __/ /  __ ____ _  / /  ___  ___ _(_) / | | / (_)__ _    __
 //  / / / _ \/ // /  ' \/ _ \/ _ \/ _ `/ / /  | |/ / / -_) |/|/ /
@@ -338,7 +330,24 @@ var ThumbnailView = Parse.View.extend({
 	},
 
 	render: function(){
-	    this.$el.html(this.template());
+		this.$el.html(this.template());
+
+		var renderedTemplate = _.template($('.thumbnail-page-view-article-view-template').text());
+		var Article = Parse.Object.extend("Article");
+		var query = new Parse.Query(Article);
+		var that = this;
+
+		query.find({
+			success: function(articles) {
+				articles.forEach(function(article) {
+					console.log(article.attributes);
+	    			$('.thumbnail-columns').prepend(renderedTemplate(article.attributes) );		
+				})
+			},
+			error: function (error) {
+				console.log(error)
+			}
+		})
 	    return this;
 	},
 
@@ -389,7 +398,26 @@ var ProfileView = Parse.View.extend({
 	},
 
 	render: function(){
-	    this.$el.html(this.template());
+		this.$el.html(this.template());
+
+		var user = Parse.User.current();
+		var renderedTemplate = _.template($('.profile-page-view-article-view-template').text());
+		var Article = Parse.Object.extend("Article");
+		var query = new Parse.Query(Article);
+		var that = this;
+		query.equalTo("user", user);
+
+		query.find({
+			success: function(articles) {
+				articles.forEach(function(article) {
+					console.log(article.attributes);
+	    			$('.profile-user-container-right').prepend(renderedTemplate(article.attributes) );		
+				})
+			},
+			error: function (error) {
+				console.log(error)
+			}
+		})
 	    return this;
 	},
 

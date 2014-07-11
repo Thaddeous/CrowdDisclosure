@@ -67,7 +67,7 @@ var AppRouter = Parse.Router.extend({
 		},
 
 		detail: function(){
-			$(".content-container").html("");
+			$(".content-container").prepend("");
 			var detailView = new DetailView();
 			console.log("DetailView has loaded.");
 		},
