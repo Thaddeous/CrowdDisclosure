@@ -49,44 +49,6 @@ var AboutView = Parse.View.extend({
 
 
 
-//    _____           ____       _   ___           
-//   / __(_)__ ____  /  _/__    | | / (_)__ _    __
-//  _\ \/ / _ `/ _ \_/ // _ \   | |/ / / -_) |/|/ /
-// /___/_/\_, /_//_/___/_//_/   |___/_/\__/|__,__/ 
-//       /___/
-//
-var SignInView = Parse.View.extend ({
-	className: "sign-in-page",
-	template: _.template($(".sign-in-page-view-template").text()),
-	events: {
-		"click .sign-in-button": "signIn"
-	},
-
-	initialize: function () {
-		$(".content-container").html(this.el);
-		this.render();
-	},
-
-	render: function(){
-	    this.$el.html(this.template());
-	    return this;
-	},
-
-	signIn: function() {
-		Parse.User.logIn($(".sign-in-username-input").val(), $(".sign-in-password-input").val(), {
-			success: function(user) {
-				router.navigate('#thumbnail', {trigger: true});
-				var userName = Parse.User.current().attributes.username;
-		    	console.log("Welcome, " + userName);
-		  },
-			error: function(user, error) {
-		    	alert("There was an error signing in. Please try again.");
-		  	}
-		});
-	}
-});
-
-
 //    _____           __  __       _   ___           
 //   / __(_)__ ____  / / / /__    | | / (_)__ _    __
 //  _\ \/ / _ `/ _ \/ /_/ / _ \   | |/ / / -_) |/|/ /
@@ -118,11 +80,87 @@ var SignUpView = Parse.View.extend ({
 		
 		user.signUp(null, {
 			success: function(user) {
-				router.navigate('#profile', {trigger: true});
+				router.navigate("#profile", {trigger: true});
 			},
 		 	error: function(user, error) {
 		    	alert("Error: " + error.code + " " + error.message);
 		    }
+		});
+	}
+});
+
+
+
+//    _____           ____       _   ___           
+//   / __(_)__ ____  /  _/__    | | / (_)__ _    __
+//  _\ \/ / _ `/ _ \_/ // _ \   | |/ / / -_) |/|/ /
+// /___/_/\_, /_//_/___/_//_/   |___/_/\__/|__,__/ 
+//       /___/
+//
+var SignInView = Parse.View.extend ({
+	className: "sign-in-page",
+	template: _.template($(".sign-in-page-view-template").text()),
+	events: {
+		"click .sign-in-button": "signIn"
+	},
+
+	initialize: function () {
+		$(".content-container").html(this.el);
+		this.render();
+	},
+
+	render: function(){
+	    this.$el.html(this.template());
+	    return this;
+	},
+
+	signIn: function() {
+		Parse.User.logIn($(".sign-in-username-input").val(), $(".sign-in-password-input").val(), {
+			success: function(user) {
+				router.navigate("#thumbnail", {trigger: true});
+				var userName = Parse.User.current().attributes.username;
+		    	console.log("Welcome, " + userName);
+		  },
+			error: function(user, error) {
+		    	alert("There was an error signing in. Please try again.");
+		  	}
+		});
+	}
+});
+
+
+
+//    ___                                 __  _   ___           
+//   / _ \___ ____ ____    _____  _______/ / | | / (_)__ _    __
+//  / ___/ _ `(_-<(_-< |/|/ / _ \/ __/ _  /  | |/ / / -_) |/|/ /
+// /_/   \_,_/___/___/__,__/\___/_/  \_,_/   |___/_/\__/|__,__/ 
+//                                                             
+var PasswordView = Parse.View.extend({
+	className: "password-page",
+	template: _.template($(".password-page-view-template").text()),
+	events: {
+		"click .password-page-button": "passwordReset"
+	},
+
+	initialize: function(){
+		$(".content-container").html(this.el);
+		this.render();
+	},
+
+	render: function(){
+	    this.$el.html(this.template());
+	    return this;
+	},
+
+	passwordReset: function() {
+		var passwordResetInput = $(".password-input").val();
+		Parse.User.requestPasswordReset(passwordResetInput, {
+			success: function() {
+				alert("Password was sent successfully");
+			},
+			error: function(error) {
+				alert("Error: " + error.code + " " + error.message);
+			}
 		});
 	}
 });
@@ -148,7 +186,7 @@ var SettingsView = Parse.View.extend ({
 	},
 
 	render: function(){
-		console.log('user is ', Parse.User.current());
+		console.log("user is ", Parse.User.current());
 	    this.$el.html(this.template());
 	    return this;
 	},
@@ -159,10 +197,11 @@ var SettingsView = Parse.View.extend ({
 		user.set("gender", $(".settings-gender-input:checked").val() );
 		user.set("birthday", $(".settings-birthday-input").val() );
 		user.set("website", $(".settings-website-input").val() );
-		user.set("contactEmail", $(".settings-email-input").val() );
+		user.set("contactEmail", $(".settings-contact-email-input").val() );
+		user.set("email", $(".settings-email-input").val() );
 		user.set("about", $(".settings-about-you-input").val() );
 
-		var fileUploadControl = $("#profilePhotoFileUpload")[0];
+		var fileUploadControl = $(".profile-photo-file-upload")[0];
 		if (fileUploadControl.files.length > 0) {
 			var file = fileUploadControl.files[0];
 			var name = "photo.jpg";
@@ -173,7 +212,7 @@ var SettingsView = Parse.View.extend ({
 				console.log("The file has been saved to Parse.");
 				user.save(null, {
 					success: function(user) {
-						router.navigate('#profile', {trigger: true});
+						router.navigate("#profile", {trigger: true});
 						alert("Your information has been updated successfully.");
 					},
 				 	error: function(user, error) {
@@ -186,7 +225,7 @@ var SettingsView = Parse.View.extend ({
 		} else {
 			user.save(null, {
 				success: function(user) {
-					router.navigate('#profile', {trigger: true});
+					router.navigate("#profile", {trigger: true});
 					alert("Your information has been updated successfully.");
 				},
 			 	error: function(user, error) {
@@ -210,20 +249,74 @@ var PostView = Parse.View.extend({
 	className: "post-page",
 	template: _.template($(".post-page-view-template").text()),
 	events: {
-
+		"click .post-page-button": "postArticle"
 	},
 
-	initialize: function(){
+	initialize: function () {
 		$(".content-container").html(this.el);
 		this.render();
 	},
 
 	render: function(){
-	    this.$el.html(this.template(this.model.attributes));
+		console.log("user is ", Parse.User.current());
+	    this.$el.html(this.template());
 	    return this;
 	},
 
+	postArticle: function() {
+		var user = Parse.User.current();
+		var Article = Parse.Object.extend("Article");
+		var article = new Article();
+		article.set("postTitle", $(".post-title-input").val() );
+		article.set("postContent", $(".post-content-input").val() );
+		article.set("user", user);
+		article.save(null, { 
+			success: function(post) {
+
+			} 
+		});
+		
+		var fileUploadControl = $(".post-file-upload")[0];
+		if (fileUploadControl.files.length > 0) {
+			var file = fileUploadControl.files[0];
+			var name = "photo.jpg";
+			var parseFile = new Parse.File(name, file);
+
+			parseFile.save().then(function() {
+				article.set("postPicture", parseFile);
+				console.log("The file has been saved to Parse.");
+				article.save(null, {
+					success: function(user) {
+						router.navigate("#profile", {trigger: true});
+						alert("Your information has been updated successfully.");
+					},
+				 	error: function(user, error) {
+				    	alert("Error: " + error.code + " " + error.message);
+				    }
+				});
+			}, function(error) {
+				console.log("The file either could not be read, or could not be saved to Parse.");
+			});
+		} else {
+			article.save(null, {
+				success: function(user) {
+					router.navigate("#profile", {trigger: true});
+					alert("Your information has been updated successfully.");
+				},
+			 	error: function(user, error) {
+			    	alert("Error: " + error.code + " " + error.message);
+			    }
+			});
+		}
+	}
 });
+
+
+
+
+
+
+
 
 
 
