@@ -337,6 +337,10 @@ var ThumbnailView = Parse.View.extend({
 		var query = new Parse.Query(Article);
 		var that = this;
 
+		$(".thumbnail-post-title-button").click(function() {
+			router.navigate("#detail", {trigger: true});
+		});
+
 		query.find({
 			success: function(articles) {
 				articles.forEach(function(article) {
