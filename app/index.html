@@ -42,14 +42,16 @@
             </div>
             <div class="main-header-right">
                 <div class="header-link-logged-in"><i class="fa fa-bars"></i>
+                    <a href="#signIn"><div class="logged-in-menu-link"><i class="fa fa-pencil"></i><b>Sign In</b></div></a>
+                    <a href="#signUp"><div class="logged-in-menu-link"><i class="fa fa-book"></i><b>Sign Up</b></div></a>
                     <a href="#profile"><div class="logged-in-menu-link"><i class="fa fa-user"></i><b>Profile</b></div></a>
                     <a href="#settings"><div class="logged-in-menu-link"><i class="fa fa-cog"></i><b>Settings</b></div></a>
                     <a href="#"><div class="logged-in-menu-link sign-out-menu-link"><i class="fa fa-meh-o"></i><b>Sign Out</b></div></a>
                 </div>
-                <div class="header-link-logged-out">
+                <!-- <div class="header-link-logged-out">
                     <a href="#signUp"><div class="header-link header-link-right-sign-up">Sign Up</div></a>
                     <a href="#signIn"><div class="header-link header-link-right">Sign In</div></a>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="header-default-padding"></div>
@@ -140,7 +142,9 @@
                 </div>
             </div>
 
-            <div class="bodybox bodybox-three">Starting a writing career has never been easier.</div>
+            <div class="bodybox bodybox-three">
+                <p>Starting a writing career has never been easier.</p>
+            </div>
 
             <div class="split-container">
                 <div class="split-A">
@@ -165,7 +169,8 @@
             <div class="squarebox">
                 <div class="squarebox-size squarebox-size-two">
                     <div class="dark-overlay">
-                        <div class="squarebox-text-container squarebox-text-container-two">Will your articles be ☆ed?</div>
+                        <div class="squarebox-text-container">Sign up today. Its free and easy.</div>
+                        <a href="#signUp"><div class="buttons squarebox-button">Get Started</div></a>
                     </div>
                 </div>
             </div>
@@ -383,7 +388,6 @@
             <div class="profile-page-container">
                 <div class="profile-user-container-left">
                     <div class="profile-user-container-left-box">
-
                         <div class="profile-image-name-box"><h3><%= Parse.User.current().get('name') ? Parse.User.current().get('name') : 'Your Name'  %></h3></div>
 
                         <img src="<%= Parse.User.current().get('profilePicture') ? Parse.User.current().get('profilePicture').url() : 'http://www.wewillgather.co.uk/content/images/placeholder.jpg?width=298&height=298&quality=100&mode=crop&scale=both' %>"/>

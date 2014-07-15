@@ -56,6 +56,7 @@ var SignUpView = Parse.View.extend ({
 		user.signUp(null, {
 			success: function(user) {
 				router.navigate("#profile", {trigger: true});
+				$( "header-link-logged-out" ).hide( "drop", { direction: "down" }, "slow" );
 			},
 		 	error: function(user, error) {
 		    	alert("Error: " + error.code + " " + error.message);
