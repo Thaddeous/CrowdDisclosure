@@ -176,6 +176,42 @@ var SettingsView = Parse.View.extend ({
 		user.set("email", $(".settings-email-input").val() );
 		user.set("about", $(".settings-about-you-input").val() );
 
+		var fileBannerUploadControl = $(".profile-banner-file-upload")[0];
+		if (fileBannerUploadControl.files.length > 0) {
+			var file = fileBannerUploadControl.files[0];
+			var name = "bannerPhoto.jpg";
+			var parseFile = new Parse.File(name, file);
+
+			parseFile.save().then(function() {
+				user.set("bannerPicture", parseFile);
+				console.log("The file has been saved to Parse.");
+				user.save(null, {
+					success: function(user) {
+					},
+				 	error: function(user, error) {
+				    	alert("Error: " + error.code + " " + error.message);
+				    }
+				});
+			}, function(error) {
+				console.log("The file either could not be read, or could not be saved to Parse.");
+			});
+		} else {
+			user.save(null, {
+				success: function(user) {
+				},
+			 	error: function(user, error) {
+			    	alert("Error: " + error.code + " " + error.message);
+			    }
+			});
+		}
+
+
+
+
+
+
+
+
 		var fileUploadControl = $(".profile-photo-file-upload")[0];
 		if (fileUploadControl.files.length > 0) {
 			var file = fileUploadControl.files[0];
@@ -208,8 +244,6 @@ var SettingsView = Parse.View.extend ({
 			    }
 			});
 		}
-
-
 	}
 });
 

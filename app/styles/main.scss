@@ -184,15 +184,18 @@ textarea::-webkit-input-placeholder {
 .header-link-logged-in:hover {
     margin-top: 1px;
     height: 180px;
-    width: 100px;
+    width: 120px;
     .logged-in-menu-link {
         display: block;
-        text-align: center;
+        text-align: left;
+        padding-left: 8px;
         border: 1px solid #cccccc;
         background-color: rgba(255, 255, 255, 0.99);
     }
 }
-
+.logged-in-menu-link .fa {
+    margin-right: 6px;
+}
 // Header Ends
 
 
@@ -241,8 +244,8 @@ textarea::-webkit-input-placeholder {
 }
 .bodybox-one {
     font-size: 1.875em;
-    height: 420px;
-    padding-top: 100px;
+    height: 450px;
+    padding-top: 70px;
     img {
         height: 60px; 
     } p {
@@ -265,12 +268,12 @@ textarea::-webkit-input-placeholder {
     }
 }    
 .bodybox-two {
-    height: 485px;
+    height: 450px;
     background-color: #222222;
     color: #ffffff;
     .small {
         p {
-            padding-top: 170px;
+            padding-top: 150px;
             font-size: 1.750em;
         }
     }
@@ -283,14 +286,14 @@ textarea::-webkit-input-placeholder {
 }
 .bodybox-three {
     height: 450px;
-    line-height: 450px;
+    line-height: 430px;
     font-size: 1.875em;
 }
 .bodybox-four {
     height: 450px;
     clear: both;
     p {
-        padding-top: 150px;
+        padding-top: 160px;
         font-size: 1.875em;
     }
 }
@@ -317,7 +320,13 @@ textarea::-webkit-input-placeholder {
     overflow: hidden;
     width: 100%;
     height: 450px;
-    background: url('http://velograd.com/img/foto17b.jpg');
+    background: url('http://inkcreaimpresion.com/wp-content/uploads/2012/09/hipster-wallpapers-for-apple-16.jpeg');
+    background-size: cover;
+}
+.squarebox-size-two {
+    width: 100%;
+    height: 450px;
+    background: url('http://www.yewty.com/wp-content/uploads/2014/06/Venice-Beach1.jpg');
     background-size: cover;
 }
 .squarebox-size:hover {
@@ -327,7 +336,7 @@ textarea::-webkit-input-placeholder {
     }
 }
 .squarebox-text-container {
-    padding-top: 130px;
+    padding-top: 120px;
     padding-left: 40px;
     padding-right: 40px;
     font-size: 2.250em;
@@ -335,10 +344,10 @@ textarea::-webkit-input-placeholder {
     text-shadow: 0px 0px 8px #000000;
 }
 .squarebox-text-container-two {
-    padding-top: 180px;
+    padding-top: 160px;
 }
 .squarebox-button {
-    margin-top: 100px;
+    margin-top: 105px;
     margin-right: 10px;
     margin-left: 10px;
     color: #ffffff; 
@@ -518,6 +527,7 @@ textarea::-webkit-input-placeholder {
     margin: 20px auto 0 auto;
 }
 .settings-container-box {
+    margin-bottom: 30px;
     padding: 20px;
     border-radius: 4px;
     border: 1px solid #aaaaaa;
@@ -551,7 +561,7 @@ textarea::-webkit-input-placeholder {
         font-size: 1.000em;
     }
 }
-.profile-photo-file-upload-box{
+.profile-photo-file-upload-box, .profile-banner-file-upload-box {
     input {
         border: 0px solid #ffffff;
     }
@@ -731,7 +741,9 @@ textarea::-webkit-input-placeholder {
 }
 .detail-article-container {
     width: 600px;
-    margin: 10px auto 0 auto;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 400px;
 }
 .detail-article-box {
     padding-left: 20px;
@@ -755,8 +767,8 @@ textarea::-webkit-input-placeholder {
     margin-top: 15px;
     margin-bottom: 5px;
     border-radius: 4px;
-    box-shadow: 0px 2px 4px -1px #555555;
-    border: 1px solid #d5d5d5;
+    box-shadow: 0px 2px 4px -1px #333333;
+    border: 1px solid #aaaaaa;
     background-color: #ffffff;
 }
 .detail-profile-box {
@@ -852,6 +864,8 @@ textarea::-webkit-input-placeholder {
     background-color: rgba(0, 0, 0, 0.55);
     border-radius: 4px 4px 0px 0px;
     h3 {
+        padding-top: 3px;
+        padding-bottom: 4px;
         color: #ffffff;
         text-align: center;
     }

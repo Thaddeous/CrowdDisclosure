@@ -42,9 +42,9 @@
             </div>
             <div class="main-header-right">
                 <div class="header-link-logged-in"><i class="fa fa-bars"></i>
-                    <a href="#profile"><div class="logged-in-menu-link"><b>Profile</b></div></a>
-                    <a href="#settings"><div class="logged-in-menu-link"><b>Settings</b></div></a>
-                    <a href="#"><div class="logged-in-menu-link sign-out-menu-link"><b>Sign Out</b></div></a>
+                    <a href="#profile"><div class="logged-in-menu-link"><i class="fa fa-user"></i><b>Profile</b></div></a>
+                    <a href="#settings"><div class="logged-in-menu-link"><i class="fa fa-cog"></i><b>Settings</b></div></a>
+                    <a href="#"><div class="logged-in-menu-link sign-out-menu-link"><i class="fa fa-meh-o"></i><b>Sign Out</b></div></a>
                 </div>
                 <div class="header-link-logged-out">
                     <a href="#signUp"><div class="header-link header-link-right-sign-up">Sign Up</div></a>
@@ -110,7 +110,7 @@
                     <div class="headerboard-text"><strong>FOR THE WRITER</strong></div>
                     <div class="headerboard-text"><strong>FOR THE READER</strong></div>
                     <a href="#signUp"><div class="buttons headerboard-button">Sign Up</div></a>
-                    <p>Writing has never been so easy. Reading has never been so cool. ☃</p>
+                    <p>Writing made easy. Reading made cool. ☃</p>
                 </div>
             </div>
 
@@ -139,7 +139,9 @@
                     </div>
                 </div>
             </div>
-            
+
+            <div class="bodybox bodybox-three">Starting a writing career has never been easier.</div>
+
             <div class="split-container">
                 <div class="split-A">
                     <div class="split-box">
@@ -154,15 +156,16 @@
                 </div>
             </div>
 
+
             <div class="bodybox bodybox-four">
                 <p>Keep up with the content that matters most to you.</p>
                 <a href="#thumbnail"><div class="buttons bodybox-four-button">Start Reading</div></a>
             </div>
 
             <div class="squarebox">
-                <div class="squarebox-size">
+                <div class="squarebox-size squarebox-size-two">
                     <div class="dark-overlay">
-                        <div class="squarebox-text-container squarebox-text-container-two">Will YOUR articles be read?</div>
+                        <div class="squarebox-text-container squarebox-text-container-two">Will your articles be ☆ed?</div>
                     </div>
                 </div>
             </div>
@@ -234,8 +237,13 @@
             <div class="settings-container">
                 <div class="settings-container-box">
                     <h3>Account Settings</h3>
-                    
-                    <img src="<%= Parse.User.current().get('profilePicture') ? Parse.User.current().get('profilePicture').url() : 'http://www.wewillgather.co.uk/content/images/placeholder.jpg?width=298&height=298&quality=100&mode=crop&scale=both' %>" width="100%">
+
+                    <span>Banner Picture:</span>
+                    <img src="<%= Parse.User.current().get('bannerPicture') ? Parse.User.current().get('bannerPicture').url() : 'http://www.comedyweb.com/img/placeholder.png' %>" width="100%">
+                    <div class="profile-banner-file-upload-box"><input type="file" class="profile-banner-file-upload"></div>
+
+                    <span>Profile Picture:</span>
+                    <img src="<%= Parse.User.current().get('profilePicture') ? Parse.User.current().get('profilePicture').url() : 'http://www.comedyweb.com/img/placeholder.png' %>" width="100%">
                     <div class="profile-photo-file-upload-box"><input type="file" class="profile-photo-file-upload"></div>
                     
                     <span>Name:</span>
@@ -340,7 +348,7 @@
                                     <p>0 <a href="">Articles Written</a></p> 
                                 </button>
                                 <button>
-                                    <p>0 <a href="">Articles Sold</a></p>
+                                    <p>0 <a href="">Articles Read</a></p>
                                 </button>
                                 <button>
                                     <p>0 <a href="">Articles Featured</a></p>
@@ -370,13 +378,13 @@
 -->
         <script type="text/template" class="profile-page-view-template">
             <div class="profile-page-banner-container">
-                <img src="http://cdn.wonderfulengineering.com/wp-content/uploads/2013/12/hd-wallpaper-desktop.jpg" />
+                <img src="<%= Parse.User.current().get('bannerPicture') ? Parse.User.current().get('bannerPicture').url() : 'http://studio-arriba.ch/web/wp-content/themes/DICE/images/placeholder-c-12-wide.png'  %>" width="100%" />
             </div>
             <div class="profile-page-container">
                 <div class="profile-user-container-left">
                     <div class="profile-user-container-left-box">
 
-                        <div class="profile-image-name-box"><h3><%= Parse.User.current().get('name') %></h3></div>
+                        <div class="profile-image-name-box"><h3><%= Parse.User.current().get('name') ? Parse.User.current().get('name') : 'Your Name'  %></h3></div>
 
                         <img src="<%= Parse.User.current().get('profilePicture') ? Parse.User.current().get('profilePicture').url() : 'http://www.wewillgather.co.uk/content/images/placeholder.jpg?width=298&height=298&quality=100&mode=crop&scale=both' %>"/>
 
@@ -385,7 +393,7 @@
                                 <p>0 <a href="">Articles Written</a></p>
                             </button>
                             <button>
-                                <p>0 <a href="">Articles Sold</a></p>
+                                <p>0 <a href="">Articles Read</a></p>
                             </button>
                             <button>
                                 <p>0 <a href="">Articles Featured</a></p>
