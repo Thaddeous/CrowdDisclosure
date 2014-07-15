@@ -56,7 +56,6 @@ var SignUpView = Parse.View.extend ({
 		user.signUp(null, {
 			success: function(user) {
 				router.navigate("#profile", {trigger: true});
-				$( "header-link-logged-out" ).hide( "drop", { direction: "down" }, "slow" );
 			},
 		 	error: function(user, error) {
 		    	alert("Error: " + error.code + " " + error.message);
@@ -177,73 +176,61 @@ var SettingsView = Parse.View.extend ({
 		user.set("email", $(".settings-email-input").val() );
 		user.set("about", $(".settings-about-you-input").val() );
 
-		var fileBannerUploadControl = $(".profile-banner-file-upload")[0];
-		if (fileBannerUploadControl.files.length > 0) {
-			var file = fileBannerUploadControl.files[0];
-			var name = "bannerPhoto.jpg";
-			var parseFile = new Parse.File(name, file);
+		var bannerPromise = uploadPhoto($(".profile-banner-file-upload")[0], 'bannerPicture');
 
-			parseFile.save().then(function() {
-				user.set("bannerPicture", parseFile);
-				console.log("The file has been saved to Parse.");
-				user.save(null, {
-					success: function(user) {
-					},
-				 	error: function(user, error) {
-				    	alert("Error: " + error.code + " " + error.message);
-				    }
-				});
-			}, function(error) {
-				console.log("The file either could not be read, or could not be saved to Parse.");
+		var profilePromise = uploadPhoto($(".profile-photo-file-upload")[0], 'profilePicture', function() {
+			alert("Your information has been updated successfully.");
+		});
+
+		bannerPromise.done(function(){
+			profilePromise.done(function(){
+				router.navigate("#profile", {trigger: true});
 			});
-		} else {
-			user.save(null, {
-				success: function(user) {
-				},
-			 	error: function(user, error) {
+		});
+
+		function uploadPhoto (input, property, successCallback, errorCallback){
+
+			var deferred = $.Deferred();
+
+			if (!successCallback) {
+				// set a default success callback
+				var successCallback = function() {};
+			}
+
+			if (!errorCallback) {
+				// set a default error callback
+				var errorCallback = function(user, error) {
 			    	alert("Error: " + error.code + " " + error.message);
-			    }
-			});
-		}
+			    };
+			}
 
+			if (input.files.length > 0) {
+				var file = input.files[0];
+				var name = "photo.jpg";
+				var parseFile = new Parse.File(name, file);
 
-
-
-
-
-
-
-		var fileUploadControl = $(".profile-photo-file-upload")[0];
-		if (fileUploadControl.files.length > 0) {
-			var file = fileUploadControl.files[0];
-			var name = "photo.jpg";
-			var parseFile = new Parse.File(name, file);
-
-			parseFile.save().then(function() {
-				user.set("profilePicture", parseFile);
-				console.log("The file has been saved to Parse.");
-				user.save(null, {
-					success: function(user) {
-						router.navigate("#profile", {trigger: true});
-						alert("Your information has been updated successfully.");
-					},
-				 	error: function(user, error) {
-				    	alert("Error: " + error.code + " " + error.message);
-				    }
+				parseFile.save().then(function() {
+					user.set(property, parseFile);
+					console.log("The file has been saved to Parse.");
+					user.save(null, {
+						success: successCallback,
+					 	error: errorCallback
+					}).done(function(){
+						deferred.resolve();
+					});
+				}, function(error) {
+					alert("The file either could not be read, or could not be saved to Parse.");
 				});
-			}, function(error) {
-				console.log("The file either could not be read, or could not be saved to Parse.");
-			});
-		} else {
-			user.save(null, {
-				success: function(user) {
-					router.navigate("#profile", {trigger: true});
-					alert("Your information has been updated successfully.");
-				},
-			 	error: function(user, error) {
-			    	alert("Error: " + error.code + " " + error.message);
-			    }
-			});
+			} else {
+				user.save(null, {
+					success: successCallback,
+				 	error: errorCallback
+				}).done(function(){
+					deferred.resolve();
+				});
+			}
+
+			return deferred;
 		}
 	}
 });
@@ -278,7 +265,6 @@ var PostView = Parse.View.extend({
 		var article = new Article();
 		article.set("postTitle", $(".post-title-input").val() );
 		article.set("postContent", $(".post-content-input").val() );
-		article.set("postContentEditor", $(".post-content-editor-input").val() );
 		article.set("user", user);
 		article.save(null, {
 			success: function(post) {
@@ -357,7 +343,7 @@ var ThumbnailView = Parse.View.extend({
 				console.log(article);
     			$('.thumbnail-columns').prepend(renderedTemplate({article: article}) );
 			});
-		}) 
+		});
 
 	    return this;
 	},
@@ -412,7 +398,7 @@ var ProfileView = Parse.View.extend({
 		this.$el.html(this.template());
 
 		var user = Parse.User.current();
-		var renderedTemplate = _.template($('.profile-page-view-article-view-template').text());
+		var template = _.template($('.profile-page-article-template').text());
 		var Article = Parse.Object.extend("Article");
 		var query = new Parse.Query(Article);
 		var that = this;
@@ -422,7 +408,7 @@ var ProfileView = Parse.View.extend({
 			success: function(articles) {
 				articles.forEach(function(article) {
 					console.log(article.attributes);
-	    			$('.profile-user-container-right').prepend(renderedTemplate(article.attributes) );
+	    			$('.profile-user-container-right').prepend(template({post: article}) );
 				});
 			},
 			error: function (error) {

@@ -80,7 +80,7 @@ var AppRouter = Parse.Router.extend({
 				  error: function(object, error) {
 				    // The object was not retrieved successfully.
 				    // error is a Parse.Error with an error code and description.
-				    console.error('page not found!')
+				    console.error('page not found!');
 				  }
 				});
 			}
