@@ -338,12 +338,17 @@ var ThumbnailView = Parse.View.extend({
 			router.navigate("#detail", {trigger: true});
 		});
 
-		window.fetchedArticles.fetch().done(function(){
-			fetchedArticles.each(function(article) {
+		query.include('user');
+
+		query.find().done(function(articles){
+
+			window.fetchedArticles.reset(articles);
+
+			window.fetchedArticles.each(function(article) {
 				console.log(article);
-    			$('.thumbnail-columns').prepend(renderedTemplate({article: article}) );
+    			$('.thumbnail-columns').prepend(renderedTemplate({article: article}) );    			
 			});
-		});
+		})
 
 	    return this;
 	},
@@ -395,6 +400,7 @@ var ProfileView = Parse.View.extend({
 	},
 
 	render: function(){
+
 		this.$el.html(this.template());
 
 		var user = Parse.User.current();
@@ -417,5 +423,4 @@ var ProfileView = Parse.View.extend({
 		});
 	    return this;
 	},
-
 });

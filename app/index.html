@@ -320,8 +320,8 @@
                 </div>
                 <div class="thumbnail-user-info">
                     <div class="user-info-box">
-                        <img src="images/girl.jpg" width="100%" />
-                        <p><a href="">Thaddeous</a></p>
+                        <img src="<%= article.get("user").get('profilePicture')._url %>" />
+                        <p><a href=""> <%= article.get("user").get('name') %> </a></p>
                         <p><a href="">Science & Technology</a></p>
                     </div>
                 </div>
@@ -342,7 +342,7 @@
                     <p><%= postContent %></p>
                     <div class="detail-profile-container">
                         <div class="detail-profile-box">
-                            <h3>Author - <a href="">Thaddeous Maximus</a></h3>
+                            <h3>Author - <a href=""></a></h3>
                             <div class="detail-profile-box-stats">
                                 <button>
                                     <p>0 <a href="">Articles Written</a></p> 
@@ -418,7 +418,7 @@
 
         <script type="text/template" class="profile-page-article-template">
             <div class="profile-user-container-right-box">
-                <a href=""><h1><%= post.get('postTitle') %></h1></a>
+                <div class="profile-article-name"><a href=""><h1><%= post.get('postTitle') %></h1></a></div>
                 <% if (post.get('postPicture')) { %>
                     <img src=" <%= post.get('postPicture').url() %> " />
                 <% } %>
