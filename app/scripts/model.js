@@ -6,6 +6,7 @@ var Article = Parse.Object.extend({
 	defaults: {
 		postTitle: "",
 		postContent: "",
+		postContentEditor: "",
 	}
 });
 

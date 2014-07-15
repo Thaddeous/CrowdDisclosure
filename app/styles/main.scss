@@ -91,14 +91,14 @@ textarea::-webkit-input-placeholder {
     // background-color: blue;
 }
 .main-header {
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.94);
     position: fixed;
     top: 0;
     z-index: 10000;
     width: 100%;
     height: 45px;
     line-height: 45px;
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid #cccccc;
     box-shadow: 0px 0px 4px #555555;
     a {
         color: #555555;
@@ -131,20 +131,18 @@ textarea::-webkit-input-placeholder {
     color: #cd1713;
     font-family: "Patua One";
     span {
-        font-family: 'Special Elite';
-        color: #222222;
+        color: #252525;
     }
 }
 .header-link {
-    display: inline-block;
     padding-left: 5px;
     padding-right: 5px;
     font-size: 0.8em; 
     height: 25px;
     line-height: 25px;
     border-radius: 4px;
-    border: 2px solid #555555;
-    color: #333333;
+    border: 2px solid #333333;
+    color: #222222;
 }
 .header-link:hover {
     color: #ffffff;
@@ -152,21 +150,49 @@ textarea::-webkit-input-placeholder {
     background-image: linear-gradient(to bottom, #cd1713 0%, #ab1210 100%);
 }
 .header-link-left {
+    float: left;
     margin-left: 10px;
+    margin-top: 8px;
 }
 .header-link-right {
+    margin-top: 8px;
+    float: right;
     margin-right: 10px;
 }
-.header-link-sign-up {
+.header-link-right-sign-up {
+    float: right;
+    margin-top: 8px;
     margin-right: 15px;
     color: #ffffff;
     border: 2px solid #ab1210; 
     background-image: linear-gradient(to bottom, #cd1713 0%, #ab1210 100%);
 }
-.header-link-sign-up:hover {
+.header-link-right-sign-up:hover {
     border: 2px solid #333333; 
     background-image: linear-gradient(to bottom, #444444 0%, #222222 100%);
 }
+.header-link-logged-in {
+    float: right;
+    height: auto;
+}
+.fa {
+    margin-right: 20px;
+}
+.logged-in-menu-link {
+    display: none
+}
+.header-link-logged-in:hover {
+    margin-top: 1px;
+    height: 180px;
+    width: 100px;
+    .logged-in-menu-link {
+        display: block;
+        text-align: center;
+        border: 1px solid #cccccc;
+        background-color: rgba(255, 255, 255, 0.99);
+    }
+}
+
 // Header Ends
 
 
@@ -182,81 +208,69 @@ textarea::-webkit-input-placeholder {
 }
 .headerboard-message {
     width: 100%;
+    padding-top: 30px;
+    padding-bottom: 170px;
     color: #ffffff;
     background-image: url("http://3.bp.blogspot.com/-UAyN14Mw74Q/UzsWkrq1_hI/AAAAAAAAMBg/7z65l9PXGFE/s1600/tumblr_static_tumblr_maoaubjog61re1a3so1_500.gif");
     background-size: cover;
-}
-.bodybox-writer {
-    width: 100%;
-    height: 50px;
-    text-align: center;
+    text-shadow: 0px 0px 8px #000000;
     p {
-        padding-top: 35px; 
-        font-size: 1.875em;
-
+        text-shadow: 0px 0px 8px #000000;
+        margin-top: 60px;
+        font-size: 2.0em;
     }
 }
-.writer-button {
+.headerboard-button {
+    text-shadow: 0px 0px 0px #000000;
     margin-top: 40px;
-    color: #222222; 
-    border: 2px solid #222222; 
     border-radius: 4px;
-    background-image: linear-gradient(to bottom, #ffffff 0%, #f9f9f9 100%);
-}
-.writer-button:hover {
-    border: 2px solid #ab1210; 
+    border: 2px solid #ffffff;
     color: #ffffff;
+}
+.headerboard-button:hover {
+    border: 2px solid #ab1210;
     background-image: linear-gradient(to bottom, #cd1713 0%, #ab1210 100%);
 }
-// Home Page Ends
-
-
-
-
-//    ___   __             __    ___               
-//   / _ | / /  ___  __ __/ /_  / _ \___ ____ ____ 
-//  / __ |/ _ \/ _ \/ // / __/ / ___/ _ `/ _ `/ -_)
-// /_/ |_/_.__/\___/\_,_/\__/ /_/   \_,_/\_, /\__/ 
-//                                      /___/ 
+// ===========================
+//      Headerboard Ends
+//    Bodybox Styling Begins
+// ===========================
 .bodybox {
     width: 100%;
     text-align: center;
 }
 .bodybox-one {
     font-size: 1.875em;
-    height: 500px;
+    height: 420px;
     padding-top: 100px;
     img {
         height: 60px; 
     } p {
         padding-bottom: 8px;
-    } h5 {
-        text-align: center;
-        padding-left: 250px;
+    } h6 {
+        text-align: right;
+        padding-top: 25px;
+        padding-right: 400px;
     }
     .crowd {
         font-family: "Patua One";
         font-size: 1.5em; 
         color: #cd1713;
     } .disclosure {
-        font-family: "Special Elite";
+        font-family: "Patua One";
         font-size: 1.5em; 
         color: #222222;
-    }
-    .arrow {
-        margin-top: 100px;
-        img {
-            height: 30px; 
-        }
+    } span {
+        color: #cd1713;
     }
 }    
 .bodybox-two {
-    height: 450px;
+    height: 485px;
     background-color: #222222;
     color: #ffffff;
     .small {
         p {
-            padding-top: 140px;
+            padding-top: 170px;
             font-size: 1.750em;
         }
     }
@@ -273,11 +287,22 @@ textarea::-webkit-input-placeholder {
     font-size: 1.875em;
 }
 .bodybox-four {
-    height: 300px;
-    line-height: 450px;
-    font-size: 1.875em;
-    color: #cd1713;
+    height: 450px;
     clear: both;
+    p {
+        padding-top: 150px;
+        font-size: 1.875em;
+    }
+}
+.bodybox-four-button {
+    margin-top: 40px;
+    border-radius: 4px;
+    border: 2px solid #222222;
+    color: #222222;
+}
+.bodybox-four-button:hover {
+    color: #ffffff;
+    background-image: linear-gradient(to bottom, #222222 0%, #222222 100%);
 }
 // ==============================================
 //         All Bodybox Styling Ends
@@ -308,9 +333,9 @@ textarea::-webkit-input-placeholder {
     font-size: 2.250em;
     color: #ffffff;
     text-shadow: 0px 0px 8px #000000;
-    p {
-        padding: 20px;
-    }
+}
+.squarebox-text-container-two {
+    padding-top: 180px;
 }
 .squarebox-button {
     margin-top: 100px;
@@ -358,12 +383,6 @@ textarea::-webkit-input-placeholder {
     height: 450px;
     background-color: #5e5e5e;
 }
-.split-B {
-    float: left;
-    width: 35%;
-    height: 450px;
-    background-color: #222222;
-}
 .split-text-A {
     color: #ffffff;
     height: 450px;
@@ -372,17 +391,21 @@ textarea::-webkit-input-placeholder {
         padding-top: 180px;
     }
 }
-.split-text-B {
-    color: #ffffff;
+.split-B {
+    float: left;
+    width: 35%;
     height: 450px;
+    background-color: #222222;
+    color: #ffffff;
     p {
         font-size: 1.875em;
-        padding-top: 162px;
+        padding-top: 130px;
         padding-left: 30px;
         padding-right: 30px;
     }
 }
 .split-box-button {
+    margin-top: 70px;
     border: 2px solid #ffffff;
     border-radius: 4px;
     color: #ffffff; 
@@ -392,7 +415,7 @@ textarea::-webkit-input-placeholder {
     color: #222222;
     background-image: linear-gradient(to bottom, #ffffff 0%, #ffffff 100%);
 }
-// About Page Ends
+// Home Page Ends
 
 
 
@@ -562,7 +585,6 @@ textarea::-webkit-input-placeholder {
 .post-page {
     width: 100%;
     height: 100%;
-    padding-bottom: 30px;
 }
 .post-container {
     margin: 25px auto 0 auto;
@@ -615,12 +637,11 @@ textarea::-webkit-input-placeholder {
 // /_/ /_//_/\_,_/_/_/_/_.__/_//_/\_,_/_/_/ /_/   \_,_/\_, /\__/ 
 //                                                    /___/   
 .thumbnail-page {
-    margin: 15px auto 0 auto;
     width: 100%;
     height: 100%;
-    padding-bottom: 30px;
 }
 .thumbnail-page-container {
+    padding-top: 15px;
     width: 90%;
     margin: 0 auto;
 }
@@ -635,7 +656,7 @@ textarea::-webkit-input-placeholder {
     margin-bottom: 15px;
     background: #ffffff;
     border-radius: 6px;
-    border: 1px solid #d5d5d5;
+    border: 1px solid #cccccc;
     color: #555555;
     box-shadow: 0px 2px 4px -2px #222222;
 }
@@ -643,7 +664,7 @@ textarea::-webkit-input-placeholder {
     img {
         width: 100%;
         border-radius: 5px 5px 0px 0px;
-        box-shadow: 0px 1px 6px #aaaaaa;
+        box-shadow: 0px 2px 4px -1px #bbbbbb;
     } a {
         color: #555555;
     } a:hover {
@@ -657,6 +678,12 @@ textarea::-webkit-input-placeholder {
         padding-right: 10px;
     }
 }
+.thumbnail-post-content-p {
+    a {
+        color: #cd1713;
+        font-size: 0.8em;
+    }
+}
 .thumbnail-user-info {
     width: 100%;
     padding-top: 10px;
@@ -665,12 +692,12 @@ textarea::-webkit-input-placeholder {
 .user-info-box {
     margin: 0 auto;
     width: 90%;
-    border-top: 1px solid #d5d5d5;
+    border-top: 1px solid #cccccc;
     padding-top: 8px;
     img {
         float: left;
-        width: 35px;
-        height: 35px;
+        width: 37px;
+        height: 37px;
         padding-right: 5px;
         border-radius: 100%; 
     } p {
@@ -680,9 +707,9 @@ textarea::-webkit-input-placeholder {
         padding-bottom: 0px;
         padding-right: 0px;
     } a {
-        color: #cd1713;
+        color: #353535;
     } a:hover {
-        color: #000000;
+        color: #cd1713;
     } 
 }
 // Thumbnail Page Ends
@@ -698,7 +725,6 @@ textarea::-webkit-input-placeholder {
 .detail-page {
     width: 100%;
     height: 100%;
-    padding-bottom: 30px;
     a {
         color: #cd1713;
     }
@@ -769,17 +795,19 @@ textarea::-webkit-input-placeholder {
     } button {
         height: auto;
         width: auto;
-        padding: 5px;
+        padding: 5px 10px 5px 5px;
         margin-bottom: 8px;
         border-radius: 4px;
-        color: #ffffff;
-        border: 0px solid #ffffff;
-        background-image: linear-gradient(to bottom, #cd1713 0%, #ab1210 100%);
+        color: #222222;
+        border: 2px solid #222222;
+        background-image: linear-gradient(to bottom, #ffffff 0%, #ffffff 100%);
         a {
-            color: #ffffff;
+            color: #222222;
         }
     } button:hover {
-        background-image: linear-gradient(to bottom, #444444 0%, #222222 100%);
+        color: #ffffff;
+        border: 2px solid #ab1210;
+        background-image: linear-gradient(to bottom, #cd1713 0%, #ab1210 100%);
         a {
             color: #ffffff;
         }
@@ -798,20 +826,34 @@ textarea::-webkit-input-placeholder {
 .profile-page {
     width: 100%;
     height: 100%;
-    padding-bottom: 30px;
+}
+.profile-page-banner-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 360px;
+    box-shadow: 0px 0px 4px #555555;
 }
 .profile-page-container {
     width: 90%;
-    padding-top: 0px;
     margin: 15px auto 0 auto;
 }
 
 .profile-user-container-left {
     float: left;
+    position: absolute;
+    top: 240px;
     width: 22%;
-    padding-bottom: 10px;
-    a, h5, h3 {
+    a, h3 {
         color: #cd1713;
+    }
+}
+.profile-image-name-box {
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: 4px 4px 0px 0px;
+    h3 {
+        color: #ffffff;
+        text-align: center;
     }
 }
 .profile-user-container-left-box {
@@ -819,7 +861,8 @@ textarea::-webkit-input-placeholder {
     img {
         width: 100%;
         margin-bottom: 10px;
-        border-radius: 4px;
+        border-radius: 0px 0px 4px 4px;
+        box-shadow: 0px 2px 4px -2px #555555;
     }
 }
 .stat-buttons {
@@ -863,7 +906,7 @@ textarea::-webkit-input-placeholder {
     }
 }    
 .profile-user-container-right {
-    float: left;
+    float: right;
     width: 77%;
     padding-bottom: 10px;
     a {

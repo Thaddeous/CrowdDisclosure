@@ -3,31 +3,26 @@
 var AppRouter = Parse.Router.extend({
 
 	routes: {
-		""          : 	"home",
-		"about" 	: 	"about",
-		"signUp"    : 	"signUp",
-		"signIn"    : 	"signIn",
-		"password"  : 	"password",
-		"settings" 	: 	"settings",
-		"post" 		: 	"post",
-		"thumbnail" : 	"thumbnail",
-		"detail"    : 	"detail",
-		"profile" 	: 	"profile"
+		""          	: 	"home",
+		"signUp"    	: 	"signUp",
+		"signIn"    	: 	"signIn",
+		"password"  	: 	"password",
+		"settings" 		: 	"settings",
+		"post" 			: 	"post",
+		"thumbnail" 	: 	"thumbnail",
+		"detail/:id"    : 	"detail",
+		"profile" 		: 	"profile"
 	},
 
 	initialize: function() {
+
+		window.fetchedArticles = new Articles;
 	
 	},
 		home: function() {
 			$(".content-container").html("");
 			var homeView = new HomeView();
 			console.log("HomeView has loaded.");
-		},
-
-		about: function(){
-			$(".content-container").html("");
-			var aboutView = new AboutView();
-			console.log("AboutView has loaded.");
 		},
 
 		signUp: function(){
@@ -66,9 +61,30 @@ var AppRouter = Parse.Router.extend({
 			console.log("ThumbnailView has loaded.");
 		},
 
-		detail: function(){
-			$(".content-container").prepend("");
-			var detailView = new DetailView();
+		detail: function(id){
+			$(".content-container").html("");
+
+			var article = window.fetchedArticles.get(id);
+			console.log('article is ', article);
+
+
+			if (article) {
+				var detailView = new DetailView({model: article});
+			} else {
+				var query = new Parse.Query(Article);
+				query.get(id, {
+				  success: function(article) {
+				    // The object was retrieved successfully.
+				    var detailView = new DetailView({model: article});
+				  },
+				  error: function(object, error) {
+				    // The object was not retrieved successfully.
+				    // error is a Parse.Error with an error code and description.
+				    console.error('page not found!')
+				  }
+				});
+			}
+
 			console.log("DetailView has loaded.");
 		},
 

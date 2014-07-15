@@ -13,7 +13,7 @@
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700|Special+Elite|Patua+One' rel='stylesheet' type='text/css'>
-
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
         <!-- build:js scripts/vendor/modernizr.js -->
@@ -34,7 +34,6 @@
 -->
         <div class="main-header">
             <div class="main-header-left">
-                <a href="#about"><div class="header-link header-link-left">About</div></a>
                 <a href="#thumbnail"><div class="header-link header-link-left">Read</div></a>
                 <a href="#post"><div class="header-link header-link-left">Write</div></a>
             </div>
@@ -42,8 +41,15 @@
                 <a href="#"><div class="main-logo">Crowd<span>Disclosure</span></div></a>
             </div>
             <div class="main-header-right">
-                <a href="#signIn"><div class="header-link header-link-right">Sign In</div></a>
-                <a href="#signUp"><div class="header-link header-link-sign-up">Sign Up</div></a>
+                <div class="header-link-logged-in"><i class="fa fa-bars"></i>
+                    <a href="#profile"><div class="logged-in-menu-link"><b>Profile</b></div></a>
+                    <a href="#settings"><div class="logged-in-menu-link"><b>Settings</b></div></a>
+                    <a href="#"><div class="logged-in-menu-link sign-out-menu-link"><b>Sign Out</b></div></a>
+                </div>
+                <div class="header-link-logged-out">
+                    <a href="#signUp"><div class="header-link header-link-right-sign-up">Sign Up</div></a>
+                    <a href="#signIn"><div class="header-link header-link-right">Sign In</div></a>
+                </div>
             </div>
         </div>
         <div class="header-default-padding"></div>
@@ -58,7 +64,6 @@
 -->     
         <div class="content-container"></div>
         <div class="home-page"></div>
-        <div class="about-page"></div>
         <div class="sign-up-page"></div>
         <div class="sign-in-page"></div>
         <div class="password-page"></div>
@@ -102,40 +107,24 @@
         <script type="text/template" class="home-page-view-template">
             <div class="headerboard">
                 <div class="headerboard-message">
-                    <div class="headerboard-text"><strong>FOR THE WRITER.</strong></div>
-                    <div class="headerboard-text"><strong>FOR THE READER.</strong></div>
+                    <div class="headerboard-text"><strong>FOR THE WRITER</strong></div>
+                    <div class="headerboard-text"><strong>FOR THE READER</strong></div>
+                    <a href="#signUp"><div class="buttons headerboard-button">Sign Up</div></a>
+                    <p>Writing has never been so easy. Reading has never been so cool. ☃</p>
                 </div>
             </div>
-            <div class="bodybox-writer">
-                <p>Starting your writing career has never been easier.</p>
-                <a href="#signUp"><div class="buttons writer-button">Sign Up</div></a>
-            </div>
-            <script>
-                jQuery(".headerboard-text").fitText();
-            </script>
-        </script>
-<!--
-   ___   __             __    ___               
-  / _ | / /  ___  __ __/ /_  / _ \___ ____ ____ 
- / __ |/ _ \/ _ \/ // / __/ / ___/ _ `/ _ `/ -_)
-/_/ |_/_.__/\___/\_,_/\__/ /_/   \_,_/\_, /\__/ 
-                                     /___/
--->
-        <script type="text/template" class="about-page-view-template">
 
             <div class="bodybox bodybox-one">
-                <p>"I would describe</p>
+                <p>“ I would describe</p>
                 <p><span class="crowd">Crowd</span><span class="disclosure">Disclosure </span> as</p>
                 <p><img src="/images/pinterest.png">for readers &</p>
-                <p><img src="/images/linkedin1.png"> for writers."</p>
-                <h5>- Random Citizen</h5>
-                <div class="arrow">
-                    <img src="/images/down-arrow2.png">
-                </div>
+                <p><img src="/images/linkedin1.png"> for writers. <span>❤</span> it!”</p>
+                <h6>- John Doe, Citizen X</h6>
             </div>
+
             <div class="bodybox bodybox-two">
                 <div class="small">
-                    <p><span>- </span> WE BELIEVE <span> -</span></p>
+                    <p><span>⊱ </span> WE BELIEVE <span> ⊰</span></p>
                 </div>
                 <p>Writers need Readers <span>&</span> Readers need Writers<p>
             </div>
@@ -145,7 +134,7 @@
             <div class="squarebox">
                 <div class="squarebox-size">
                     <div class="dark-overlay">
-                        <div class="squarebox-text-container">Write. Gain Readers. Smile.</div>
+                        <div class="squarebox-text-container">Write. Gain Readers. Smile. ツ</div>
                         <a href="#post"><div class="buttons squarebox-button">Start Writing</div></a>
                     </div>
                 </div>
@@ -155,24 +144,34 @@
                 <div class="split-A">
                     <div class="split-box">
                         <div class="split-text-A">
-                            <p>Unsure of your skills?</p>
+                            <p>Unsure of your skills? ☞</p>
                         </div>
                     </div>
                 </div>
                 <div class="split-B">
-                    <div class="split-box">
-                        <div class="split-text-B">
-                            <p>Learn to write engaging material.</p>
-                            <div class="buttons split-box-button">Tutorials</div>
-                        </div>
+                    <p>Learn to write engaging material.</p>
+                    <div class="buttons split-box-button">Tutorials</div>
+                </div>
+            </div>
+
+            <div class="bodybox bodybox-four">
+                <p>Keep up with the content that matters most to you.</p>
+                <a href="#thumbnail"><div class="buttons bodybox-four-button">Start Reading</div></a>
+            </div>
+
+            <div class="squarebox">
+                <div class="squarebox-size">
+                    <div class="dark-overlay">
+                        <div class="squarebox-text-container squarebox-text-container-two">Will YOUR articles be read?</div>
                     </div>
                 </div>
             </div>
 
-            <div class="bodybox bodybox-four">Will YOUR articles be featured?</div>
-
-        </script>
-<!--  
+            <script>
+                jQuery(".headerboard-text").fitText();
+            </script>
+        </script> 
+<!--
    _____           __  __       ___               
   / __(_)__ ____  / / / /__    / _ \___ ____ ____ 
  _\ \/ / _ `/ _ \/ /_/ / _ \  / ___/ _ `/ _ `/ -_)
@@ -280,14 +279,16 @@
         <script type="text/template" class="post-page-view-template">
             <div class="post-container">
                 <h3>Upload a photo and begin writing.</h3>
-
                 <img src="http://wearableworldnews.com/wp-content/uploads/2013/10/placeholder_image1.png" width="100%">
                 <div class="post-file-upload-box"><input type="file" class="post-file-upload"></div>
-
                 <input class="post-title-input" type="text" placeholder="Title">
                 <textarea class="post-content-input" type="text" placeholder="Start Writing..."></textarea>
+                <textarea name="editor1" class="post-content-editor-input"></textarea>
                 <button><div class="post-page-button">Post</div></button>
             </div>
+            <script>
+            CKEDITOR.replace( 'editor1' );
+            </script>
         </script>
 <!--  
  ________              __             _ __  ___               
@@ -305,15 +306,15 @@
         <script type="text/template" class="thumbnail-page-view-article-view-template">
             <div class="thumbnail-post">
                 <div class="post-box">
-                    <img src="<%= postPicture._url %>" />
-                    <div class="thumbnail-post-title-button"><h3><a href=""><%= postTitle %></a></h3></div>
-                    <p><%= postContent %></p>
+                    <img src="<%= article.get('postPicture')._url %>" />
+                    <div class="thumbnail-post-title-button"><h3><a href="#detail/<%= article.id %>"><%= article.get('postTitle') %></a></h3></div>
+                    <p class="thumbnail-post-content-p"><%= _.first(article.get('postContent').split(' '), 30).join(' ') + '... ' %><a href="#detail/<%= article.id %>">read more</a></p>
                 </div>
                 <div class="thumbnail-user-info">
                     <div class="user-info-box">
                         <img src="images/girl.jpg" width="100%" />
                         <p><a href="">Thaddeous</a></p>
-                        <h6><a href="">Science & Technology</a></h6>
+                        <p><a href="">Science & Technology</a></p>
                     </div>
                 </div>
             </div>
@@ -329,34 +330,30 @@
             <div class="detail-article-container">
                 <div class="detail-article-box">
                     <h1>This is the really cool heading</h1>
-                    <img src="http://boncia.co/wp-content/uploads/2014/04/pictures-of-sharks.jpg" />
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. ed feugiat consecteturn pellentesque Nam ac elit risusac blandit dui. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat consecteturn pellentesque Nam ac elit risusac blandit dui. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.veniam, quis nostrud exercitation ullamco laboris nisi ut Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat consecteturn pellentesque Nam ac elit risusac blandit dui. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officiaididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
+                    <img src="<%= postPicture.url() %>" />
+                    <p><%= postContent %></p>
                     <div class="detail-profile-container">
                         <div class="detail-profile-box">
                             <h3>Author - <a href="">Thaddeous Maximus</a></h3>
                             <div class="detail-profile-box-stats">
                                 <button>
-                                    <p>44 <a href="">Articles Written</a></p> 
+                                    <p>0 <a href="">Articles Written</a></p> 
                                 </button>
                                 <button>
-                                    <p>2 <a href="">Articles Sold</a></p>
+                                    <p>0 <a href="">Articles Sold</a></p>
                                 </button>
                                 <button>
-                                    <p>5 <a href="">Articles Featured</a></p>
+                                    <p>0 <a href="">Articles Featured</a></p>
                                 </button>
                                 <button>
-                                    <p>30 <a href="">Articles Shared</a></p>
+                                    <p>0 <a href="">Articles Shared</a></p>
                                 </button>
                             </div>
                             <div class="detail-profile-box-image">
                                 <img src="http://www.cntraveler.com/daily-traveler/2014/02/please-stop-taking-these-instagram-pictures/_jcr_content/par/cn_contentwell/par-main/cn_colctrl/par-col2/cn_blogpost/cn_image.size.stop-taking-these-pictures.jpg" />
                             </div>
                             <div class="detail-profile-box-about">
-                                <p class="about-p"><span><b></b></span>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.
-                                </p>
+                                <p class="about-p"><span><b>About - </b></span> </p>
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -372,28 +369,31 @@
                                      /___/  
 -->
         <script type="text/template" class="profile-page-view-template">
+            <div class="profile-page-banner-container">
+                <img src="http://cdn.wonderfulengineering.com/wp-content/uploads/2013/12/hd-wallpaper-desktop.jpg" />
+            </div>
             <div class="profile-page-container">
-
                 <div class="profile-user-container-left">
                     <div class="profile-user-container-left-box">
-                        <h5><%= Parse.User.current().get('name') %></h5>
-                        <img src="<%= Parse.User.current().get('profilePicture') ? Parse.User.current().get('profilePicture').url() : 'http://www.wewillgather.co.uk/content/images/placeholder.jpg?width=298&height=298&quality=100&mode=crop&scale=both' %>" />
+
+                        <div class="profile-image-name-box"><h3><%= Parse.User.current().get('name') %></h3></div>
+
+                        <img src="<%= Parse.User.current().get('profilePicture') ? Parse.User.current().get('profilePicture').url() : 'http://www.wewillgather.co.uk/content/images/placeholder.jpg?width=298&height=298&quality=100&mode=crop&scale=both' %>"/>
 
                         <div class="stat-buttons">
                             <button>
-                                <p>44 <a href="">Articles Written</a></p>
+                                <p>0 <a href="">Articles Written</a></p>
                             </button>
                             <button>
-                                <p>2 <a href="">Articles Sold</a></p>
+                                <p>0 <a href="">Articles Sold</a></p>
                             </button>
                             <button>
-                                <p>5 <a href="">Articles Featured</a></p>
+                                <p>0 <a href="">Articles Featured</a></p>
                             </button>
                             <button>
-                                <p>30 <a href="">Articles Shared</a></p>
+                                <p>0 <a href="">Articles Shared</a></p>
                             </button>
                         </div>
-
                         <div class="contact-info">
                             <h6>Email: <%= Parse.User.current().get('contactEmail') %></h6>
                             <h6>Website: <a href=""><%= Parse.User.current().get('website') %></a></h6>
@@ -408,15 +408,13 @@
                 <div class="profile-user-container-right"></div>
             </div>
         </script>
-        
         <script type="text/template" class="profile-page-view-article-view-template">
             <div class="profile-user-container-right-box">
                 <a href=""><h1><%= postTitle %></h1></a>
                 <img src=" <%= postPicture._url %> " />
                 <p><%= postContent %></p>
             </div>
-        </script>
-                         
+        </script>   
 <!-- 
    ____        _      __    ______               __     __            ____        __
   / __/_______(_)__  / /_  /_  __/__ __ _  ___  / /__ _/ /____ ___   / __/__  ___/ /

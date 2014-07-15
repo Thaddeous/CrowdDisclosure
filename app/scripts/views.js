@@ -24,31 +24,6 @@ var HomeView = Parse.View.extend({
 
 
 
-//    ___   __             __    _   ___           
-//   / _ | / /  ___  __ __/ /_  | | / (_)__ _    __
-//  / __ |/ _ \/ _ \/ // / __/  | |/ / / -_) |/|/ /
-// /_/ |_/_.__/\___/\_,_/\__/   |___/_/\__/|__,__/
-//
-var AboutView = Parse.View.extend({
-	className: "about-page",
-	template: _.template($(".about-page-view-template").text()),
-	events: {
-	},
-
-	initialize: function(){
-		$(".content-container").html(this.el);
-		this.render();
-	},
-
-	render: function(){
-	    this.$el.html(this.template());
-	    return this;
-	},
-
-});
-
-
-
 //    _____           __  __       _   ___           
 //   / __(_)__ ____  / / / /__    | | / (_)__ _    __
 //  _\ \/ / _ `/ _ \/ /_/ / _ \   | |/ / / -_) |/|/ /
@@ -268,11 +243,12 @@ var PostView = Parse.View.extend({
 		var article = new Article();
 		article.set("postTitle", $(".post-title-input").val() );
 		article.set("postContent", $(".post-content-input").val() );
+		article.set("postContentEditor", $(".post-content-editor-input").val() );
 		article.set("user", user);
-		article.save(null, { 
+		article.save(null, {
 			success: function(post) {
 
-			} 
+			}
 		});
 		
 		var fileUploadControl = $(".post-file-upload")[0];
@@ -341,17 +317,13 @@ var ThumbnailView = Parse.View.extend({
 			router.navigate("#detail", {trigger: true});
 		});
 
-		query.find({
-			success: function(articles) {
-				articles.forEach(function(article) {
-					console.log(article.attributes);
-	    			$('.thumbnail-columns').prepend(renderedTemplate(article.attributes) );		
-				})
-			},
-			error: function (error) {
-				console.log(error)
-			}
-		})
+		window.fetchedArticles.fetch().done(function(){
+			fetchedArticles.each(function(article) {
+				console.log(article);
+    			$('.thumbnail-columns').prepend(renderedTemplate({article: article}) );
+			});
+		}) 
+
 	    return this;
 	},
 
@@ -377,7 +349,7 @@ var DetailView = Parse.View.extend({
 	},
 
 	render: function(){
-	    this.$el.html(this.template());
+	    this.$el.html(this.template(this.model.attributes));
 	    return this;
 	},
 
@@ -415,13 +387,13 @@ var ProfileView = Parse.View.extend({
 			success: function(articles) {
 				articles.forEach(function(article) {
 					console.log(article.attributes);
-	    			$('.profile-user-container-right').prepend(renderedTemplate(article.attributes) );		
-				})
+	    			$('.profile-user-container-right').prepend(renderedTemplate(article.attributes) );
+				});
 			},
 			error: function (error) {
-				console.log(error)
+				console.log(error);
 			}
-		})
+		});
 	    return this;
 	},
 
