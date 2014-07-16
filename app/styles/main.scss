@@ -159,18 +159,6 @@ textarea::-webkit-input-placeholder {
     float: right;
     margin-right: 10px;
 }
-.header-link-right-sign-up {
-    float: right;
-    margin-top: 8px;
-    margin-right: 15px;
-    color: #ffffff;
-    border: 2px solid #ab1210; 
-    background-image: linear-gradient(to bottom, #cd1713 0%, #ab1210 100%);
-}
-.header-link-right-sign-up:hover {
-    border: 2px solid #333333; 
-    background-image: linear-gradient(to bottom, #444444 0%, #222222 100%);
-}
 .header-link-logged-in {
     float: right;
 }
@@ -674,9 +662,9 @@ textarea::-webkit-input-placeholder {
     margin: 0 auto;
 }
 .thumbnail-columns {
+    column-fill: auto;
     column-count: 5;
     column-gap: 15px;
-    column-fill: auto;
 }
 .thumbnail-post {
     column-break-inside: avoid;
@@ -953,7 +941,7 @@ textarea::-webkit-input-placeholder {
     h1 {
         padding-top: 5px;
         padding-bottom: 5px;
-    } h1:hover {
+    } a:hover {
         color: #cd1713;
     } img {
         width: 100%;

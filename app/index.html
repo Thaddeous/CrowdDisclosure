@@ -40,17 +40,7 @@
                 <a href="#"><div class="main-logo">Crowd<span>Disclosure</span></div></a>
             </div>
             <div class="main-header-right">
-                <div class="header-link-logged-in"><i class="fa fa-bars"></i>
-                    <a href="#signIn"><div class="logged-in-menu-link"><i class="fa fa-pencil"></i><b>Sign In</b></div></a>
-                    <a href="#signUp"><div class="logged-in-menu-link"><i class="fa fa-book"></i><b>Sign Up</b></div></a>
-                    <a href="#profile"><div class="logged-in-menu-link"><i class="fa fa-user"></i><b>Profile</b></div></a>
-                    <a href="#settings"><div class="logged-in-menu-link"><i class="fa fa-cog"></i><b>Settings</b></div></a>
-                    <a href="#"><div class="logged-in-menu-link sign-out-menu-link"><i class="fa fa-meh-o"></i><b>Sign Out</b></div></a>
-                </div>
-                <!-- <div class="header-link-logged-out">
-                    <a href="#signUp"><div class="header-link header-link-right-sign-up">Sign Up</div></a>
-                    <a href="#signIn"><div class="header-link header-link-right">Sign In</div></a>
-                </div> -->
+                <div class="header-link-logged-in"></div>
             </div>
         </div>
         <div class="header-default-padding"></div>
@@ -80,8 +70,8 @@
 /_/  \___/\___/\__/\__/_/  
 -->                        
         <div class="clear"></div>
-        <div class="footer">
-            <!-- <div class="footer-container">
+        <!-- <div class="footer">
+            <div class="footer-container">
                 <div class="footer-menu-box">
                     <div class="menu-left">
                         <a href=""><ul>©2014 CrowdDisclosure</ul></a>
@@ -91,20 +81,39 @@
                         <a href=""><ul>Meet the Team</ul></a>
                     </div>
                 </div>
-            </div> -->
-        </div>
+            </div>
+        </div> -->
 <!--
   _      __    __     ___                  ____        _      __    ______               __     __        
  | | /| / /__ / /    / _ \___ ____ ____   / __/_______(_)__  / /_  /_  __/__ __ _  ___  / /__ _/ /____ ___
  | |/ |/ / -_) _ \  / ___/ _ `/ _ `/ -_) _\ \/ __/ __/ / _ \/ __/   / / / -_)  ' \/ _ \/ / _ `/ __/ -_|_-<
  |__/|__/\__/_.__/ /_/   \_,_/\_, /\__/ /___/\__/_/ /_/ .__/\__/   /_/  \__/_/_/_/ .__/_/\_,_/\__/\__/___/
                              /___/                   /_/                        /_/ 
+   __ __            __          ___                   __              
+  / // /__ ___ ____/ /__ ____  / _ \_______  ___  ___/ /__ _    _____ 
+ / _  / -_) _ `/ _  / -_) __/ / // / __/ _ \/ _ \/ _  / _ \ |/|/ / _ \
+/_//_/\__/\_,_/\_,_/\__/_/   /____/_/  \___/ .__/\_,_/\___/__,__/_//_/
+                                          /_/                         
+-->
+        <script type="text/template" class="sign-up-header-view-template">
+            <i class="fa fa-bars"></i>
+            <a href="#signIn"><div class="logged-in-menu-link"><i class="fa fa-pencil"></i><b>Sign In</b></div></a>
+            <a href="#signUp"><div class="logged-in-menu-link"><i class="fa fa-book"></i><b>Sign Up</b></div></a>
+        </script>
+        
+        <script type="text/template" class="signed-in-header-view-template">
+            <i class="fa fa-bars"></i>
+            <a href="#profile"><div class="logged-in-menu-link"><i class="fa fa-user"></i><b>Profile</b></div></a>
+            <a href="#settings"><div class="logged-in-menu-link"><i class="fa fa-cog"></i><b>Settings</b></div></a>
+            <a href="#"><div class="logged-in-menu-link sign-out-menu-link"><i class="fa fa-meh-o"></i><b>Sign Out</b></div></a>
+        </script>
+<!--
    __ __                 ___               
   / // /__  __ _  ___   / _ \___ ____ ____ 
  / _  / _ \/  ' \/ -_) / ___/ _ `/ _ `/ -_)
 /_//_/\___/_/_/_/\__/ /_/   \_,_/\_, /\__/ 
                                 /___/
--->
+-->        
         <script type="text/template" class="home-page-view-template">
             <div class="headerboard">
                 <div class="headerboard-message">
@@ -185,6 +194,7 @@
 /___/_/\_, /_//_/\____/ .__/ /_/   \_,_/\_, /\__/ 
       /___/          /_/               /___/  
 -->   
+
         <script type="text/template" class="sign-up-page-view-template">
             <div class="sign-up-page-container">
                 <div class="sign-up-page-box">
@@ -342,7 +352,7 @@
                     <p><%= postContent %></p>
                     <div class="detail-profile-container">
                         <div class="detail-profile-box">
-                            <h3>Author - <a href=""></a></h3>
+                            <h3>Author - <a href=""><%= this.model.attributes.user.attributes.name %></a></h3>
                             <div class="detail-profile-box-stats">
                                 <button>
                                     <p>0 <a href="">Articles Written</a></p> 
@@ -358,10 +368,10 @@
                                 </button>
                             </div>
                             <div class="detail-profile-box-image">
-                                <img src="http://www.cntraveler.com/daily-traveler/2014/02/please-stop-taking-these-instagram-pictures/_jcr_content/par/cn_contentwell/par-main/cn_colctrl/par-col2/cn_blogpost/cn_image.size.stop-taking-these-pictures.jpg" />
+                                <img src="<%= this.model.attributes.user.attributes.profilePicture._url %>" />
                             </div>
                             <div class="detail-profile-box-about">
-                                <p class="about-p"><span><b>About - </b></span> </p>
+                                <p class="about-p"><span><b>About - </b> <%= this.model.attributes.user.attributes.about %></span> </p>
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -418,7 +428,7 @@
 
         <script type="text/template" class="profile-page-article-template">
             <div class="profile-user-container-right-box">
-                <div class="profile-article-name"><a href=""><h1><%= post.get('postTitle') %></h1></a></div>
+                <div class="profile-article-name"><h1><a href="#detail/<%= post.id %>"><%= post.get('postTitle') %></a></h1></div>
                 <% if (post.get('postPicture')) { %>
                     <img src=" <%= post.get('postPicture').url() %> " />
                 <% } %>

@@ -329,7 +329,7 @@ var ThumbnailView = Parse.View.extend({
 	render: function(){
 		this.$el.html(this.template());
 
-		var renderedTemplate = _.template($('.thumbnail-page-view-article-view-template').text());
+		var renderedTemplate = _.template($(".thumbnail-page-view-article-view-template").text());
 		var Article = Parse.Object.extend("Article");
 		var query = new Parse.Query(Article);
 		var that = this;
@@ -341,14 +341,14 @@ var ThumbnailView = Parse.View.extend({
 		query.include('user');
 
 		query.find().done(function(articles){
-
+			query.descending("createdAt");
 			window.fetchedArticles.reset(articles);
 
 			window.fetchedArticles.each(function(article) {
 				console.log(article);
-    			$('.thumbnail-columns').prepend(renderedTemplate({article: article}) );    			
+    			$(".thumbnail-columns").prepend(renderedTemplate({article: article}) );			
 			});
-		})
+		});
 
 	    return this;
 	},
@@ -382,6 +382,7 @@ var DetailView = Parse.View.extend({
 });
 
 
+
 //    ___           ____ __      _   ___           
 //   / _ \_______  / _(_) /__   | | / (_)__ _    __
 //  / ___/ __/ _ \/ _/ / / -_)  | |/ / / -_) |/|/ /
@@ -404,23 +405,29 @@ var ProfileView = Parse.View.extend({
 		this.$el.html(this.template());
 
 		var user = Parse.User.current();
-		var template = _.template($('.profile-page-article-template').text());
+		var template = _.template($(".profile-page-article-template").text());
 		var Article = Parse.Object.extend("Article");
 		var query = new Parse.Query(Article);
 		var that = this;
-		query.equalTo("user", user);
 
+		$(".profile-article-name").click(function() {
+			router.navigate("#detail", {trigger: true});
+		});
+
+		query.equalTo("user", user);
+		query.ascending("createdAt");
 		query.find({
 			success: function(articles) {
 				articles.forEach(function(article) {
 					console.log(article.attributes);
-	    			$('.profile-user-container-right').prepend(template({post: article}) );
+	    			$(".profile-user-container-right").prepend(template({post: article}) );
 				});
 			},
 			error: function (error) {
 				console.log(error);
 			}
 		});
+
 	    return this;
 	},
 });
