@@ -174,25 +174,24 @@ textarea::-webkit-input-placeholder {
 .header-link-logged-in {
     float: right;
 }
-.header-link-logged-out {
-
-}
 .fa {
     margin-right: 20px;
 }
 .logged-in-menu-link {
-    display: none
+    display: none;
 }
 .header-link-logged-in:hover {
     margin-top: 1px;
-    height: 180px;
-    width: 120px;
+    height: auto;
+    width: 150px;
     .logged-in-menu-link {
         display: block;
         text-align: left;
-        padding-left: 8px;
-        border: 1px solid #cccccc;
+        padding-left: 10px;
         background-color: rgba(255, 255, 255, 0.99);
+        border: 1px solid #cccccc;
+    } .sign-out-menu-link {
+        border-radius: 0px 0px 0px 4px;
     }
 }
 .logged-in-menu-link .fa {
@@ -302,7 +301,7 @@ textarea::-webkit-input-placeholder {
     height: 450px;
     clear: both;
     p {
-        padding-top: 160px;
+        padding-top: 200px;
         margin-left: 30px;
         margin-right: 30px;
         font-size: 1.875em;
@@ -357,8 +356,8 @@ textarea::-webkit-input-placeholder {
 }
 .squarebox-button {
     margin-top: 105px;
-    margin-right: 10px;
-    margin-left: 10px;
+    margin-right: 25px;
+    margin-left: 25px;
     color: #ffffff; 
     border: 2px solid #ffffff; 
     border-radius: 4px;
@@ -608,7 +607,9 @@ textarea::-webkit-input-placeholder {
     height: 100%;
 }
 .post-container {
-    margin: 25px auto 0 auto;
+    margin: 0 auto;
+    margin-top: 25px;
+    margin-bottom: 300px;
     width: 50%;
     padding: 10px 25px;
     border-radius: 4px;
@@ -621,6 +622,9 @@ textarea::-webkit-input-placeholder {
     } img {
         border-radius: 4px;
         margin-bottom: 5px;
+    } span {
+        padding-left: 4px;
+        font-size: 0.9em;
     }
 }
 .post-file-upload-box{
@@ -632,23 +636,26 @@ textarea::-webkit-input-placeholder {
 .post-title-input {
     width: 98%;
     font-size: 0.900em;
+    border-radius: 0px;
+    border-top: 0px solid #ffffff;
+    border-left: 0px solid #ffffff;
+    border-right: 0px solid #ffffff;
+    border-bottom: 1px solid #aaaaaa;
 }
 .post-content-input {
     font-size: 0.900em;
     width: 98%;
     max-width: 98%;
-    height: 200px;
+    min-height: 400px;
     margin-top: 5px;
     margin-bottom: 5px;
     padding-top: 6px;
     padding-left: 6px;
     padding-right: 6px;
     line-height: 17px;
-    border: 1px solid #aaaaaa;
-    border-radius: 4px;
+    border: 0px solid #aaaaaa;
 }
 // Write Post Page Ends
-
 
 
 
@@ -873,7 +880,8 @@ textarea::-webkit-input-placeholder {
 .profile-image-name-box {
     background-color: rgba(0, 0, 0, 0.55);
     border-radius: 4px 4px 0px 0px;
-    h3 {
+    p {
+        font-size: 1.3em;
         padding-top: 3px;
         padding-bottom: 4px;
         color: #ffffff;
@@ -1112,6 +1120,61 @@ textarea::-webkit-input-placeholder {
             padding-top: 100px;
         }
     }
+    .profile-page-banner-container {
+        position: inherit;
+    }
+    .profile-user-container-left {
+        position: relative;
+        width: 100%;
+        top: -160px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #bbbbbb;
+    }
+    .profile-user-container-left-box {
+        padding-right: 0%;
+        border-right: 0px solid #e5e5e5;
+        .profile-image-name-box {
+            width: 55%;
+        }
+        img {
+            width: 55%;
+            float: left;
+            margin-bottom: 30px;
+        }
+    }
+    .stat-buttons {
+        p {
+            font-size: 0.8em;
+        } button {
+            width: 37%;
+            margin-top: 10px;
+            margin-bottom: 0px;
+            margin-left: 10px;
+            float: right; 
+        }
+    }
+    .about-the-author {
+        border-top: 1px solid #bbbbbb;
+        padding-top: 10px;
+        h3 {
+            padding-top: 10px;
+        } p {
+            margin-bottom: 15px;
+            padding-bottom: 0px;
+            clear: both;
+        }
+    }  
+    .profile-user-container-right {
+        width: 100%;
+        height: auto;
+        margin-top: -140px;
+    }
+    .profile-user-container-right-box {
+        width: 95%;
+        p {
+            padding-bottom: 40px;
+        }
+    }
 }
 // 905px Media Query Ends
 // ======================
@@ -1166,14 +1229,6 @@ textarea::-webkit-input-placeholder {
         text-align: left;
         margin-left: 10px;
     }
-    .stat-buttons {
-        p {
-            font-size: 0.8em;
-        } button {
-            float: right;
-            width: 120px;  
-        }
-    }
 }
 // 700px Media Query Ends
 // =======================
@@ -1193,55 +1248,8 @@ textarea::-webkit-input-placeholder {
             margin-right: 30px;
         }
     }
-    .profile-page-banner-container {
-        position: none;
-    }
     .detail-article-container {
         width: 100%;
-    }
-    .profile-user-container-left {
-        position: none;
-        float: none;
-        width: 90%;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #bbbbbb;
-    }
-    .profile-user-container-left-box {
-        padding-right: 0%;
-        border-right: 0px solid #e5e5e5;
-        .profile-image-name-box {
-            width: 59%;
-        }
-        img {
-            width: 59%;
-            float: left;
-        } button {
-            margin-left: 5px;
-            float: left;
-        }
-    }
-    .about-the-author {
-        border-top: 1px solid #bbbbbb;
-        padding-top: 10px;
-        h3 {
-            padding-top: 10px;
-        } p {
-            margin-bottom: 15px;
-            padding-bottom: 0px;
-            clear: both;
-        }
-    }  
-    .profile-user-container-right {
-        float: none;
-        width: 100%;
-        height: auto;
-        margin-top: 250px;
-    }
-    .profile-user-container-right-box {
-        width: 95%;
-        p {
-            padding-bottom: 40px;
-        }
     }
 }
 
@@ -1286,9 +1294,6 @@ textarea::-webkit-input-placeholder {
     .split-box-button {
         width: 90px;
     }
-    .profile-user-container-right {
-        margin-top: 220px;
-    }
 }
 // 575px Media Query Ends
 // =======================
@@ -1307,9 +1312,6 @@ textarea::-webkit-input-placeholder {
     }
     .thumbnail-columns {
         column-count: 1;
-    }
-    .profile-user-container-right {
-        margin-top: 190px;
     }
 }
 // 500px Media Query Ends

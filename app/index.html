@@ -136,6 +136,7 @@
                 <div class="squarebox-size">
                     <div class="dark-overlay">
                         <div class="squarebox-text-container">Write. Gain Readers. Smile. ツ</div>
+                        <a href="#thumbnail"><div class="buttons squarebox-button">Start Reading</div></a>
                         <a href="#post"><div class="buttons squarebox-button">Start Writing</div></a>
                     </div>
                 </div>
@@ -162,7 +163,6 @@
 
             <div class="bodybox bodybox-four">
                 <p>Keep up with the content that matters most to you.</p>
-                <a href="#thumbnail"><div class="buttons bodybox-four-button">Start Reading</div></a>
             </div>
 
             <div class="squarebox">
@@ -188,7 +188,7 @@
         <script type="text/template" class="sign-up-page-view-template">
             <div class="sign-up-page-container">
                 <div class="sign-up-page-box">
-                    <h3>Account Registration</h3>
+                    <h3>"The time is always now."</h3>
                     <input class="sign-up-username-input" type="text" placeholder="Username">
                     <input class="sign-up-password-input" type="password" placeholder="Password">
                     <input class="sign-up-email-input" type="email" placeholder="Email">
@@ -206,7 +206,7 @@
         <script type="text/template" class="sign-in-page-view-template">
             <div class="sign-in-page-container">
                 <div class="sign-in-page-box">
-                    <h3>Welcome Back!</h3>
+                    <h3>"A jug fills drop by drop."</h3>
                     <input class="sign-in-username-input" type="text" placeholder="Username">
                     <input class="sign-in-password-input" type="password" placeholder="Password">
                     <button><div class="sign-in-button">Sign In</div></button>
@@ -290,11 +290,11 @@
 -->   
         <script type="text/template" class="post-page-view-template">
             <div class="post-container">
-                <h3>Upload a photo and begin writing.</h3>
-                <img src="http://wearableworldnews.com/wp-content/uploads/2013/10/placeholder_image1.png" width="100%">
+                <h3>"If not us, who? If not now, when?"</h3>
+                <span>Upload an image to feature.</span>
                 <div class="post-file-upload-box"><input type="file" class="post-file-upload"></div>
-                <input class="post-title-input" type="text" placeholder="Title">
-                <textarea class="post-content-input" type="text" placeholder="Start Writing..."></textarea>
+                <input class="post-title-input" type="text" placeholder="Write the Title...">
+                <textarea class="post-content-input" type="text" placeholder="Write the Content..."></textarea>
                 <button><div class="post-page-button">Post</div></button>
             </div>
         </script>
@@ -337,7 +337,7 @@
         <script type="text/template" class="detail-page-view-template">
             <div class="detail-article-container">
                 <div class="detail-article-box">
-                    <h1>This is the really cool heading</h1>
+                    <h1><%= postTitle %></h1>
                     <img src="<%= postPicture.url() %>" />
                     <p><%= postContent %></p>
                     <div class="detail-profile-container">
@@ -383,7 +383,7 @@
             <div class="profile-page-container">
                 <div class="profile-user-container-left">
                     <div class="profile-user-container-left-box">
-                        <div class="profile-image-name-box"><h3><%= Parse.User.current().get('name') ? Parse.User.current().get('name') : 'Your Name'  %></h3></div>
+                        <div class="profile-image-name-box"><p><%= Parse.User.current().get('name') ? Parse.User.current().get('name') : 'Your Name'  %></p></div>
 
                         <img src="<%= Parse.User.current().get('profilePicture') ? Parse.User.current().get('profilePicture').url() : 'http://www.wewillgather.co.uk/content/images/placeholder.jpg?width=298&height=298&quality=100&mode=crop&scale=both' %>"/>
 
