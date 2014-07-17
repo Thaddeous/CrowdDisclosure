@@ -338,6 +338,10 @@ var ThumbnailView = Parse.View.extend({
 			router.navigate("#detail", {trigger: true});
 		});
 
+		$(".author-article-name").click(function() {
+			router.navigate("#author", {trigger: true});
+		});
+
 		query.include('user');
 
 		query.find().done(function(articles){
@@ -376,7 +380,13 @@ var DetailView = Parse.View.extend({
 
 	render: function(){
 	    this.$el.html(this.template(this.model.attributes));
+	    
+	    $(".author-article-name").click(function() {
+			router.navigate("#author", {trigger: true});
+		});
+
 	    return this;
+
 	},
 
 });
@@ -430,4 +440,57 @@ var ProfileView = Parse.View.extend({
 
 	    return this;
 	},
+});
+
+
+
+
+//    ___       __  __              _   ___           
+//   / _ |__ __/ /_/ /  ___  ____  | | / (_)__ _    __
+//  / __ / // / __/ _ \/ _ \/ __/  | |/ / / -_) |/|/ /
+// /_/ |_\_,_/\__/_//_/\___/_/     |___/_/\__/|__,__/ 
+//                         
+var AuthorView = Parse.View.extend({
+	className: "author-page",
+	template: _.template($(".author-page-view-template").text()),
+	events: {
+
+	},
+
+	initialize: function(){
+		$(".content-container").html(this.el);
+		this.render();
+	},
+
+	render: function(){
+	    this.$el.html(this.template(this.model.attributes));
+
+
+		var template = _.template($(".author-page-article-template").text());
+		var Article = Parse.Object.extend("Article");
+		var query = new Parse.Query(Article);
+		var that = this;
+
+		$(".author-article-name").click(function() {
+			router.navigate("#detail", {trigger: true});
+		});
+
+		query.include("user");
+		query.ascending("createdAt");
+		query.find({
+			success: function(articles) {
+				articles.forEach(function(article) {
+					console.log(article.attributes);
+	    			$(".author-user-container-right").prepend(template({post: article}) );
+				});
+			},
+			error: function (error) {
+				console.log(error);
+			}
+		});
+
+
+	    return this;
+	},
+
 });

@@ -318,11 +318,11 @@ textarea::-webkit-input-placeholder {
     overflow: hidden;
     width: 100%;
     height: 450px;
-    background: url('http://inkcreaimpresion.com/wp-content/uploads/2012/09/hipster-wallpapers-for-apple-16.jpeg');
+    background: url("http://inkcreaimpresion.com/wp-content/uploads/2012/09/hipster-wallpapers-for-apple-16.jpeg");
     background-size: cover;
 }
 .squarebox-size-two {
-    background: url('http://www.yewty.com/wp-content/uploads/2014/06/Venice-Beach1.jpg');
+    background: url("http://www.yewty.com/wp-content/uploads/2014/06/Venice-Beach1.jpg");
     background-size: cover;
 }
 .squarebox-size:hover {
@@ -715,6 +715,7 @@ textarea::-webkit-input-placeholder {
         width: 37px;
         height: 37px;
         margin-right: 10px;
+        margin-bottom: 6px;
         border-radius: 100%; 
     } p {
         font-size: 14px;
@@ -885,7 +886,7 @@ textarea::-webkit-input-placeholder {
         box-shadow: 0px 2px 4px -2px #555555;
     }
 }
-.stat-buttons {
+.profile-stat-buttons {
     p {
         font-size: 0.9em;
     } button {
@@ -909,14 +910,14 @@ textarea::-webkit-input-placeholder {
         }
     }
 }
-.contact-info {
+.profile-contact-info {
     border-top: 1px solid #bbbbbb;
     clear: both;
     width: 100%;
     padding-top: 10px;
     margin-bottom: 10px;
 }
-.about-the-author {
+.profile-about-the-author {
     border-top: 1px solid #bbbbbb;
     padding-top: 10px;
     p {
@@ -955,6 +956,141 @@ textarea::-webkit-input-placeholder {
     }
 }
 // Profile Page Ends
+
+
+
+
+//    ___       __  __              ___               
+//   / _ |__ __/ /_/ /  ___  ____  / _ \___ ____ ____ 
+//  / __ / // / __/ _ \/ _ \/ __/ / ___/ _ `/ _ `/ -_)
+// /_/ |_\_,_/\__/_//_/\___/_/   /_/   \_,_/\_, /\__/ 
+//                                         /___/  
+.author-page {
+    width: 100%;
+    height: 100%;
+}
+.author-page-banner-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 360px;
+}
+.author-page-container {
+    width: 90%;
+    margin: 15px auto 0 auto;
+}
+
+.author-user-container-left {
+    float: left;
+    position: absolute;
+    top: 240px;
+    width: 22%;
+    a, h3 {
+        color: #cd1713;
+    }
+}
+.author-image-name-box {
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: 4px 4px 0px 0px;
+    p {
+        font-size: 1.3em;
+        padding-top: 3px;
+        padding-bottom: 4px;
+        color: #ffffff;
+        text-align: center;
+    }
+}
+.author-user-container-left-box {
+    padding-right: 5%;
+    img {
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 0px 0px 4px 4px;
+        box-shadow: 0px 2px 4px -2px #555555;
+    }
+}
+.author-stat-buttons {
+    p {
+        font-size: 0.9em;
+    } button {
+        float: left;
+        height: auto;
+        padding: 5px;
+        margin-bottom: 8px;
+        margin-right: 8px;
+        border-radius: 4px;
+        color: #222222;
+        border: 2px solid #222222;
+        a {
+            color: #222222;
+        }
+    } button:hover {
+        color: #ffffff;
+        border: 2px solid #ab1210;
+        background-image: linear-gradient(to bottom, #cd1713 0%, #ab1210 100%);
+        a {
+            color: #ffffff;
+        }
+    }
+}
+.author-contact-info {
+    border-top: 1px solid #bbbbbb;
+    clear: both;
+    width: 100%;
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+.author-about-the-author {
+    border-top: 1px solid #bbbbbb;
+    padding-top: 10px;
+    p {
+        font-size: 0.8em;
+        margin-bottom: 15px;
+        padding-bottom: 5px;
+    }
+}    
+.author-user-container-right {
+    float: right;
+    width: 77%;
+    padding-bottom: 10px;
+    a {
+        color: #333333;
+    }
+}
+.author-user-container-right-box {
+    width: 60%;
+    margin: 0 auto;
+    padding-left: 2%;
+    padding-right: 2%;
+    h1 {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    } a:hover {
+        color: #cd1713;
+    } img {
+        width: 100%;
+        margin-bottom: 8px;
+        border-radius: 4px;
+    } p {
+        line-height: 1.5;
+        padding-left: 1px;
+        padding-bottom: 50px;
+        border-bottom: 1px solid #bbbbbb;
+    }
+}
+// Author Page Ends
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1130,7 +1266,7 @@ textarea::-webkit-input-placeholder {
             margin-bottom: 30px;
         }
     }
-    .stat-buttons {
+    .profile-stat-buttons {
         p {
             font-size: 0.8em;
         } button {
@@ -1141,7 +1277,7 @@ textarea::-webkit-input-placeholder {
             float: right; 
         }
     }
-    .about-the-author {
+    .profile-about-the-author {
         border-top: 1px solid #bbbbbb;
         padding-top: 10px;
         h3 {
@@ -1158,6 +1294,61 @@ textarea::-webkit-input-placeholder {
         margin-top: -140px;
     }
     .profile-user-container-right-box {
+        width: 95%;
+        p {
+            padding-bottom: 40px;
+        }
+    }
+    .author-page-banner-container {
+        position: inherit;
+    }
+    .author-user-container-left {
+        position: relative;
+        width: 100%;
+        top: -160px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #bbbbbb;
+    }
+    .author-user-container-left-box {
+        padding-right: 0%;
+        border-right: 0px solid #e5e5e5;
+        .author-image-name-box {
+            width: 55%;
+        }
+        img {
+            width: 55%;
+            float: left;
+            margin-bottom: 30px;
+        }
+    }
+    .author-stat-buttons {
+        p {
+            font-size: 0.8em;
+        } button {
+            width: 37%;
+            margin-top: 10px;
+            margin-bottom: 0px;
+            margin-left: 10px;
+            float: right; 
+        }
+    }
+    .author-about-the-author {
+        border-top: 1px solid #bbbbbb;
+        padding-top: 10px;
+        h3 {
+            padding-top: 10px;
+        } p {
+            margin-bottom: 15px;
+            padding-bottom: 0px;
+            clear: both;
+        }
+    }  
+    .author-user-container-right {
+        width: 100%;
+        height: auto;
+        margin-top: -140px;
+    }
+    .author-user-container-right-box {
         width: 95%;
         p {
             padding-bottom: 40px;

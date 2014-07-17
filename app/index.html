@@ -12,7 +12,7 @@
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700|Special+Elite|Patua+One' rel='stylesheet' type='text/css'>
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700|Special+Elite|Patua+One" rel="stylesheet" type="text/css">
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
@@ -34,7 +34,7 @@
         <div class="main-header">
             <div class="main-header-left">
                 <a href="#thumbnail"><div class="header-link header-link-left">Read</div></a>
-                <a href="#post"><div class="header-link header-link-left">Write</div></a>
+                <div class="write-header-view"></div>
             </div>
             <div class="main-header-center">
                 <a href="#"><div class="main-logo">Crowd<span>Disclosure</span></div></a>
@@ -63,6 +63,7 @@
         <div class="thumbnail-page"></div>
         <div class="detail-page"></div>
         <div class="profile-page"></div>
+        <div class="author-page"></div>
 <!--
    ____          __         
   / __/__  ___  / /____ ____
@@ -106,6 +107,9 @@
             <a href="#profile"><div class="logged-in-menu-link"><i class="fa fa-user"></i><b>Profile</b></div></a>
             <a href="#settings"><div class="logged-in-menu-link"><i class="fa fa-cog"></i><b>Settings</b></div></a>
             <a href="#"><div class="logged-in-menu-link sign-out-menu-link"><i class="fa fa-meh-o"></i><b>Sign Out</b></div></a>
+        </script>
+        <script type="text/template" class="write-header-view-template">
+            <a href="#post"><div class="header-link header-link-left">Write</div></a>
         </script>
 <!--
    __ __                 ___               
@@ -253,23 +257,23 @@
                     <h3>Account Settings</h3>
 
                     <span>Banner Picture:</span>
-                    <img src="<%= Parse.User.current().get('bannerPicture') ? Parse.User.current().get('bannerPicture').url() : 'http://www.comedyweb.com/img/placeholder.png' %>" width="100%">
+                    <img src="<%= Parse.User.current().get("bannerPicture") ? Parse.User.current().get("bannerPicture").url() : 'http://www.comedyweb.com/img/placeholder.png' %>" width="100%">
                     <div class="profile-banner-file-upload-box"><input type="file" class="profile-banner-file-upload"></div>
 
                     <span>Profile Picture:</span>
-                    <img src="<%= Parse.User.current().get('profilePicture') ? Parse.User.current().get('profilePicture').url() : 'http://www.comedyweb.com/img/placeholder.png' %>" width="100%">
+                    <img src="<%= Parse.User.current().get("profilePicture") ? Parse.User.current().get("profilePicture").url() : 'http://www.comedyweb.com/img/placeholder.png' %>" width="100%">
                     <div class="profile-photo-file-upload-box"><input type="file" class="profile-photo-file-upload"></div>
                     
                     <span>Name:</span>
-                    <input class="settings-name-input" type="text" placeholder="..." value="<%= Parse.User.current().get('name') %>">
+                    <input class="settings-name-input" type="text" placeholder="..." value="<%= Parse.User.current().get("name") %>">
 
                     <span>Gender</span>
                     <div class="gender-equality">
                         <span>Male</span>
-                        <input class="settings-gender-input" type="radio" name="gender" id="male" value="male" <%= Parse.User.current().get('gender') === 'male' ? 'checked' : '' %> >
+                        <input class="settings-gender-input" type="radio" name="gender" id="male" value="male" <%= Parse.User.current().get("gender") === "male" ? "checked" : "" %> >
                         
                         <span>Female</span>
-                        <input class="settings-gender-input" type="radio" name="gender" id="female" value="female" <%= Parse.User.current().get('gender') === 'female' ? 'checked' : '' %> >
+                        <input class="settings-gender-input" type="radio" name="gender" id="female" value="female" <%= Parse.User.current().get("gender") === "female" ? "checked" : "" %> >
                     </div>
 
                     <span>Birthday:</span>
@@ -285,7 +289,7 @@
                     <input class="settings-email-input" type="email" placeholder="..." value="<%= Parse.User.current().get('email') %>">
 
                     <span>Author Bio:</span>
-                    <textarea class="settings-about-you-input" type="text" placeholder="..."><%= Parse.User.current().get('about') %></textarea>
+                    <textarea class="settings-about-you-input" type="text" placeholder="..."><%= Parse.User.current().get("about") %></textarea>
                     
                     <button><div class="settings-save-button">Save</div></button>
                 </div>
@@ -324,15 +328,15 @@
         <script type="text/template" class="thumbnail-page-view-article-view-template">
             <div class="thumbnail-post">
                 <div class="post-box">
-                    <img src="<%= article.get('postPicture')._url %>" />
-                    <div class="thumbnail-post-title-button"><h3><a href="#detail/<%= article.id %>"><%= article.get('postTitle') %></a></h3></div>
-                    <p class="thumbnail-post-content-p"><%= _.first(article.get('postContent').split(' '), 30).join(' ') + '... ' %><a href="#detail/<%= article.id %>">read more</a></p>
+                    <img src="<%= article.get("postPicture")._url %>" />
+                    <div class="thumbnail-post-title-button"><h3><a href="#detail/<%= article.id %>"><%= article.get("postTitle") %></a></h3></div>
+                    <p class="thumbnail-post-content-p"><%= _.first(article.get("postContent").split(" "), 30).join(" ") + "... " %><a href="#detail/<%= article.id %>">read more</a></p>
                 </div>
                 <div class="thumbnail-user-info">
                     <div class="user-info-box">
-                        <img src="<%= article.get("user").get('profilePicture')._url %>" />
-                        <p><a href=""> <%= article.get("user").get('name') %> </a></p>
-                        <p><a href="">Science & Technology</a></p>
+                        <img src="<%= article.get("user").get("profilePicture")._url %>" />
+                        <p><a href="#author/<%= article.id %>"> <%= article.get("user").get("name") %> </a></p>
+                        
                     </div>
                 </div>
             </div>
@@ -352,7 +356,7 @@
                     <p><%= postContent %></p>
                     <div class="detail-profile-container">
                         <div class="detail-profile-box">
-                            <h3>Author - <a href=""><%= this.model.attributes.user.attributes.name %></a></h3>
+                            <h3>Author - <a href="  "><%= this.model.attributes.user.attributes.name %></a></h3>
                             <div class="detail-profile-box-stats">
                                 <button>
                                     <p>0 <a href="">Articles Written</a></p> 
@@ -388,16 +392,16 @@
 -->
         <script type="text/template" class="profile-page-view-template">
             <div class="profile-page-banner-container">
-                <img src="<%= Parse.User.current().get('bannerPicture') ? Parse.User.current().get('bannerPicture').url() : 'http://studio-arriba.ch/web/wp-content/themes/DICE/images/placeholder-c-12-wide.png'  %>" width="100%" />
+                <img src="<%= Parse.User.current().get("bannerPicture") ? Parse.User.current().get("bannerPicture").url() : 'http://studio-arriba.ch/web/wp-content/themes/DICE/images/placeholder-c-12-wide.png'  %>" width="100%" />
             </div>
             <div class="profile-page-container">
                 <div class="profile-user-container-left">
                     <div class="profile-user-container-left-box">
-                        <div class="profile-image-name-box"><p><%= Parse.User.current().get('name') ? Parse.User.current().get('name') : 'Your Name'  %></p></div>
+                        <div class="profile-image-name-box"><p><%= Parse.User.current().get("name") ? Parse.User.current().get("name") : "Your Name"  %></p></div>
 
-                        <img src="<%= Parse.User.current().get('profilePicture') ? Parse.User.current().get('profilePicture').url() : 'http://www.wewillgather.co.uk/content/images/placeholder.jpg?width=298&height=298&quality=100&mode=crop&scale=both' %>"/>
+                        <img src="<%= Parse.User.current().get("profilePicture") ? Parse.User.current().get("profilePicture").url() : 'http://www.wewillgather.co.uk/content/images/placeholder.jpg?width=298&height=298&quality=100&mode=crop&scale=both' %>"/>
 
-                        <div class="stat-buttons">
+                        <div class="profile-stat-buttons">
                             <button>
                                 <p>0 <a href="">Articles Written</a></p>
                             </button>
@@ -411,14 +415,14 @@
                                 <p>0 <a href="">Articles Shared</a></p>
                             </button>
                         </div>
-                        <div class="contact-info">
-                            <h6>Email: <%= Parse.User.current().get('contactEmail') %></h6>
-                            <h6>Website: <a href=""><%= Parse.User.current().get('website') %></a></h6>
+                        <div class="profile-contact-info">
+                            <h6>Email: <%= Parse.User.current().get("contactEmail") %></h6>
+                            <h6>Website: <a href=""><%= Parse.User.current().get("website") %></a></h6>
                         </div>
                         
-                        <div class="about-the-author">
+                        <div class="profile-about-the-author">
                             <h4>About the Author</h4>
-                            <p class="about-p"><%= Parse.User.current().get('about') %></p>
+                            <p class="about-p"><%= Parse.User.current().get("about") %></p>
                         </div>
                     </div>
                 </div>
@@ -428,13 +432,65 @@
 
         <script type="text/template" class="profile-page-article-template">
             <div class="profile-user-container-right-box">
-                <div class="profile-article-name"><h1><a href="#detail/<%= post.id %>"><%= post.get('postTitle') %></a></h1></div>
-                <% if (post.get('postPicture')) { %>
-                    <img src=" <%= post.get('postPicture').url() %> " />
+                <div class="profile-article-name"><h1><a href=""><%= post.get("postTitle") %></a></h1></div>
+                <% if (post.get("postPicture")) { %>
+                    <img src="<%= post.get("postPicture").url() %>" />
                 <% } %>
-                <p><%= post.get('postContent') %></p>
+                <p><%= post.get("postContent") %></p>
             </div>
-        </script>   
+        </script>
+<!-- 
+   ___       __  __              ___               
+  / _ |__ __/ /_/ /  ___  ____  / _ \___ ____ ____ 
+ / __ / // / __/ _ \/ _ \/ __/ / ___/ _ `/ _ `/ -_)
+/_/ |_\_,_/\__/_//_/\___/_/   /_/   \_,_/\_, /\__/ 
+                                        /___/      
+-->
+        <script type="text/template" class="author-page-view-template">
+            <div class="author-page-banner-container">
+                <img src="<%= this.model.attributes.user.attributes.bannerPicture._url %>" width="100%" />
+            </div>
+            <div class="author-page-container">
+                <div class="author-user-container-left">
+                    <div class="author-user-container-left-box">
+                        <div class="author-image-name-box"><p><%= this.model.attributes.user.attributes.name %></p></div>
+                        <img src="<%= this.model.attributes.user.attributes.profilePicture._url %>"/>
+                        <div class="author-stat-buttons">
+                            <button>
+                                <p>0 <a href="">Articles Written</a></p>
+                            </button>
+                            <button>
+                                <p>0 <a href="">Articles Read</a></p>
+                            </button>
+                            <button>
+                                <p>0 <a href="">Articles Featured</a></p>
+                            </button>
+                            <button>
+                                <p>0 <a href="">Articles Shared</a></p>
+                            </button>
+                        </div>
+                        <div class="author-contact-info">
+                            <h6>Email: <%= this.model.attributes.user.attributes.contactEmail %></h6>
+                            <h6>Website: <a href=""><%= this.model.attributes.user.attributes.website %></a></h6>
+                        </div>
+                        
+                        <div class="author-about-the-author">
+                            <h4>About the Author</h4>
+                            <p class="about-p"><%= this.model.attributes.user.attributes.about %></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="author-user-container-right"></div>
+            </div>
+        </script>
+
+        <script type="text/template" class="author-page-article-template">
+            <div class="author-user-container-right-box">
+                <div class="author-article-name"><h1><a href=" "><%= post.get("postTitle") %></a></h1></div>
+                <img src="<%= post.get("postPicture").url() %>" />
+                <p><%= post.get("postContent") %></p>
+            </div>
+        </script>
 <!-- 
    ____        _      __    ______               __     __            ____        __
   / __/_______(_)__  / /_  /_  __/__ __ _  ___  / /__ _/ /____ ___   / __/__  ___/ /
@@ -457,9 +513,9 @@
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
             e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
+            e.src="//www.google-analytics.com/analytics.js";
+            r.parentNode.insertBefore(e,r)}(window,document,"script","ga"));
+            ga("create","UA-XXXXX-X");ga("send","pageview");
         </script>
 
         <!-- build:js({app,.tmp}) scripts/main.js -->

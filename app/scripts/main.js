@@ -15,6 +15,9 @@ var checkNav = function() {
 		var renderedTemplate = _.template($(".signed-in-header-view-template").text());
 		$(".header-link-logged-in").html(renderedTemplate());
 
+		var renderedTemplate = _.template($(".write-header-view-template").text());
+		$(".write-header-view").html(renderedTemplate());
+
 		$(".sign-out-menu-link").click(function() {
 			Parse.User.logOut();
 			var currentUser = Parse.User.current();
@@ -25,4 +28,4 @@ var checkNav = function() {
 		var renderedTemplate = _.template($(".sign-up-header-view-template").text());
 		$(".header-link-logged-in").html(renderedTemplate());
 	}
-}
+};
