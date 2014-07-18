@@ -335,7 +335,7 @@
                 <div class="thumbnail-user-info">
                     <div class="user-info-box">
                         <img src="<%= article.get("user").get("profilePicture")._url %>" />
-                        <p><a href="#author/<%= article.id %>"> <%= article.get("user").get("name") %> </a></p>
+                        <p><a href="#author/<%= article.attributes.user.id %>"> <%= article.get("user").get("name") %> </a></p>
                         
                     </div>
                 </div>
@@ -448,13 +448,13 @@
 -->
         <script type="text/template" class="author-page-view-template">
             <div class="author-page-banner-container">
-                <img src="<%= this.model.attributes.user.attributes.bannerPicture._url %>" width="100%" />
+                <img src="<%= this.model[0].get('bannerPicture')._url %>" width="100%" />
             </div>
             <div class="author-page-container">
                 <div class="author-user-container-left">
                     <div class="author-user-container-left-box">
-                        <div class="author-image-name-box"><p><%= this.model.attributes.user.attributes.name %></p></div>
-                        <img src="<%= this.model.attributes.user.attributes.profilePicture._url %>"/>
+                        <div class="author-image-name-box"><p><%= this.model[0].get("name") %></p></div>
+                        <img src="<%= this.model[0].get('profilePicture')._url %>"/>
                         <div class="author-stat-buttons">
                             <button>
                                 <p>0 <a href="">Articles Written</a></p>
@@ -470,13 +470,13 @@
                             </button>
                         </div>
                         <div class="author-contact-info">
-                            <h6>Email: <%= this.model.attributes.user.attributes.contactEmail %></h6>
-                            <h6>Website: <a href=""><%= this.model.attributes.user.attributes.website %></a></h6>
+                            <h6>Email: <%= this.model[0].get("contactEmail") %></h6>
+                            <h6>Website: <a href=""><%= this.model[0].get("website") %></a></h6>
                         </div>
                         
                         <div class="author-about-the-author">
                             <h4>About the Author</h4>
-                            <p class="about-p"><%= this.model.attributes.user.attributes.about %></p>
+                            <p class="about-p"><%= this.model[0].get("about") %></p>
                         </div>
                     </div>
                 </div>
@@ -486,9 +486,9 @@
 
         <script type="text/template" class="author-page-article-template">
             <div class="author-user-container-right-box">
-                <div class="author-article-name"><h1><a href=" "><%= post.get("postTitle") %></a></h1></div>
-                <img src="<%= post.get("postPicture").url() %>" />
-                <p><%= post.get("postContent") %></p>
+                <div class="author-article-name"><h1><a href=" "></a> <%= postTitle %> </h1></div>
+                <img src='<%= postPicture["_url"] %>' />
+                <p><%= postContent %></p>
             </div>
         </script>
 <!-- 

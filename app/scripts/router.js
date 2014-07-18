@@ -16,7 +16,7 @@ var AppRouter = Parse.Router.extend({
 	},
 
 	initialize: function() {
-		window.fetchedArticles = new Articles;
+		window.fetchedArticles = new Articles();
 	
 	},
 		home: function() {
@@ -75,6 +75,8 @@ var AppRouter = Parse.Router.extend({
 		},
 
 
+
+
 		detail: function(id){
 			checkNav();
 			$(".content-container").html("");
@@ -113,26 +115,27 @@ var AppRouter = Parse.Router.extend({
 		author: function(id){
 			checkNav();
 			$(".content-container").html("");
+			console.log(id)
+			// var article = window.fetchedArticles.get(id)
 
-			var article = window.fetchedArticles.get(id);
 
-			if (article) {
-				var authorView = new AuthorView({model: article});
-			} else {
-				var query = new Parse.Query(Article);
-				query.include("user");
-				query.get(id, {
-				  success: function(article) {
+				var query = new Parse.Query(Parse.User);
+				console.log(id)
+				query.equalTo('objectId', id)	
+
+				query.find({
+				  success: function(user) {
+					console.log(user)
 				    // The object was retrieved successfully.
-				    var authorView = new AuthorView({model: article});
-				    console.log("article is ", article);
+				    new AuthorView({model: user})
+				    console.log(user);
 				  },
 				  error: function(object, error) {
 				    // The object was not retrieved successfully.
 				    console.error("Page not found!");
 				  }
 				});
-			}
+		
 			console.log("AuthorView has loaded.");
 		},
 });

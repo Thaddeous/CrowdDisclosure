@@ -318,7 +318,7 @@ var ThumbnailView = Parse.View.extend({
 	className: "thumbnail-page",
 	template: _.template($(".thumbnail-page-view-template").text()),
 	events: {
-
+			
 	},
 
 	initialize: function(){
@@ -338,14 +338,9 @@ var ThumbnailView = Parse.View.extend({
 			router.navigate("#detail", {trigger: true});
 		});
 
-		$(".author-article-name").click(function() {
-			router.navigate("#author", {trigger: true});
-		});
-
 		query.include('user');
-
+		query.ascending("createdAt");
 		query.find().done(function(articles){
-			query.descending("createdAt");
 			window.fetchedArticles.reset(articles);
 
 			window.fetchedArticles.each(function(article) {
@@ -460,13 +455,13 @@ var AuthorView = Parse.View.extend({
 	initialize: function(){
 		$(".content-container").html(this.el);
 		this.render();
+	    console.log(this.model)
+	    // var userId = this.model.attributes.user.id
+	    // console.log(userId)
 	},
 
 	render: function(){
 	    this.$el.html(this.template(this.model.attributes));
-
-
-		var template = _.template($(".author-page-article-template").text());
 		var Article = Parse.Object.extend("Article");
 		var query = new Parse.Query(Article);
 		var that = this;
@@ -475,20 +470,31 @@ var AuthorView = Parse.View.extend({
 			router.navigate("#detail", {trigger: true});
 		});
 
-		query.include("user");
+		var id = this.model[0].id
 		query.ascending("createdAt");
+		var userId = {
+			__type: "Pointer",
+			className: "_User",
+			objectId: id
+		}
+		console.log(userId)
+
+		query.equalTo('user', userId)
+		// query.equalTo('objectId', "FjTc2GPDSD")
 		query.find({
 			success: function(articles) {
+				console.log(articles)
 				articles.forEach(function(article) {
-					console.log(article.attributes);
-	    			$(".author-user-container-right").prepend(template({post: article}) );
+					console.log("article is ", article);
+					var templateTwo = _.template($(".author-page-article-template").text());
+					var renderedTemplate = templateTwo(article.attributes)
+	    			$(".author-user-container-right").prepend(templateTwo(article.attributes));
 				});
 			},
 			error: function (error) {
 				console.log(error);
 			}
 		});
-
 
 	    return this;
 	},
