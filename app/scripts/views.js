@@ -179,7 +179,6 @@ var SettingsView = Parse.View.extend ({
 		var bannerPromise = uploadPhoto($(".profile-banner-file-upload")[0], 'bannerPicture');
 
 		var profilePromise = uploadPhoto($(".profile-photo-file-upload")[0], 'profilePicture', function() {
-			alert("Your information has been updated successfully.");
 		});
 
 		bannerPromise.done(function(){
@@ -189,6 +188,7 @@ var SettingsView = Parse.View.extend ({
 		});
 
 		function uploadPhoto (input, property, successCallback, errorCallback){
+
 
 			var deferred = $.Deferred();
 
@@ -284,7 +284,6 @@ var PostView = Parse.View.extend({
 				article.save(null, {
 					success: function(user) {
 						router.navigate("#profile", {trigger: true});
-						alert("Your information has been updated successfully.");
 					},
 				 	error: function(user, error) {
 				    	alert("Error: " + error.code + " " + error.message);
@@ -297,7 +296,6 @@ var PostView = Parse.View.extend({
 			article.save(null, {
 				success: function(user) {
 					router.navigate("#profile", {trigger: true});
-					alert("Your information has been updated successfully.");
 				},
 			 	error: function(user, error) {
 			    	alert("Error: " + error.code + " " + error.message);
@@ -449,26 +447,24 @@ var AuthorView = Parse.View.extend({
 	className: "author-page",
 	template: _.template($(".author-page-view-template").text()),
 	events: {
-
+		'click .author-article-name' : 'seeDetailView'
 	},
 
 	initialize: function(){
 		$(".content-container").html(this.el);
 		this.render();
 	    console.log(this.model)
-	    // var userId = this.model.attributes.user.id
-	    // console.log(userId)
 	},
 
 	render: function(){
-	    this.$el.html(this.template(this.model.attributes));
+	    this.$el.html(this.template(this.model[0].attributes));
 		var Article = Parse.Object.extend("Article");
 		var query = new Parse.Query(Article);
 		var that = this;
 
-		$(".author-article-name").click(function() {
-			router.navigate("#detail", {trigger: true});
-		});
+		// $(".author-article-name").click(function() {
+		// 	router.navigate("#detail", {trigger: true});
+		// });
 
 		var id = this.model[0].id
 		query.ascending("createdAt");
@@ -485,10 +481,11 @@ var AuthorView = Parse.View.extend({
 			success: function(articles) {
 				console.log(articles)
 				articles.forEach(function(article) {
-					console.log("article is ", article);
+					console.log("article is id", article.id);
 					var templateTwo = _.template($(".author-page-article-template").text());
-					var renderedTemplate = templateTwo(article.attributes)
-	    			$(".author-user-container-right").prepend(templateTwo(article.attributes));
+					var renderedTemplate = templateTwo(article)
+	    			$(".author-user-container-right").prepend(renderedTemplate);
+
 				});
 			},
 			error: function (error) {
@@ -498,5 +495,12 @@ var AuthorView = Parse.View.extend({
 
 	    return this;
 	},
+
+	seeDetailView: function (target) {
+		console.log(target.currentTarget.id)
+		var id = "/#detail/"+target.currentTarget.id;
+		console.log(id)
+		router.navigate(id,{trigger: true})
+	}
 
 });

@@ -336,7 +336,7 @@
                     <div class="user-info-box">
                         <img src="<%= article.get("user").get("profilePicture")._url %>" />
                         <p><a href="#author/<%= article.attributes.user.id %>"> <%= article.get("user").get("name") %> </a></p>
-                        
+                        <p><a href="#author/<%= article.attributes.user.id %>">Science & Technology</a></p>
                     </div>
                 </div>
             </div>
@@ -356,7 +356,7 @@
                     <p><%= postContent %></p>
                     <div class="detail-profile-container">
                         <div class="detail-profile-box">
-                            <h3>Author - <a href="  "><%= this.model.attributes.user.attributes.name %></a></h3>
+                            <h3>Author - <a href="#author/<%= this.model.attributes.user.id %>"><%= this.model.attributes.user.attributes.name %></a></h3>
                             <div class="detail-profile-box-stats">
                                 <button>
                                     <p>0 <a href="">Articles Written</a></p> 
@@ -432,7 +432,7 @@
 
         <script type="text/template" class="profile-page-article-template">
             <div class="profile-user-container-right-box">
-                <div class="profile-article-name"><h1><a href=""><%= post.get("postTitle") %></a></h1></div>
+                <div class="profile-article-name"><h1><a href="#detail/<%= post.id %>"><%= post.get("postTitle") %></a></h1></div>
                 <% if (post.get("postPicture")) { %>
                     <img src="<%= post.get("postPicture").url() %>" />
                 <% } %>
@@ -448,13 +448,13 @@
 -->
         <script type="text/template" class="author-page-view-template">
             <div class="author-page-banner-container">
-                <img src="<%= this.model[0].get('bannerPicture')._url %>" width="100%" />
+                <img src="<%= bannerPicture._url %>" width="100%" />
             </div>
             <div class="author-page-container">
                 <div class="author-user-container-left">
                     <div class="author-user-container-left-box">
-                        <div class="author-image-name-box"><p><%= this.model[0].get("name") %></p></div>
-                        <img src="<%= this.model[0].get('profilePicture')._url %>"/>
+                        <div class="author-image-name-box"><p><%= name %></p></div>
+                        <img src="<%= profilePicture._url %>"/>
                         <div class="author-stat-buttons">
                             <button>
                                 <p>0 <a href="">Articles Written</a></p>
@@ -470,13 +470,13 @@
                             </button>
                         </div>
                         <div class="author-contact-info">
-                            <h6>Email: <%= this.model[0].get("contactEmail") %></h6>
-                            <h6>Website: <a href=""><%= this.model[0].get("website") %></a></h6>
+                            <h6>Email: <%= contactEmail %></h6>
+                            <h6>Website: <a href=""><%= website %></a></h6>
                         </div>
                         
                         <div class="author-about-the-author">
                             <h4>About the Author</h4>
-                            <p class="about-p"><%= this.model[0].get("about") %></p>
+                            <p class="about-p"><%= about %></p>
                         </div>
                     </div>
                 </div>
@@ -486,9 +486,9 @@
 
         <script type="text/template" class="author-page-article-template">
             <div class="author-user-container-right-box">
-                <div class="author-article-name"><h1><a href=" "></a> <%= postTitle %> </h1></div>
-                <img src='<%= postPicture["_url"] %>' />
-                <p><%= postContent %></p>
+                <div class="author-article-name" id="<%= id%>"><h1><%= attributes.postTitle %></h1></div>
+                <img src='<%= attributes.postPicture["_url"] %>' />
+                <p><%= attributes.postContent %></p>
             </div>
         </script>
 <!-- 

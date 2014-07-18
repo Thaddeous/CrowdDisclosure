@@ -125,7 +125,7 @@ var AppRouter = Parse.Router.extend({
 
 				query.find({
 				  success: function(user) {
-					console.log(user)
+					console.log('query results', user)
 				    // The object was retrieved successfully.
 				    new AuthorView({model: user})
 				    console.log(user);
