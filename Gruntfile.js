@@ -322,20 +322,6 @@ module.exports = function (grunt) {
                     ]
                 }]
             },
-            vendor: {
-                files: [{
-                    expand: true,
-                    dot: true,
-                    cwd: 'bower_components',
-                    dest: '<%= config.dist %>/bower_components/',
-                    src: [
-                        'modernizr/modernizr.js',
-                        'jquery/dist/jquery.js',
-                        'fittext/fittext.js',
-                        'underscore/underscore.js'
-                    ]
-                }]
-            },
             styles: {
                 expand: true,
                 dot: true,
@@ -424,7 +410,6 @@ module.exports = function (grunt) {
         'cssmin',
         'uglify',
         'copy:dist',
-        'copy:vendor',
         'modernizr',
         'rev',
         'usemin',
